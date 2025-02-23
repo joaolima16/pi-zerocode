@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.zecorode.domain.user.AuthenticationDTO;
+import com.zecorode.domain.user.LoginResponseDTO;
 import com.zecorode.domain.user.RegisterDTO;
 import com.zecorode.domain.user.User;
+import com.zecorode.infra.security.TokenService;
 import com.zecorode.repositories.UserRepository;
 
 import jakarta.validation.Valid;
@@ -27,12 +29,16 @@ public class AuthenticationController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private TokenService tokenService;
+
     @PostMapping("/login")
-    public ResponseEntity login(@RequestBody @Valid AuthenticationDTO authenticationDTO) {
+    public ResponseEntity<LoginResponseDTO> login(@RequestBody @Valid AuthenticationDTO authenticationDTO) {
         var emailPassword = new UsernamePasswordAuthenticationToken(authenticationDTO.email(),
                 authenticationDTO.password());
         var auth = authenticationManager.authenticate(emailPassword);
-        return ResponseEntity.ok().build();
+        var token = tokenService.generateToken((User) auth.getPrincipal());
+        return ResponseEntity.ok(new LoginResponseDTO(token));
     }
 
     @PostMapping("/register")
