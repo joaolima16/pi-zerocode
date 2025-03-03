@@ -16,6 +16,7 @@ import com.zecorode.domain.user.RegisterDTO;
 import com.zecorode.domain.user.User;
 import com.zecorode.infra.security.TokenService;
 import com.zecorode.repositories.UserRepository;
+import com.zecorode.services.AuthorizationService;
 
 import jakarta.validation.Valid;
 
@@ -32,6 +33,8 @@ public class AuthenticationController {
     @Autowired
     private TokenService tokenService;
 
+    @Autowired
+    private AuthorizationService authorizationService;
     @PostMapping("/login")
     public ResponseEntity<LoginResponseDTO> login(@RequestBody @Valid AuthenticationDTO authenticationDTO) {
         var emailPassword = new UsernamePasswordAuthenticationToken(authenticationDTO.email(),
@@ -48,7 +51,7 @@ public class AuthenticationController {
         }
         String encryptPassword = new BCryptPasswordEncoder().encode(registerDTO.password());
         var newUser = new User(registerDTO.email(), encryptPassword, registerDTO.role());
-        this.userRepository.save(newUser);
+        authorizationService.create(newUser);
         return ResponseEntity.ok().build();
 
     }
