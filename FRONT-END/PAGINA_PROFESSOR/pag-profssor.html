@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus | Professores</title>
+    <link rel="stylesheet" href="pag-profssor.css">
+    <link rel="stylesheet" href="../style.css"> <!-- Classe globa css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Nexus</span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="courses.html">Cursos</a></li>
+                    <li><a href="teachers.html" class="active">Professores</a></li>
+                    <li><a href="modules.html">Módulos</a></li>
+                    <li><a href="#">Meu Perfil</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Entrar</a>
+                <a href="register.html" class="btn btn-primary">Cadastrar</a>
+            </div>
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="grid-layout">
+                <aside class="sidebar">
+                    <h2 class="sidebar-title">Filtros</h2>
+                    <form id="filter-form">
+                        <div class="filter-group">
+                            <label for="subject" class="filter-label">Disciplina</label>
+                            <select id="subject" class="form-select">
+                                <option value="all">Todas as disciplinas</option>
+                                <option value="Matemática">Matemática</option>
+                                <option value="Programação">Programação</option>
+                                <option value="Inglês">Inglês</option>
+                                <option value="Física">Física</option>
+                                <option value="História">História</option>
+                                <option value="Química">Química</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label class="filter-label">Avaliação mínima: <span id="rating-value">4</span></label>
+                            <input type="range" id="rating" min="1" max="5" step="0.5" value="4" class="form-control">
+                        </div>
+                        <div class="filter-group">
+                            <label class="filter-label">Faixa de preço: R$<span id="price-min">50</span> - R$<span id="price-max">200</span></label>
+                            <input type="range" id="price-range" min="50" max="300" step="10" value="50,200" class="form-control">
+                        </div>
+                        <div class="filter-group">
+                            <label class="filter-label">Disponibilidade</label>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="available-now">
+                                <label for="available-now">Disponível agora</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="available-weekends">
+                                <label for="available-weekends">Disponível aos finais de semana</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Aplicar Filtros</button>
+                    </form>
+                    
+                    <div class="filter-group" style="margin-top: 2rem;">
+                        <h2 class="sidebar-title">Pesquisar</h2>
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="search" id="search" class="form-control search-input" placeholder="Nome ou especialidade...">
+                        </div>
+                    </div>
+                </aside>
+                
+                <div class="content">
+                    <div class="page-header">
+                        <h1 class="page-title">Professores Disponíveis</h1>
+                    </div>
+                    
+                    <div class="teachers-grid" id="teachers-grid">
+                        <!-- Teachers will be loaded here via JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>EduConnect</span>
+            </div>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#">Termos</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="footer-copyright">
+                © 2025 EduConnect. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Message Modal -->
+    <div class="modal" id="message-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Enviar mensagem para <span id="message-teacher-name"></span></h2>
+                <p class="modal-description">Tire suas dúvidas ou agende uma aula experimental</p>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="message">Sua mensagem</label>
+                    <textarea id="message" class="form-textarea" placeholder="Olá! Gostaria de saber mais sobre suas aulas..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="close-message-modal">Cancelar</button>
+                <button class="btn btn-primary" id="send-message">Enviar mensagem</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schedule Modal -->
+    <div class="modal" id="schedule-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Agendar aula com <span id="schedule-teacher-name"></span></h2>
+                <p class="modal-description">Escolha o dia, horário e detalhes da sua aula</p>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="date">Data</label>
+                    <input type="date" id="date" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="time">Horário</label>
+                    <input type="time" id="time" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="duration">Duração</label>
+                    <select id="duration" class="form-select">
+                        <option value="30">30 minutos</option>
+                        <option value="60" selected>1 hora</option>
+                        <option value="90">1 hora e 30 minutos</option>
+                        <option value="120">2 horas</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="topic">Tópico da aula</label>
+                    <input type="text" id="topic" class="form-control" placeholder="Ex: Dúvidas sobre Cálculo I">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="teacher-price">Total: R$<span id="schedule-price">0</span></div>
+                <div>
+                    <button class="btn btn-outline" id="close-schedule-modal">Cancelar</button>
+                    <button class="btn btn-primary" id="confirm-schedule">Confirmar agendamento</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="pag-profssor.js"></script>
+</body>
+</html>
