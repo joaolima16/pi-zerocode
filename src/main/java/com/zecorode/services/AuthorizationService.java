@@ -29,5 +29,9 @@ public class AuthorizationService implements UserDetailsService{
             throw new RuntimeException("Error to create user");
         }
     }
+    public User create(RegisterDTO registerDTO){
+        User user = new User(registerDTO.email(), registerDTO.password(), registerDTO.role());
+        return create(user);
+    }
     
 }
