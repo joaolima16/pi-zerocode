@@ -120,9 +120,11 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p class="teacher-subject">${teacher.subject}</p>
                         </div>
                     </div>
-                    <div class="teacher-rating">
-                        <i class="fas fa-star"></i>
-                        <span>${teacher.rating}</span>
+
+                    <div class="teacher-rating"> 
+                       <a href="/FRONT-END/Pagina_Perfil_Professor/perfilProfessor.html"  }>
+                        Detalhes
+                    </a>
                     </div>
                 </div>
                 <div class="teacher-body">
@@ -150,6 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
             teachersGrid.appendChild(teacherCard);
         });
+                            // arrumar essa div teacher-rating
         
         // Add event listeners to buttons
         document.querySelectorAll('.message-btn').forEach(btn => {
