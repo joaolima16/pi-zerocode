@@ -36,6 +36,7 @@ public class Student {
         @Column(name = "date_birthday", nullable = false)
         private LocalDate dateBirthday;
 
+
         @Column(length = 100, nullable = false, unique = true)
         private String email;
 

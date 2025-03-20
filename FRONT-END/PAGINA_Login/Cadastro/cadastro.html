@@ -38,6 +38,14 @@
                         <input type="email" id="student-email" class="form-control" placeholder="seu@email.com" required>
                     </div>
                     <div class="form-group">
+                        <label for="student-cpf">cpf</label>
+                        <input type="text" id="student-cpf" class="form-control" placeholder="999.999.999-99" required maxlength="14" onchange="validateCPF()">
+                    </div>
+                    <div class="form-group">
+                        <label for="student-birthday">Data de nascimento</label>
+                        <input type="date" id="student-birthday" class="form-control" placeholder="30/11/2004" required>
+                    </div>
+                    <div class="form-group">
                         <label for="student-phone">Telefone</label>
                         <input type="tel" id="student-phone" class="form-control">
                     </div>
