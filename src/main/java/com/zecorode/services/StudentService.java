@@ -30,6 +30,7 @@ public class StudentService {
             newStudent.setCpf(student.cpf());
             newStudent.setDateBirthday(student.dateBirth());
             newStudent.setEmail(student.email());
+            newStudent.setPhone(student.phone());
             newStudent.setPassword(passwordEncoder.encode(student.password()));
             Student authStudent = studentRepository.save(newStudent);
             if (authStudent == null) {
@@ -49,6 +50,7 @@ public class StudentService {
             studentToUpdate.setName(student.name());
             studentToUpdate.setCpf(student.cpf());
             studentToUpdate.setDateBirthday(student.dateBirth());
+            studentToUpdate.setPhone(student.phone());
             studentToUpdate.setEmail(student.email());
             studentToUpdate.setPassword(new BCryptPasswordEncoder().encode(student.password()));
             return studentRepository.save(studentToUpdate);

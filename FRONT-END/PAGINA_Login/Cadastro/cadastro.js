@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert('As senhas não coincidem!');
                 return;
             }
+            registerTeacher();
 
 
         });
@@ -62,10 +63,12 @@ async function registerStudent() {
     const password = document.querySelector("#student-password").value;
     const cpf = document.querySelector("#student-cpf").value;
     const birthday = document.querySelector("#student-birthday").value;
+    const phone = document.querySelector("#student-phone").value;
     const jsonData = JSON.stringify({
         name: name,
         cpf: cpf,
         dateBirth: birthday,
+        phone: phone,
         email: email,
         password: password,
     })
@@ -79,6 +82,7 @@ async function registerStudent() {
     })
         .then((res) => res)
         .then((response) => {
+    
             if (response.status == 200) {
                 alert("Aluno cadastrado com sucesso!");
                 window.location.href = "../Login/login.html";
@@ -125,4 +129,44 @@ function showResult(isValid) {
         cpfInput.value = ""
 
     }
+}
+
+function registerTeacher() {
+    const url = "http://localhost:8080/teacher/create";
+
+    const name = document.querySelector("#teacher-name").value;
+    const email = document.querySelector("#teacher-email").value;
+    const password = document.querySelector("#teacher-password").value;
+    const cpf = document.querySelector("#teacher-cpf").value;
+    const birthday = document.querySelector("#teacher-birthday").value;
+    const phone = document.querySelector("#teacher-phone").value;
+    const area_teaching = document.querySelector("#teacher-specialty").value;
+    const jsonData = JSON.stringify({
+        name: name,
+        cpf: cpf,
+        dateBirth: birthday,
+        email: email,
+        password: password,
+        phone: phone,
+        area_teaching: area_teaching
+    })
+
+    fetch(url, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: jsonData
+    })
+        .then((res) => res.json())
+        .then((response) => {
+            console.log(response);
+                alert("Professor cadastrado com sucesso!");
+                window.location.href = "../Login/login.html";
+            
+        })
+        .catch((err) =>{
+            alert("Ocorreu um erro ao cadastrar o professor!");
+            console.log(err);
+        });
 }

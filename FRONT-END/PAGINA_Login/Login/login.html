@@ -27,37 +27,20 @@
             <div class="tab-content active" id="student-tab">
                 <form id="student-login-form">
                     <div class="form-group">
-                        <label for="student-email">Email</label>
-                        <input type="email" id="student-email" class="form-control" placeholder="seu@email.com" required>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="seu@email.com" required>
                     </div>
                     <div class="form-group">
                         <div class="form-footer">
-                            <label for="student-password">Senha</label>
+                            <label for="password">Senha</label>
                             <a href="#" class="forgot-password">Esqueceu a senha?</a>
                         </div>
-                        <input type="password" id="student-password" class="form-control" required>
+                        <input type="password" id="password" class="form-control" required>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Entrar</button>
+                    <button type="button" class="btn btn-primary" style="width: 100%;" onclick="loginUser()">Entrar</button>
                 </form>
             </div>
-            
-            <div class="tab-content" id="teacher-tab">
-                <form id="teacher-login-form">
-                    <div class="form-group">
-                        <label for="teacher-email">Email</label>
-                        <input type="email" id="teacher-email" class="form-control" placeholder="professor@email.com" required>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-footer">
-                            <label for="teacher-password">Senha</label>
-                            <a href="#" class="forgot-password">Esqueceu a senha?</a>
-                        </div>
-                        <input type="password" id="teacher-password" class="form-control" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Entrar como Professor</button>
-                </form>
-            </div>
-            
+        
             <div class="login-footer">
                 Não tem uma conta? <a href="/FRONT-END/PAGINA_Login/Cadastro/cadastro.html" target="_blank">Cadastre-se aqui</a>
             </div>
