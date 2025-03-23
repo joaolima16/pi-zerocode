@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - EduConnect</title>
+    <link rel="stylesheet" href="cadastro.css">
+    <link rel="stylesheet" href="/FRONT-END/Pagina_Home/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ 
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-card">
+            <div class="register-header">
+                <a href="index.html" class="register-logo">
+                   <figure>
+                    <img src="/FRONT-END/IMAGENS/Nexus.png" alt="logo Nexus">
+                   </figure>
+                </a>
+                <h1>Crie sua conta</h1>
+                <p>Cadastre-se para começar sua jornada de aprendizado</p>
+            </div>
+            
+            <div class="tabs">
+                <div class="tab active" data-tab="student">Aluno</div>
+                <div class="tab" data-tab="teacher">Professor</div>
+            </div>
+            
+            <div class="tab-content active" id="student-tab">
+                <form id="student-register-form">
+                    <div class="form-group">
+                        <label for="student-name">Nome completo</label>
+                        <input type="text" id="student-name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="student-email">Email</label>
+                        <input type="email" id="student-email" class="form-control" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="student-cpf">cpf</label>
+                        <input type="text" id="student-cpf" class="form-control" placeholder="999.999.999-99" required maxlength="14" onchange="validateCPF()">
+                    </div>
+                    <div class="form-group">
+                        <label for="student-birthday">Data de nascimento</label>
+                        <input type="date" id="student-birthday" class="form-control" placeholder="30/11/2004" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="student-phone">Telefone</label>
+                        <input type="tel" id="student-phone" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="student-password">Senha</label>
+                        <input type="password" id="student-password" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="student-confirm-password">Confirmar senha</label>
+                        <input type="password" id="student-confirm-password" class="form-control" required>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="student-terms" required>
+                        <label for="student-terms">
+                            Eu aceito os <a href="#" class="terms-link">termos de serviço</a> e <a href="#" class="terms-link">política de privacidade</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Cadastrar como Aluno</button>
+                </form>
+            </div>
+            
+            <div class="tab-content" id="teacher-tab">
+                <form id="teacher-register-form">
+                    <div class="form-group">
+                        <label for="teacher-name">Nome completo</label>
+                        <input type="text" id="teacher-name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teacher-email">Email</label>
+                        <input type="email" id="teacher-email" class="form-control" placeholder="professor@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teacher-cpf">Cpf</label>
+                        <input type="text" id="teacher-cpf" class="form-control" placeholder="999.999.999-99" required maxlength="11">
+                    </div>
+                    <div class="form-group">
+                        <label for="teacher-birthday">Data de nascimento</label>
+                        <input type="date" id="teacher-birthday" class="form-control" placeholder="30/11/2004" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teacher-phone">Telefone</label>
+                        <input type="tel" id="teacher-phone" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="teacher-specialty">Especialidade principal</label>
+                        <select id="teacher-specialty" class="form-select" required>
+                            <option value="">Selecione sua especialidade</option>
+                            <option value="math">Matemática</option>
+                            <option value="portuguese">Português</option>
+                            <option value="science">Literatura</option>
+                            <option value="geography">Biologia</option>
+                            <option value="programming">Programação</option>
+                            <option value="languages">Idiomas</option>
+                            <option value="other">Outra</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="teacher-password">Senha</label>
+                        <input type="password" id="teacher-password" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teacher-confirm-password">Confirmar senha</label>
+                        <input type="password" id="teacher-confirm-password" class="form-control" required>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="teacher-terms" required>
+                        <label for="teacher-terms">
+                            Eu aceito os <a href="#" class="terms-link">termos de serviço</a> e <a href="#" class="terms-link">política de privacidade</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;" >Cadastrar como Professor</button>
+                </form>
+            </div>
+            
+            <div class="register-footer">
+                Já tem uma conta? <a href="/FRONT-END/PAGINA_Login/Login/login.html">Entre aqui</a>
+            </div>
+            
+            <a href="/FRONT-END/Pagina_Home/index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Voltar para a página inicial
+            </a>
+        </div>
+    </div>
+
+    <script src="cadastro.js"></script>
+</body>
+</html>

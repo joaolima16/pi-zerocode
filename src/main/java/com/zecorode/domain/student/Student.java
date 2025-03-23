@@ -33,8 +33,12 @@ public class Student {
         @Column(length = 11, nullable = false, unique = true)
         private String cpf;
 
+        @Column(name = "phone", length = 13, nullable = false)
+        private String phone;
+        
         @Column(name = "date_birthday", nullable = false)
         private LocalDate dateBirthday;
+
 
         @Column(length = 100, nullable = false, unique = true)
         private String email;

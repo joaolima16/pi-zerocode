@@ -17,9 +17,13 @@ public class TeacherController {
 
     @Autowired
     private TeacherService teacherService;
+
     @PostMapping("/create")
     public ResponseEntity<Teacher> create(@RequestBody RegisterTeacherDTO registerTeacherDTO) {
         Teacher teacher = teacherService.create(registerTeacherDTO);
+        if(teacher == null) {
+            return ResponseEntity.badRequest().build();
+        }
         return ResponseEntity.ok(teacher);
     }
 }

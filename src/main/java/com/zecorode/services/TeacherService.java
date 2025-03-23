@@ -9,40 +9,33 @@ import com.zecorode.domain.teacher.Teacher;
 import com.zecorode.domain.user.SystemRole;
 import com.zecorode.domain.user.User;
 import com.zecorode.repositories.TeacherRepository;
-import com.zecorode.repositories.UserRepository;
 
 @Service
 public class TeacherService {
-
-  @Autowired
-  private PasswordEncoder passwordEncoder;
-
-  @Autowired
-  private TeacherRepository teacherRepository;
-
-  @Autowired
-  private AuthorizationService authorizationService;
-
-
-  public Teacher create(RegisterTeacherDTO registerTeacherDTO) {
-    Teacher teacher = generateTeacherFromDTO(registerTeacherDTO);
-    Teacher savedTeacher = teacherRepository.save(teacher);
-    if (savedTeacher == null) {
-      throw new RuntimeException("Error to create teacher");
+    @Autowired
+    private TeacherRepository teacherRepository;
+    
+    @Autowired
+    private AuthorizationService authorizationService;
+    
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+    public Teacher create(RegisterTeacherDTO registerTeacherDTO) {
+        Teacher teacher = new Teacher();
+        teacher.setName(registerTeacherDTO.name());
+        teacher.setCpf(registerTeacherDTO.cpf());
+        teacher.setDateBirthday(registerTeacherDTO.dateBirth());
+        teacher.setPhone(registerTeacherDTO.phone());
+        teacher.setArea_teaching(registerTeacherDTO.area_teaching());
+        teacher.setEmail(registerTeacherDTO.email());
+        teacher.setPassword(passwordEncoder.encode(registerTeacherDTO.password()));
+        Teacher teacherSaved = teacherRepository.save(teacher);
+        if(teacherSaved == null) {
+            throw new RuntimeException("Teacher not saved");
+        }
+        User userTeacher = new User(teacherSaved.getEmail(), teacherSaved.getPassword(), SystemRole.TEACHER);
+        authorizationService.create(userTeacher
+        );
+        return teacherSaved;
     }
-    User userAuth = new User(savedTeacher.getEmail(), savedTeacher.getPassword(), SystemRole.TEACHER);
-    authorizationService.create(userAuth);
-    return savedTeacher;
-  }
-  public Teacher generateTeacherFromDTO(RegisterTeacherDTO registerTeacherDTO) {
-    Teacher teacher = new Teacher();
-    teacher.setName(registerTeacherDTO.name());
-    teacher.setCpf(registerTeacherDTO.cpf());
-    teacher.setDateBirthday(registerTeacherDTO.dateBirth());
-    teacher.setEmail(registerTeacherDTO.email());
-    teacher.setPassword(passwordEncoder.encode(registerTeacherDTO.password()));
-    teacher.setCodeTeacher(registerTeacherDTO.code_teacher());
-    return teacher;
-
-  }
 }

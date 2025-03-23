@@ -33,6 +33,12 @@ public class Teacher {
 
     @Column(name = "date_birthday", nullable = false)
     private LocalDate dateBirthday;
+    
+    @Column(name = "phone", length = 13, nullable = false)
+    private String phone;
+ 
+    @Column(name = "area_teaching", length = 100, nullable = false)
+    private String area_teaching;
 
     @Column(length = 100, nullable = false, unique = true)
     private String email;
