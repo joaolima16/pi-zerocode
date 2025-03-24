@@ -1,6 +1,7 @@
 package com.zecorode.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.zecorode.domain.teacher.RegisterTeacherDTO;
@@ -17,14 +18,17 @@ public class TeacherService {
     @Autowired
     private AuthorizationService authorizationService;
     
+    @Autowired
+    private PasswordEncoder passwordEncoder;
     public Teacher create(RegisterTeacherDTO registerTeacherDTO) {
         Teacher teacher = new Teacher();
         teacher.setName(registerTeacherDTO.name());
         teacher.setCpf(registerTeacherDTO.cpf());
-        teacher.setDateBirthday(registerTeacherDTO.dateBirthday());
+        teacher.setDateBirthday(registerTeacherDTO.dateBirth());
+        teacher.setPhone(registerTeacherDTO.phone());
+        teacher.setArea_teaching(registerTeacherDTO.area_teaching());
         teacher.setEmail(registerTeacherDTO.email());
-        teacher.setPassword(registerTeacherDTO.password());
-        teacher.setArea_teaching(registerTeacherDTO.areaTeaching());
+        teacher.setPassword(passwordEncoder.encode(registerTeacherDTO.password()));
         Teacher teacherSaved = teacherRepository.save(teacher);
         if(teacherSaved == null) {
             throw new RuntimeException("Teacher not saved");
