@@ -1,3 +1,5 @@
+
+
 function loginUser(){
     var email = document.getElementById('email').value;
     var senha = document.getElementById('password').value;
@@ -17,6 +19,7 @@ function loginUser(){
         if(data.token){
             alert("Logado com sucesso!");
             localStorage.setItem('token', data.token);
+            localStorage.setItem('id', data.id);
             window.location.href = "../../Pagina_Home/index.html";
         }
     })

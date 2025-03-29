@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexus | Professores</title>
-    <link rel="stylesheet" href="pag-profssor.css">
+    <link rel="stylesheet" href="pag-professor.css">
     <link rel="stylesheet" href="/FRONT-END/Pagina_Home/style.css"> <!-- Classe globa css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -24,8 +24,9 @@
                 </ul>
             </nav>
             <div class="auth-buttons">
-                <a href="login.html" class="btn btn-outline">Entrar</a>
-                <a href="register.html" class="btn btn-primary">Cadastrar</a>
+                <a href="../PAGINA_Login/Login/login.html" class="btn btn-outline" id="btn-login">Entrar</a>
+                <a href="../PAGINA_Login/Cadastro/cadastro.html" class="btn btn-primary" id="btn-register">Cadastrar</a>
+                <a onclick="logout()" class="btn btn-outline" id="btn-logout">Sair</a>
             </div>
             <button class="mobile-menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -175,6 +176,6 @@
         </div>
     </div>
 
-    <script src="pag-profssor.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

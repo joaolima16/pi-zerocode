@@ -1,4 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const token = localStorage.getItem('token');
+    var loginButton = document.querySelector('#btn-login'); 
+    var registerButton = document.querySelector('#btn-register');
+    var logoutButton = document.querySelector('#btn-logout');
+    if (loginButton && token) { // Garante que o botão existe antes de tentar acessá-lo
+        loginButton.style.display = 'none';
+        registerButton.style.display = 'none';
+        logoutButton.style.display = 'block';
+    }
     // Sample data for teachers
     const teachers = [
         {
@@ -270,3 +279,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial render
     renderTeachers();
 });
+function logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('id');
+    alert("Deslogado com sucesso!");
+    window.location.href = "../PAGINA_Login/Login/login.html";
+}

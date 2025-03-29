@@ -472,3 +472,6 @@ p {
         text-align: right;
     }
 }
+#btn-logout{
+    display: none;
+}

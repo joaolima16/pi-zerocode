@@ -1,22 +1,16 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const mainNav = document.querySelector('.main-nav');
-    
-    if (mobileMenuToggle && mainNav) {
-        mobileMenuToggle.addEventListener('click', function() {
-            mainNav.classList.toggle('active');
-            
-            // Change icon based on menu state
-            const icon = mobileMenuToggle.querySelector('i');
-            if (mainNav.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
+    const token = localStorage.getItem('token');
+    var loginButton = document.querySelector('#btn-login'); 
+    var registerButton = document.querySelector('#btn-register');
+    var logoutButton = document.querySelector('#btn-logout');
+    if (loginButton && token) { // Garante que o botão existe antes de tentar acessá-lo
+        loginButton.style.display = 'none';
+        registerButton.style.display = 'none';
+        logoutButton.style.display = 'block';
     }
     
     // Add mobile menu styles dynamically
@@ -43,3 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 });
+function logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('id');
+    alert("Deslogado com sucesso!");
+    window.location.href = "../PAGINA_Login/Login/login.html";
+}
