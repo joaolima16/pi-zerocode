@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Senha | Nexus - Inovação & Educação</title>
+    <link rel="stylesheet" href="recuperar-senha.css">
+    <link rel="stylesheet" href="/FRONT-END/Pagina_Home/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+</head>
+<body>
+    <div class="recuperar-container">
+        <div class="recuperar-card">
+            <!-- Div informações de recuperação -->
+            <div class="recuperar-header">
+                <a href="/FRONT-END/Pagina_Home/index.html" class="recuperar-logo">
+                   <figure>
+                    <img src="/FRONT-END/IMAGENS/Nexus.png" alt="">
+                   </figure>
+                </a>
+                <h1>Recuperação de Senha</h1>
+                <p>Entre com seu cadastro anterior para acessar a plataforma</p>
+            </div>
+            <!-- Div informações de recuperação -->
+
+            
+          
+            <!-- Formulário de recuperação -->
+            <div class="tab-content active" id="student-tab">
+                <form id="student-recuperar-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="seu@email.com" required>
+                        <label for="password">Senha</label> 
+                        <input type="password" id="password" class="form-control" required>
+                        <label for="password">Confirmar senha</label> 
+                        <input type="password" id="password-confirmar" class="form-control" required>
+                    </div>
+                    <button type="button" class="btn btn-primary" style="width: 100%;" onclick="recuperar_user()">Entrar</button>
+                </form>
+            </div>
+            <!-- Formulário de recuperação -->
+
+        
+            <!--Retornar pagina inicial  -->
+            <a href="/FRONT-END/Pagina_Home/index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Voltar para a página inicial
+            </a>
+            <!--Retornar pagina inicial  -->
+        </div>
+    </div>
+
+    <script src="recuperar-senha.js"></script>
+</body>
+</html>
