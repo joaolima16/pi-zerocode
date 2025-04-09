@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus | Pagamento</title>
+    <link rel="stylesheet" href="pagemento.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+          <div class="logo">
+            <img src="../IMAGENS/Nexus.png" alt="Logo Nexus" />
+          </div>
+          <nav class="main-nav">
+            <ul>
+              <li><a href="../Pagina_Cursos/cursos.html">Cursos</a></li>
+              <li>
+                <a href="../Pagina_AreaProfessor/pag-profssor.html "
+                  >Professores</a
+                >
+                <a href="../Pagina_Perfil_Professor/perfilProfessor.html"></a>
+              </li>
+              <li><a href="../Pagina_Rank_Professores/rank.html">Rank</a></li>
+              <li><a href="../Pagina_Blog/blog.html">Blog</a></li>
+              <li><a href="../Pagina_Sobre/sobre.html">Sobre</a></li>
+              
+            </ul>
+          </nav>
+          <div class="auth-buttons">
+            <a href="/FRONT-END/PAGINA_Login/Login/login.html" class="btn btn-outline">Entrar</a
+            >
+            <a href="/FRONT-END/PAGINA_Login/Cadastro/cadastro.html" class="btn btn-primary">Cadastrar</a
+            >
+          </div>
+          <button class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </header>
+      
+    <main>
+        <div class="container">
+            <h2 class="section-title">Selecione a forma de pagamento</h2>
+            
+            <table class="course-list">
+                <thead>
+                    <tr>
+                        <th>Matéria</th>
+                        <th>Categoria</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <div class="course-image"></div>
+                                <div>Economia</div>
+                            </div>
+                        </td>
+                        <td>Matéria: Gestão</td>
+                        <td>Valor: R$80,00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <div class="course-image"></div>
+                                <div>Matemática</div>
+                            </div>
+                        </td>
+                        <td>Matéria: Geometria</td>
+                        <td>Valor: R$80,00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <div class="course-image"></div>
+                                <div>Programação WEB</div>
+                            </div>
+                        </td>
+                        <td>Matéria: Front-End</td>
+                        <td>Valor: R$80,00</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div style="display: flex; gap: 30px;">
+                <div style="flex: 2;"></div>
+                <div style="flex: 1; border: 1px solid #e0e0e0; padding: 20px; border-radius: 8px;">
+                    <h3 style="margin-bottom: 15px;">Forma de pagamento via:</h3>
+                    
+                    <div class="payment-options">
+                        <div class="payment-option">
+                            <input type="radio" id="pix" name="payment" value="pix">
+                            <label for="pix">Pix</label>
+                        </div>
+                        <div class="payment-option">
+                            <input type="radio" id="boleto" name="payment" value="boleto">
+                            <label for="boleto">Boleto</label>
+                        </div>
+                        <div class="payment-option">
+                            <input type="radio" id="credit-card" name="payment" value="credit-card" checked>
+                            <label for="credit-card">Cartão de Crédito</label>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 15px;">
+                        <p style="font-size: 12px; color: #0066cc; margin-bottom: 15px;">Termos de pagamento</p>
+                        <button class="btn btn-success" style="width: 100%;">Pagamento</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+        <footer class="main-footer">
+            <div class="container">
+              <div class="footer-logo">
+                <img src="/FRONT-END/IMAGENS/Nexus.png" alt="Logo da nexus">
+              </div>
+              <nav class="footer-nav">
+                <ul>
+                  <li><a href="#">Termos</a></li>
+                  <li><a href="#">Privacidade</a></li>
+                  <li><a href="#">Contato</a></li>
+                </ul>
+              </nav>
+              <div class="footer-copyright">
+                &copy; 2025 Nexus | Inovação & Educação. Todos os direitos reservados.
+              </div>
+            </div>
+          </footer>
+    </footer>
+</body>
+</html>

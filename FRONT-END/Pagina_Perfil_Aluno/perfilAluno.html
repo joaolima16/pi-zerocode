@@ -1,106 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus | Perfil Aluno</title>
-    <link rel="stylesheet" href="perfilAluno.css">
-    <link rel="stylesheet" href="../Pagina_Home/style.css"> <!-- Classe globa css -->
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus | Perfil Aluno</title>
+  <link rel="stylesheet" href="perfilAluno.css">
+  <link rel="stylesheet" href="../Pagina_Home/style.css"> <!-- Classe globa css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-    <header class="main-header">
-        <div class="container">
-          <div class="logo">
-            <img src="../IMAGENS/Nexus.png" alt="Logo Nexus" />
-          </div>
-          <nav class="main-nav">
-            <ul>
-              <li><a href="/Pagina_Cursos/cursos.html">Cursos</a></li>
-              <li>
-                <a href="PAGINA_PROFESSOR/pag-profssor.html" target="_blank"
-                  >Professores</a
-                >
-              </li>
-              <li><a href="modules.html">Módulos</a></li>
-              <li><a href="#">Sobre</a></li>
-            </ul>
-          </nav>
-          <div class="auth-buttons">
-            <a href="/PAGINA_Login/Login/login.html" class="btn btn-outline">Entrar</a
-            >
-            <a href="/PAGINA_Login/Cadastro/cadastro.html" class="btn btn-primary">Cadastrar</a
-            >
-          </div>
-          <button class="mobile-menu-toggle">
-            <i class="fas fa-bars"></i>
-          </button>
-        </div>
-      </header>
-   
-   <main>
-       
-          <section>
-            <h1>Perfil do Aluno</h1>
-                    <!-- Icone de perfil do Aluno -->
-              <img src="" alt="Icon Aluno selecionado">
-          </section>
-        <!-- Seção de Informações do Aluno -->
-        <section>
-          <h2>Aluno :</h2>
-          <p>Biografia:</p>
-          <p>Status:</p>
-        </section>
-        <!-- Fim da Seção de Informações do Aluno -->
-       
-       <hr>
-        <!-- Seção de disciplinas inscrita do Aluno -->
-        <section>
-          <h2>Disciplinas Inscritas</h2>
-          <p>Matemática</p>
-          <p>Programação</p>
-          <p>Inglês</p>
-          <p>Física</p>
-        </section>
-        <!-- Fim da seção de inscrita do Aluno -->
-       
-       <hr>
-        <!-- Seção de formação do Aluno -->
-        <section>
-          <h2>Contato</h2>
-          <!-- Icones de conexão -->
-          <p>Email:</p>
-          <p>Linkdin:</p>
-          <p>GitHub:</p>
-        </section>
-        <!-- Seção de formação do Aluno -->
-       
-        <hr>
-        <!-- Seção de formação do Aluno -->
-        <section>
-          <h2>Formações</h2>
-          <p>Ensino Médio / Fundamental:</p>
-          <p>Graduação:</p>
-          <p>Pós-Graduação:</p>
-          <p>Mestrado:</p>
-        </section>
-        <!-- Seção de formação do Aluno -->
-        <hr>
-        <!-- Seção de Escolas aplicadas do Aluno -->
-       
-        <section>
-          <h2>Agendamento de aulas</h2>
-          <ul>
-              <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta cum, perspiciatis aliquam dolor expedita, nam vero quis nemo beatae laudantium molestias quisquam molestiae, veritatis eaque et eius sed omnis incidunt?</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum magni laboriosam sequi sint nostrum incidunt vel, illum minus officiis aspernatur voluptatibus impedit pariatur saepe tempora necessitatibus harum a cum est.</li>
-              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, molestiae unde asperiores fuga sequi placeat sed est tenetur facilis quae. Corporis blanditiis adipisci veniam quisquam mollitia et ducimus officiis nihil?</li>
-              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ab minus consequatur minima nostrum dolore delectus. Laudantium, perspiciatis obcaecati a pariatur deserunt illo natus unde, magnam veniam est incidunt quaerat?</li>
-          </ul>
-        </section>
-        <!-- Seção de Escolas aplicadas do Aluno -->
-   </main>
 
-   <footer class="main-footer">
+<body>
+  <header class="main-header">
+    <div class="container">
+      <div class="logo">
+        <img src="../IMAGENS/Nexus.png" alt="Logo Nexus" />
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../Pagina_Cursos/cursos.html">Cursos</a></li>
+          <li>
+            <a href="../Pagina_AreaProfessor/pag-profssor.html ">Professores</a>
+            <a href="../Pagina_Perfil_Professor/perfilProfessor.html"></a>
+          </li>
+          <li><a href="../Pagina_Rank_Professores/rank.html">Rank</a></li>
+          <li><a href="../Pagina_Blog/blog.html">Blog</a></li>
+          <li><a href="../Pagina_Sobre/sobre.html">Sobre</a></li>
+          
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <a href="../Pagina_Pagamento/pagamento.html" class="btn "  ><i class="fa fa-shopping-cart"></i></a>
+        <a href="/FRONT-END/PAGINA_Login/Login/login.html" class="btn btn-outline">Entrar</a>
+        <a href="/FRONT-END/PAGINA_Login/Cadastro/cadastro.html" class="btn btn-primary">Cadastrar</a>
+
+      </div>
+      <button class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="container">
+      <!-- Profile Section -->
+      <div class="profile">
+        <div class="profile-image">
+          <img src="https://via.placeholder.com/150" alt="Foto do Aluno">
+          <a href="../Pagina_Editar_Perfil_Aluno/editar_aluno.html"><span>Ver perfil</span></a>
+        </div>
+        <div class="profile-info">
+          <h2>Aluno : [Nome]</h2>
+          <p>Aprenda com os melhores educadores com históricos comprovados de sucesso dos Alunos.</p>
+          <p>Status na plataforma : [Ativo]</p>
+        </div>
+      </div>
+
+      <!-- Scheduled Classes Section -->
+      <h3 class="section-title">Aulas marcadas</h3>
+      <div class="card-grid">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="card-image"></div>
+          <div class="card-content">
+            <div class="card-title">Matéria: [Nome da matéria]</div>
+            <div class="card-subtitle">Disciplina: [Nome da disciplina]</div>
+            <div class="card-status">Status: [Agendado]</div>
+            <div class="card-date">Horário: [Horário]</div>
+            <div class="card-action">
+              <a href="#">[Desmarcar Aula]</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="card-image"></div>
+          <div class="card-content">
+            <div class="card-title">Matéria: [Nome da matéria]</div>
+            <div class="card-subtitle">Disciplina: [Nome da disciplina]</div>
+            <div class="card-status">Status: [Agendado]</div>
+            <div class="card-date">Horário: [Horário]</div>
+            <div class="card-action">
+              <a href="#">[Desmarcar Aula]</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="card-image"></div>
+          <div class="card-content">
+            <div class="card-title">Matéria: [Nome da matéria]</div>
+            <div class="card-subtitle">Disciplina: [Nome da disciplina]</div>
+            <div class="card-status">Status: [Agendado]</div>
+            <div class="card-date">Horário: [Horário]</div>
+            <div class="card-action">
+              <a href="#">[Desmarcar Aula]</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enrolled Courses Section -->
+      <h3 class="section-title">Cursos Inscritos</h3>
+      <div class="card-grid">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="card-image"></div>
+          <div class="card-content">
+            <div class="card-title">Matéria: Fundamentos</div>
+            <div class="card-subtitle">Disciplina: Matemática</div>
+            <div class="card-action">
+              <a href="#">Ver a matéria</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="card-image"></div>
+          <div class="card-content">
+            <div class="card-title">Matéria: Geometria</div>
+            <div class="card-subtitle">Disciplina: Matemática</div>
+            <div class="card-action">
+              <a href="#">Ver a matéria</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="card-image"></div>
+          <div class="card-content">
+            <div class="card-title">Matéria: Gestão</div>
+            <div class="card-subtitle">Disciplina: Economia</div>
+            <div class="card-action">
+              <a href="#">Ver a matéria</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
     <div class="container">
       <div class="footer-logo">
         <img src="/IMAGENS/Nexus.png" alt="Logo da nexus">
@@ -121,4 +162,5 @@
 
 
 </body>
+
 </html>
