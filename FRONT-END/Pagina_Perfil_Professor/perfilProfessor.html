@@ -4,63 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexus | Perfil Professor</title>
+    <link rel="stylesheet" href="perfilProfessor.css">
+    <link rel="stylesheet" href="../Pagina_Home/style.css">
 </head>
 <body>
-    
-    <main>
-        <h1>Perfil do Professor</h1>
-        <!-- Icone de perfil do professor -->
-        <figure>
-            <img src="" alt="Icon professor selecionado">
-        </figure>
-        <!-- Seção de Informações do professor -->
-        <h2>Professor :</h2>
-        <p>Biografia:</p>
-        <p>Status:</p>
-        <!-- Fim da Seção de Informações do professor -->
-        <!-- Seção de Metodologia do professor -->
-        <hr>
-        <h2>Metodologia aplicadas</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum voluptatum sint deleniti, pariatur nemo harum tempore vero aut. Laboriosam suscipit ad alias accusantium mollitia iusto quia eum deleniti atque architecto?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum voluptatum sint deleniti, pariatur nemo harum tempore vero aut. Laboriosam suscipit ad alias accusantium mollitia iusto quia eum deleniti atque architecto?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum voluptatum sint deleniti, pariatur nemo harum tempore vero aut. Laboriosam suscipit ad alias accusantium mollitia iusto quia eum deleniti atque architecto?</p>
-        <!-- fim da Seção de Metodologia do professor -->
-        
-        <hr>
-        <!-- Seção de formação do professor -->
-        <h2>Disciplinas Aplicadass</h2>
-        <p>Matemática</p>
-        <p>Programação</p>
-        <p>Inglês</p>
-        <p>Física</p>
-        <!-- Seção de formação do professor -->
-        
-        <hr>
-        <!-- Seção de formação do professor -->
-        <h2>Contato</h2>
-        <p>Telefone:</p>
-        <p>Email:</p>
-        <!-- Seção de formação do professor -->
-        
-        <hr>
-        <!-- Seção de formação do professor -->
-        <h2>Formações</h2>
-        <p>Graduação:</p>
-        <p>Pós-Graduação:</p>
-        <p>Mestrado:</p>
-        <!-- Seção de formação do professor -->
-        <hr>
-        <!-- Seção de Escolas aplicadas do professor -->
-        
-        <h2>Escolas Trabalahdas</h2>
+  <header class="main-header">
+    <div class="container">
+      <div class="logo">
+        <img src="../IMAGENS/Nexus.png" alt="Logo Nexus" />
+      </div>
+      <nav class="main-nav">
         <ul>
-            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta cum, perspiciatis aliquam dolor expedita, nam vero quis nemo beatae laudantium molestias quisquam molestiae, veritatis eaque et eius sed omnis incidunt?</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum magni laboriosam sequi sint nostrum incidunt vel, illum minus officiis aspernatur voluptatibus impedit pariatur saepe tempora necessitatibus harum a cum est.</li>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, molestiae unde asperiores fuga sequi placeat sed est tenetur facilis quae. Corporis blanditiis adipisci veniam quisquam mollitia et ducimus officiis nihil?</li>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ab minus consequatur minima nostrum dolore delectus. Laudantium, perspiciatis obcaecati a pariatur deserunt illo natus unde, magnam veniam est incidunt quaerat?</li>
+          <li><a href="/Pagina_Cursos/cursos.html">Cursos</a></li>
+          <li>
+            <a href="PAGINA_PROFESSOR/pag-profssor.html" target="_blank"
+              >Professores</a
+            >
+          </li>
+          <li><a href="modules.html">Módulos</a></li>
+          <li><a href="#">Sobre</a></li>
         </ul>
-        <!-- Seção de Escolas aplicadas do professor -->
-    </main>
+      </nav>
+      <div class="auth-buttons">
+        <a href="/PAGINA_Login/Login/login.html" class="btn btn-outline">Entrar</a
+        >
+        <a href="/PAGINA_Login/Cadastro/cadastro.html" class="btn btn-primary">Cadastrar</a
+        >
+      </div>
+      <button class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  
+
+    <!-- Main Content -->
+     <main class="container">
+          <div class="container">
+            <!-- Profile Section -->
+            <section>
+              <div class="profile">
+                  <div class="profile-image">
+                      <div style="font-size: 12px; color: #777;">Matemática</div>
+                      <a href="../Pagina_Editar_Perfil_Professor/editar_professor.html"><span>Ver perfil</span></a>
+                  </div>
+                  <div class="profile-info">
+                      <h2>Professor · [Nome]</h2>
+                      <p>Aprenda com os melhores educadores com históricos comprovados de sucesso dos alunos.</p>
+                      <p>Status na plataforma : []</p>
+                      <p>Sexo: [Sexo]</p>
+                  </div>
+              </div>
+            </section>
+
+            <!-- Classes Section -->
+            <section>
+              <div class="card-grid">
+                  <!-- Card 1 -->
+                  <div class="card">
+                      <div class="card-image"></div>
+                      <div class="card-content">
+                          <div class="card-title">Matéria: Funções/Álm</div>
+                          <div class="card-subtitle">Matemática</div>
+                          <div class="card-status">Aluno: Test</div>
+                          <div class="card-date">Horário: Dia 14/10/2023 às 14:30 horas</div>
+                          <div class="card-action">
+                              <a href="#">Deseja confirmar?</a>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Card 2 -->
+                  <div class="card">
+                      <div class="card-image"></div>
+                      <div class="card-content">
+                          <div class="card-title">Matéria: Geometria</div>
+                          <div class="card-subtitle">Matemática</div>
+                          <div class="card-status">Aluno: Test</div>
+                          <div class="card-date">Horário: Dia 20/10/2023 às 14:30 horas</div>
+                          <div class="card-action">
+                              <a href="#">Aceitar a matéria</a>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Card 3 -->
+                  <div class="card">
+                      <div class="card-image"></div>
+                      <div class="card-content">
+                          <div class="card-title">Matéria: Gestão</div>
+                          <div class="card-subtitle">Economia</div>
+                          <div class="card-status">Aluno: Test</div>
+                          <div class="card-date">Horário: Dia 15/03/2023 às 16:30 horas</div>
+                          <div class="card-action">
+                              <a href="#">Aceitar a matéria</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </section>
+
+            <!-- Methodology Section -->
+            <section>
+              <div class="methodology">
+                  <h3>Metodologia aplicadas</h3>
+                  <p>eget hendrerit vitae tortor. eget orci ex. adipiscing efficitur. leo. non, placerat tortor. volutpat tempor ullamcorper eu diam. Ut id placerat lacus amet, ex</p>
+                  <p>malesuada faucibus vitae massa. In vitae risus lobortis, sit eu sapien Quisque sit et ex. commodo felis, id eu varius sodales. Praesent libero, tincidunt non</p>
+                  <p>diam scelerisque viverra nulla, vitae orci cursus placerat ex Vestibulum et eget ipsum elementum In vitae tortor, massa orci</p>
+                  <p>Ut in commodo Lorem ipsum massa Lorem quis at Vestibulum maximus vitae ex Nunc in malesuada elementum gravida eget urna. placerat, Vestibulum nibh</p>
+              </div>
+            </section>
+        </div>
+            <!-- Seção de Escolas aplicadas do professor -->
+      </main>
 
     <footer class="main-footer">
         <div class="container">
