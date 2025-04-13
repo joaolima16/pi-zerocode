@@ -3,10 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nexus | Inovação & Educação</title>
+    <title>Nexus | Invoção & Educação</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="css/components.css" />
-  
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -22,22 +20,22 @@
           <ul>
             <li><a href="../Pagina_Cursos/cursos.html">Cursos</a></li>
             <li>
-              <a href="/FRONT-END/PAGINA_PROFESSOR/pag-professor.html "
+              <a href="../Pagina_AreaProfessor/pag-professor.html "
                 >Professores</a
               >
-              <a href="/FRONT-END/Pagina_Perfil_Professor/perfilProfessor.html"></a>
+              <a href="../Pagina_Perfil_Professor/perfilProfessor.html"></a>
             </li>
-            <li><a href="modules.html">Módulos</a></li>
+            <li><a href="../Pagina_Rank_Professores/rank.html">Rank</a></li>
+            <li><a href="../Pagina_Blog/blog.html">Blog</a></li>
             <li><a href="../Pagina_Sobre/sobre.html">Sobre</a></li>
+            
           </ul>
         </nav>
         <div class="auth-buttons">
-          <a href="/FRONT-END/PAGINA_Login/Login/login.html" class="btn btn-outline"  id="btn-login">Entrar</a
-            >
-            <a href="/FRONT-END/PAGINA_Login/Cadastro/cadastro.html" class="btn btn-primary" id="btn-register">Cadastrar</a
-              >
-            <a  class="btn btn-outline" id="btn-logout" onclick="logout()">Sair</a>
- 
+          <a href="/FRONT-END/PAGINA_Login/Login/login.html" class="btn btn-outline">Entrar</a
+          >
+          <a href="/FRONT-END/PAGINA_Login/Cadastro/cadastro.html" class="btn btn-primary">Cadastrar</a
+          >
         </div>
         <button class="mobile-menu-toggle">
           <i class="fas fa-bars"></i>
@@ -232,27 +230,36 @@
           </div>
         </div>
       </section>
+
+      <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h3>Comece sua jornada de aprendizado hoje com a Nexus</h3>
+                <p>Com foco de transformar carreiras através da educação online de qualidade.</p>
+                <a href="../Pagina_Cursos/cursos.html" class="cta-btn">Explorar Cursos</a>
+            </div>
+        </div>
+    </section>
     </main>
 
     <footer class="main-footer">
       <div class="container">
-          <div class="footer-logo">
-              <i class="fas fa-graduation-cap"></i>
-              <span>Nexus</span>
-          </div>
-          <nav class="footer-nav">
-              <ul>
-                  <li><a href="#">Termos</a></li>
-                  <li><a href="#">Privacidade</a></li>
-                  <li><a href="#">Contato</a></li>
-              </ul>
-          </nav>
-          <div class="footer-copyright">
-              © 2025 Nexus. Todos os direitos reservados.
-          </div>
+        <div class="footer-logo">
+          <img src="/FRONT-END/IMAGENS/Nexus.png" alt="Logo da nexus">
+        </div>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="#">Termos</a></li>
+            <li><a href="#">Privacidade</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </nav>
+        <div class="footer-copyright">
+          &copy; 2025 Nexus | Inovação & Educação. Todos os direitos reservados.
+        </div>
       </div>
-  </footer>
+    </footer>
 
-    <script src="./script.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

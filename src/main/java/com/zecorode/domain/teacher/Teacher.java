@@ -1,5 +1,6 @@
 package com.zecorode.domain.teacher;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import jakarta.persistence.Column;
@@ -39,6 +40,10 @@ public class Teacher {
  
     @Column(name = "area_teaching", length = 100, nullable = false)
     private String area_teaching;
+
+    
+    @Column(name = "value_per_hour", nullable = false, precision = 10, scale = 2)
+    private BigDecimal valuePerHour;
 
     @Column(length = 100, nullable = false, unique = true)
     private String email;

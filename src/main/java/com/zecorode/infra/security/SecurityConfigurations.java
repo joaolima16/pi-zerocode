@@ -38,6 +38,7 @@ public class SecurityConfigurations {
                         .requestMatchers(HttpMethod.POST, "/students/create").permitAll()
                         .requestMatchers(HttpMethod.PUT, "/students/update/{id}").permitAll()
                         .requestMatchers(HttpMethod.POST, "/teacher/create").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/teacher").permitAll()
                         .anyRequest().authenticated())
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();

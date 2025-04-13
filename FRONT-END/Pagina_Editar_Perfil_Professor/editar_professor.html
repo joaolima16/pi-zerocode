@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus | Editar Perfil do aluno</title>
+    <link rel="stylesheet" href="editar_professor.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+          <div class="logo">
+            <img src="../IMAGENS/Nexus.png" alt="Logo Nexus" />
+          </div>
+          <nav class="main-nav">
+            <ul>
+              <li><a href="../Pagina_Cursos/cursos.html">Cursos</a></li>
+              <li>
+                <a href="../Pagina_AreaProfessor/pag-professor.html "
+                  >Professores</a
+                >
+                <a href="../Pagina_Perfil_Professor/perfilProfessor.html"></a>
+              </li>
+              <li><a href="../Pagina_Rank_Professores/rank.html">Rank</a></li>
+              <li><a href="../Pagina_Blog/blog.html">Blog</a></li>
+              <li><a href="../Pagina_Sobre/sobre.html">Sobre</a></li>
+              
+            </ul>
+          </nav>
+          <div class="auth-buttons">
+            <a href="/FRONT-END/PAGINA_Login/Login/login.html" class="btn btn-outline">Entrar</a
+            >
+            <a href="/FRONT-END/PAGINA_Login/Cadastro/cadastro.html" class="btn btn-primary">Cadastrar</a
+            >
+          </div>
+          <button class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </header>
+
+    
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2 class="section-title">Editar Perfil</h2>
+        
+        <div class="edit-profile-form">
+            <div class="profile-upload">
+                <div class="upload-preview">
+                    <img src="https://via.placeholder.com/150" alt="Foto do Perfil">
+                </div>
+                <button class="btn">Alterar foto</button>
+            </div>
+            
+            <div class="form-group">
+                <label for="name">Nome Completo</label>
+                <input type="text" id="name" placeholder="professor exemplo 2" >
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="novoemail@exemplo.com">
+            </div>
+
+            <div class="form-group">
+                <select id="gender" name="gender" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;" >
+                    <option value="Masculino" selected></option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Outro">Outro</option>
+                </select>
+            </div>
+            
+            
+            <div class="form-group">
+                <label for="phone">Telefone</label>
+                <input type="tel" id="phone" >
+            </div>
+
+    
+            
+            
+            <div style="margin-top: 20px;">
+                <button class="btn btn-primary" onclick="concluido()">Salvar Alterações</button>
+                <button class="btn" style="margin-left: 10px;">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+  
+    <footer class="main-footer">
+        <div class="container">
+          <div class="footer-logo">
+            <img src="/FRONT-END/IMAGENS/Nexus.png" alt="Logo da nexus">
+          </div>
+          <nav class="footer-nav">
+            <ul>
+              <li><a href="#">Termos</a></li>
+              <li><a href="#">Privacidade</a></li>
+              <li><a href="#">Contato</a></li>
+            </ul>
+          </nav>
+          <div class="footer-copyright">
+            &copy; 2025 Nexus | Inovação & Educação. Todos os direitos reservados.
+          </div>
+        </div>
+      </footer>
+
+    <!-- Mascot -->
+    <img src="https://via.placeholder.com/80" alt="Mascote" class="mascot">
+    <script src="editar_professor.js"></script>
+</body>
+</html>

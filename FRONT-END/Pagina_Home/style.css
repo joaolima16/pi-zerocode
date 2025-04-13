@@ -1,7 +1,7 @@
 /* Base Styles */
 :root {
-    --primary: #8b5cf6;
-    --primary-hover: #7c3aed;
+    --primary: #000000;
+    --primary-hover: #423f3f;
     --secondary: #f3f4f6;
     --text-primary: #111827;
     --text-secondary: #6b7280;
@@ -142,12 +142,10 @@ p {
 .logo {
     display: flex;
     align-items: center;
-    font-weight: 700;
-    font-size: 1.25rem;
 }
 
 .logo img {
-    margin-right: 0.5rem;
+    margin-left: 0.5px;
     font-size: 1.5rem;
     height: 50px;
 }
@@ -159,6 +157,8 @@ p {
 .main-nav ul {
     display: flex;
     gap: 1.5rem;
+    margin-left: -5rem;
+
 }
 
 .main-nav a {
@@ -197,7 +197,7 @@ p {
 /* Hero Section */
 .hero {
     padding: 3rem 0;
-    background: linear-gradient(to bottom, #f5f3ff, white);
+    background: linear-gradient(to bottom, #e3e2e6ce, white);
 }
 
 .hero .container {
@@ -413,6 +413,45 @@ p {
     font-weight: 500;
 }
 
+.cta-section {
+    background: var(--primary);
+    padding: 4rem 0;
+    text-align: center;
+    color: white;
+}
+
+.cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-content p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.cta-btn {
+    display: inline-block;
+    background-color: white;
+    color: #000000;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
 @media (min-width: 768px) {
     .teachers-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -440,11 +479,14 @@ p {
 
 .footer-logo img {
     margin-right: 0.5rem;
+    width: 50%;
 }
+
 
 .footer-nav ul {
     display: flex;
-    gap: 1rem;
+    gap: 3rem;
+    margin-left: -50px;
 }
 
 .footer-nav a {
@@ -471,7 +513,4 @@ p {
     .footer-copyright {
         text-align: right;
     }
-}
-#btn-logout{
-    display: none;
 }
