@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
+    console.log(localStorage.getItem('teste'));
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const mainNav = document.querySelector('.main-nav');
     

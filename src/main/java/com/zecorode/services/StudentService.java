@@ -43,7 +43,13 @@ public class StudentService {
             throw new RuntimeException("Error to create student");
         }
     }
-
+    public Student getStudent(Long id) {
+        try {
+            return studentRepository.findById(id).get();
+        } catch (Exception e) {
+            throw new RuntimeException("Error to get student");
+        }
+    }
     public Student update(Long id, RegisterStudentDTO student) {
         try {
             Student studentToUpdate = studentRepository.findById(id).get();

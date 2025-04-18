@@ -19,6 +19,8 @@ public class TeacherService {
     
     @Autowired
     private AuthorizationService authorizationService;
+
+
     
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -28,7 +30,7 @@ public class TeacherService {
         teacher.setCpf(registerTeacherDTO.cpf());
         teacher.setDateBirthday(registerTeacherDTO.dateBirth());
         teacher.setPhone(registerTeacherDTO.phone());
-        teacher.setArea_teaching(registerTeacherDTO.area_teaching());
+        teacher.setAreaTeaching(registerTeacherDTO.areaTeaching());
         teacher.setEmail(registerTeacherDTO.email());
         teacher.setPassword(passwordEncoder.encode(registerTeacherDTO.password()));
         Teacher teacherSaved = teacherRepository.save(teacher);
@@ -42,5 +44,8 @@ public class TeacherService {
     }
     public List<Teacher> findAll() {
         return teacherRepository.findAll();
+    }
+    public Teacher findById(Long id) {
+        return teacherRepository.findById(id).orElse(null);
     }
 }

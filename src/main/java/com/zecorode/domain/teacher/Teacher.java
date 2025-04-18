@@ -39,7 +39,7 @@ public class Teacher {
     private String phone;
  
     @Column(name = "area_teaching", length = 100, nullable = false)
-    private String area_teaching;
+    private String areaTeaching;
 
     
     @Column(name = "value_per_hour", nullable = false, precision = 10, scale = 2)

@@ -1,4 +1,4 @@
-function loginUser(){
+function loginUser() {
     var email = document.getElementById('email').value;
     var senha = document.getElementById('password').value;
     var data = {
@@ -12,15 +12,19 @@ function loginUser(){
         },
         body: JSON.stringify(data)
     })
-    .then(response => response.json())
-    .then(data => {
-        if(data.token){
-            alert("Logado com sucesso!");
-            localStorage.setItem('token', data.token);
-            window.location.href = "../../Pagina_Home/index.html";
-        }
-    })
-    .catch(error => {
-        alert("Erro ao logar")
-    });
+        .then(response => response.json())
+        .then(data => {
+
+            if (data.token) {
+                alert("Logado com sucesso!");
+                localStorage.setItem('token', data.token);
+                localStorage.setItem('id', data.id);
+                localStorage.setItem('role', data.role);
+                window.location.href = "../../Pagina_Home/index.html";
+            }
+        })
+        .catch(error => {
+            alert("Erro ao logar")
+            console.error('Error:', error);
+        });
 }

@@ -1,98 +1,39 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function () {
     // Sample data for teachers
-    const teachers = [
-        {
-            id: 1,
-            name: "Dra. Carolina Silva",
-            image: "https://placehold.co/100x100",
-            subject: "Matemática",
-            rating: 4.9,
-            specialty: ["Cálculo", "Álgebra Linear", "Estatística"],
-            price: 120,
-            available: true,
-        },
-        {
-            id: 2,
-            name: "Prof. André Santos",
-            image: "https://placehold.co/100x100",
-            subject: "Programação",
-            rating: 4.7,
-            specialty: ["JavaScript", "React", "Node.js"],
-            price: 150,
-            available: true,
-        },
-        {
-            id: 3,
-            name: "Mestra Julia Costa",
-            image: "https://placehold.co/100x100",
-            subject: "Inglês",
-            rating: 4.8,
-            specialty: ["Conversação", "Gramática", "Redação"],
-            price: 100,
-            available: false,
-        },
-        {
-            id: 4,
-            name: "Dr. Roberto Almeida",
-            image: "https://placehold.co/100x100",
-            subject: "Física",
-            rating: 4.6,
-            specialty: ["Mecânica", "Eletromagnetismo", "Física Moderna"],
-            price: 130,
-            available: true,
-        },
-        {
-            id: 5,
-            name: "Profa. Carla Mendes",
-            image: "https://placehold.co/100x100",
-            subject: "História",
-            rating: 4.5,
-            specialty: ["História do Brasil", "História Mundial", "História da Arte"],
-            price: 90,
-            available: true,
-        },
-        {
-            id: 6,
-            name: "Prof. Daniel Oliveira",
-            image: "https://placehold.co/100x100",
-            subject: "Química",
-            rating: 4.4,
-            specialty: ["Química Orgânica", "Química Inorgânica", "Bioquímica"],
-            price: 110,
-            available: false,
-        },
-    ];
-    
+
+    const teachers = await getTeachers();
+
     // Filter state
     let filters = {
-        subject: "all",
+        areaTeaching: "all",
         minRating: 4,
         priceRange: [50, 200],
         availableNow: false,
         availableWeekends: false,
         search: ""
     };
-    
+
     // Render teachers
     function renderTeachers() {
+     
         const teachersGrid = document.getElementById('teachers-grid');
         teachersGrid.innerHTML = '';
-        
+
         // Filter teachers
         const filteredTeachers = teachers.filter(teacher => {
+            console.log(teacher);
             return (
-                (filters.subject === "all" || teacher.subject === filters.subject) &&
-                teacher.rating >= filters.minRating &&
-                teacher.price >= filters.priceRange[0] &&
-                teacher.price <= filters.priceRange[1] &&
+                (filters.areaTeaching === "all" || teacher.areaTeaching === filters.subject) &&
+                teacher.valuePerHour >= filters.priceRange[0] &&
+                teacher.valuePerHour <= filters.priceRange[1] &&
                 (!filters.availableNow || teacher.available) &&
-                (filters.search === "" || 
-                 teacher.name.toLowerCase().includes(filters.search.toLowerCase()) ||
-                 teacher.subject.toLowerCase().includes(filters.search.toLowerCase()) ||
-                 teacher.specialty.some(s => s.toLowerCase().includes(filters.search.toLowerCase())))
+                (filters.search === "" ||
+                    teacher.name.toLowerCase().includes(filters.search.toLowerCase()) ||
+                    teacher.areaTeaching.toLowerCase().includes(filters.search.toLowerCase()) ||
+                    teacher.specialty.some(s => s.toLowerCase().includes(filters.search.toLowerCase())))
             );
         });
-        
+
         // Show empty state if no teachers match filters
         if (filteredTeachers.length === 0) {
             teachersGrid.innerHTML = `
@@ -103,8 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
             return;
         }
-        
-        // Render each teacher
         filteredTeachers.forEach(teacher => {
             const teacherCard = document.createElement('div');
             teacherCard.className = 'teacher-card';
@@ -117,27 +56,23 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                         <div>
                             <h3 class="teacher-name">${teacher.name}</h3>
-                            <p class="teacher-subject">${teacher.subject}</p>
+                            <p class="teacher-subject">${teacher.areaTeaching}</p>
                         </div>
                     </div>
 
                     <div class="teacher-rating"> 
-                       <a href="/FRONT-END/Pagina_Perfil_Professor/perfilProfessor.html"  }>
+         
+                       <a href="/FRONT-END/Pagina_Perfil_Professor/perfilProfessor.html"} onclick="redirectPage(${teacher.id})" class="btn btn-outline btn-sm details-btn">
                         Detalhes
                     </a>
                     </div>
                 </div>
                 <div class="teacher-body">
-                    <div class="teacher-tags">
-                        ${teacher.specialty.map(spec => `<span class="teacher-tag">${spec}</span>`).join('')}
-                    </div>
                     <div class="teacher-meta">
                         <div class="teacher-price">
-                            R$ ${teacher.price}/hora
+                            R$ ${teacher.valuePerHour}/hora
                         </div>
                         <div class="teacher-availability">
-                            <i class="fas fa-calendar"></i>
-                            ${teacher.available ? 'Disponível hoje' : 'Indisponível hoje'}
                         </div>
                     </div>
                 </div>
@@ -145,26 +80,26 @@ document.addEventListener('DOMContentLoaded', function() {
                     <button class="btn btn-outline btn-sm message-btn" data-id="${teacher.id}" data-name="${teacher.name}">
                         <i class="fas fa-comment"></i> Mensagem
                     </button>
-                    <button class="btn btn-primary btn-sm schedule-btn" data-id="${teacher.id}" data-name="${teacher.name}" data-price="${teacher.price}" ${!teacher.available ? 'disabled' : ''}>
+                    <button class="btn btn-primary btn-sm schedule-btn" data-id="${teacher.id}" data-name="${teacher.name}" data-price="${teacher.valuePerHour}">
                         Agendar aula
                     </button>
                 </div>
             `;
             teachersGrid.appendChild(teacherCard);
         });
-                            // arrumar essa div teacher-rating
-        
+        // arrumar essa div teacher-rating
+
         // Add event listeners to buttons
         document.querySelectorAll('.message-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function () {
                 const teacherId = this.getAttribute('data-id');
                 const teacherName = this.getAttribute('data-name');
                 openMessageModal(teacherId, teacherName);
             });
         });
-        
+
         document.querySelectorAll('.schedule-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function () {
                 const teacherId = this.getAttribute('data-id');
                 const teacherName = this.getAttribute('data-name');
                 const teacherPrice = this.getAttribute('data-price');
@@ -172,22 +107,22 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-    
+
     // Initialize range sliders
     const ratingSlider = document.getElementById('rating');
     const ratingValue = document.getElementById('rating-value');
-    
-    ratingSlider.addEventListener('input', function() {
+
+    ratingSlider.addEventListener('input', function () {
         ratingValue.textContent = this.value;
         filters.minRating = parseFloat(this.value);
     });
-    
+
     // Price range slider (simplified for this example)
     const priceRangeSlider = document.getElementById('price-range');
     const priceMin = document.getElementById('price-min');
     const priceMax = document.getElementById('price-max');
-    
-    priceRangeSlider.addEventListener('input', function() {
+
+    priceRangeSlider.addEventListener('input', function () {
         const value = this.value.split(',');
         if (value.length === 2) {
             priceMin.textContent = value[0];
@@ -195,91 +130,96 @@ document.addEventListener('DOMContentLoaded', function() {
             filters.priceRange = [parseInt(value[0]), parseInt(value[1])];
         }
     });
-    
+
     // Filter form
     const filterForm = document.getElementById('filter-form');
-    filterForm.addEventListener('submit', function(e) {
+    filterForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        
-        filters.subject = document.getElementById('subject').value;
-        filters.availableNow = document.getElementById('available-now').checked;
-        filters.availableWeekends = document.getElementById('available-weekends').checked;
-        
+
+        filters.areaTeaching = document.getElementById('subject').value;
+        // filters.availableNow = document.getElementById('available-now').checked;
+        // filters.availableWeekends = document.getElementById('available-weekends').checked;
+
         renderTeachers();
     });
-    
+
     // Search
     const searchInput = document.getElementById('search');
-    searchInput.addEventListener('input', function() {
+    searchInput.addEventListener('input', function () {
         filters.search = this.value;
         renderTeachers();
     });
-    
+
     // Modal functionality
     function openMessageModal(teacherId, teacherName) {
         document.getElementById('message-teacher-name').textContent = teacherName;
         document.getElementById('message-modal').classList.add('active');
     }
-    
+
     function openScheduleModal(teacherId, teacherName, teacherPrice) {
         document.getElementById('schedule-teacher-name').textContent = teacherName;
         document.getElementById('schedule-price').textContent = teacherPrice;
         document.getElementById('schedule-modal').classList.add('active');
-        
+
         // Update price when duration changes
-        document.getElementById('duration').addEventListener('change', function() {
+        document.getElementById('duration').addEventListener('change', function () {
             const duration = parseInt(this.value);
             const price = parseInt(teacherPrice);
             document.getElementById('schedule-price').textContent = (price * duration / 60).toFixed(2);
         });
     }
-    
-    document.getElementById('close-message-modal').addEventListener('click', function() {
+
+    document.getElementById('close-message-modal').addEventListener('click', function () {
         document.getElementById('message-modal').classList.remove('active');
     });
-    
-    document.getElementById('send-message').addEventListener('click', function() {
+
+    document.getElementById('send-message').addEventListener('click', function () {
         alert('Mensagem enviada com sucesso!');
         document.getElementById('message-modal').classList.remove('active');
     });
-    
-    document.getElementById('close-schedule-modal').addEventListener('click', function() {
+
+    document.getElementById('close-schedule-modal').addEventListener('click', function () {
         document.getElementById('schedule-modal').classList.remove('active');
     });
-    
-    document.getElementById('confirm-schedule').addEventListener('click', function() {
+
+    document.getElementById('confirm-schedule').addEventListener('click', function () {
         const date = document.getElementById('date').value;
         const time = document.getElementById('time').value;
-        
+
         if (!date || !time) {
             alert('Por favor, selecione uma data e horário.');
             return;
         }
-        
+
         alert('Aula agendada com sucesso!');
         document.getElementById('schedule-modal').classList.remove('active');
     });
-    
+
     // Close modals when clicking outside
-    window.addEventListener('click', function(e) {
+    window.addEventListener('click', function (e) {
         if (e.target.classList.contains('modal')) {
             e.target.classList.remove('active');
         }
     });
-    
+
     // Initial render
     renderTeachers();
-    getTeachers();
 });
-async function getTeachers(){
+async function getTeachers() {
     const url = "http://localhost:8080/teacher";
+    let teachers = [];
     await fetch(url, {
         method: "GET",
         headers: {
             "Content-Type": "application/json"
         }
     })
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((err) => console.log(err))
+        .then((response) => response.json())
+        .then((data) => teachers = data)
+        .catch((err) => console.log(err))
+    return teachers;
+}
+const redirectPage = (id) =>{
+    localStorage.setItem('id', id);
+    window.location.href = `/FRONT-END/Pagina_Perfil_Professor/perfilProfessor.html`;
 }
