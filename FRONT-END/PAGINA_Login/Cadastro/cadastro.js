@@ -148,7 +148,7 @@ function registerTeacher() {
         email: email,
         password: password,
         phone: phone,
-        area_teaching: area_teaching
+        areaTeaching: area_teaching
     })
 
     fetch(url, {

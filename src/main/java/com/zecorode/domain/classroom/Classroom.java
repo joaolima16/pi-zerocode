@@ -2,6 +2,7 @@ package com.zecorode.domain.classroom;
 
 import java.math.BigDecimal;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.zecorode.domain.course.Course;
 
 import jakarta.persistence.Column;
@@ -29,16 +30,14 @@ public class Classroom {
     private long id;
 
     @Column(name = "name_class", length = 50, nullable = false)
-    private String name_class;
+    private String nameClass;
     
     @Column(name = "duration", precision = 10, scale = 2, nullable = false)
     private BigDecimal  duration;
 
-    @Column(name = "value_classroom", precision = 10, scale = 2, nullable = false)
-    private BigDecimal value_classroom;
-
     @ManyToOne
     @JoinColumn(name = "course_id", nullable = false)
+    @JsonIgnore
     private Course course;
 
 }

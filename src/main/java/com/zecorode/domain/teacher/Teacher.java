@@ -2,12 +2,18 @@ package com.zecorode.domain.teacher;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.zecorode.domain.course.Course;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -53,5 +59,9 @@ public class Teacher {
 
     @Column(name = "code_teacher", length = 10, nullable = false, unique = true)
     private int codeTeacher;
+
+    @OneToMany(mappedBy = "teacher")
+    @JsonIgnore
+    private List<Course> courses;
     
 }
