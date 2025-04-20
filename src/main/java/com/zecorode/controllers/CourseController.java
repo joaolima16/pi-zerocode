@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.zecorode.domain.course.Course;
 import com.zecorode.domain.course.RegisterCourseDTO;
@@ -30,5 +31,10 @@ public class CourseController {
     public ResponseEntity<String> createCourse(@RequestBody RegisterCourseDTO registerCourseDTO) {
         this.courseService.createCourse(registerCourseDTO);
         return ResponseEntity.ok("Course created successfully!");
+    }
+    @GetMapping("/{id}")
+    public ResponseEntity<Course> getCourseById(@PathVariable Long id) {
+        Course course = this.courseService.getCourseById(id);
+        return ResponseEntity.ok(course);
     }
 }

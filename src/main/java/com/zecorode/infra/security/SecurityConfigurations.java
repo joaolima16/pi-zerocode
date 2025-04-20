@@ -43,8 +43,10 @@ public class SecurityConfigurations {
                         .requestMatchers(HttpMethod.GET, "/teacher/{id}").permitAll()
                         .requestMatchers(HttpMethod.POST,"/courses").permitAll()
                         .requestMatchers(HttpMethod.GET,"/courses/all").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/courses/{id}").permitAll()
                         .requestMatchers(HttpMethod.POST,"/classroom").permitAll()
                         .requestMatchers(HttpMethod.GET,"/classroom/all").permitAll()
+                        
                         .anyRequest().authenticated())
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
