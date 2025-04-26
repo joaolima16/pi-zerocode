@@ -33,6 +33,7 @@ public class TeacherService {
         teacher.setAreaTeaching(registerTeacherDTO.areaTeaching());
         teacher.setEmail(registerTeacherDTO.email());
         teacher.setPassword(passwordEncoder.encode(registerTeacherDTO.password()));
+        teacher.setValuePerHour(registerTeacherDTO.valuePerHour());
         Teacher teacherSaved = teacherRepository.save(teacher);
         if(teacherSaved == null) {
             throw new RuntimeException("Teacher not saved");

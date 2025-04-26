@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
-    console.log(localStorage.getItem('teste'));
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const mainNav = document.querySelector('.main-nav');
     
@@ -18,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 icon.classList.add('fa-bars');
             }
         });
+    getTeachers();
     }
     
     // Add mobile menu styles dynamically
@@ -44,3 +44,37 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 });
+async function getTeachers(){
+    const url = 'http://localhost:8080/teacher';
+    const container = document.querySelector('.teachers-grid');
+    container.innerHTML = ''; 
+    let data = [];
+    let index;
+    await fetch(url)
+        .then((res) => res.json())
+        .then((resp) => data = resp)
+        .catch((err) => console.error(err));
+    index = data.length > 3 ? 3 :data.length;
+    console.log(data)
+    for (let i = 0; i < index; i++) {
+        console.log(data[i]);
+        container.innerHTML += `
+             <a href="teachers.html" class="teacher-card">
+              <div class="teacher-image">
+                <img
+                  src="https://placehold.co/150x150"
+                  alt="${data[i].name}"    
+                />
+              </div>
+              <h3>${data[i].name}</h3>
+              <p>${data[i].areaTeaching}</p>
+              <span class="teacher-link">Ver perfil</span>
+            </a>
+        
+        
+        `
+       
+    }
+    
+
+}
