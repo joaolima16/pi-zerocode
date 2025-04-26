@@ -1,0 +1,377 @@
+/* Base Styles */
+:root {
+    --primary: #000000;
+    --primary-hover: #423f3f;
+    --secondary: #f3f4f6;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --background: #ffffff;
+    --border: #e5e7eb;
+    --success: #10b981;
+    --error: #ef4444;
+    --radius: 0.5rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f5f5f5;
+    /* Cinza claro */
+    color: #333;
+    line-height: 1.6;
+}
+
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+
+/* Header */
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-color: var(--border);
+    color: var(--text-primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--secondary);
+}
+
+.btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.125rem;
+}
+
+.btn i {
+    margin-left: 0.5rem;
+}
+
+.icone-fas{
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+.main-header {
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+    background-color: #ffffff;
+}
+
+.main-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    margin-left: 0.5px;
+    font-size: 1.5rem;
+    height: 50px;
+}
+
+.main-nav {
+    display: none;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    margin-left: 3rem;
+
+}
+
+.main-nav a {
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.auth-buttons {
+    display: none;
+    gap: 0.5rem;
+}
+
+.auth-buttons a{
+    text-decoration: none;
+
+}
+
+
+.mobile-menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: var(--text-primary);
+}
+
+@media (min-width: 768px) {
+    .main-nav, .auth-buttons {
+        display: flex;
+    }
+    
+    .mobile-menu-toggle {
+        display: none;
+    }
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.logo img {
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    justify-items: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #3f3f40;
+}
+/* Fim Hearder */
+
+
+/* Seção hero */
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-title h2 {
+    font-size: 2.2rem;
+    color: #000000;
+    position: relative;
+    display: inline-block;
+    align-items: center;
+    padding-bottom: 0.5rem;
+}
+.section-title p {
+    font-size: 1.2rem;
+    color: #423f3f;
+    min-width: 10px;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #000000;
+}
+
+.team-section {
+    background-color: #e9e9e9;
+    padding: 4rem 0;
+}
+
+.team-grid {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-items: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 6rem;
+}
+
+.team-member {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    width: 50%;
+}
+
+.member-img {
+    height: 200px;
+    background-color: #ddd;
+    position: relative;
+    overflow: hidden;
+}
+
+.member-img::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to top, rgba(106, 48, 147, 0.7), transparent);
+}
+
+.member-info {
+    padding: 1.5rem;
+}
+
+.member-info h3 {
+    color: #6a3093;
+    margin-bottom: 0.5rem;
+}
+
+.member-info p {
+    color: #777;
+    font-size: 0.9rem;
+}
+/* Fim da seção Hero */
+
+/* Footer da nexus */
+
+footer {
+    position: static;
+    top: 0;
+    background-color: #333;
+    color: #ddd;
+    padding: 3rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.footer-column h4 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-column ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #e0c3ff;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #444;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+
+    .mission-content {
+        padding: 2rem;
+    }
+
+    .mission-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .mission-content p {
+        font-size: 1rem;
+    }
+
+    .cta-content h3 {
+        font-size: 1.6rem;
+    }
+}
