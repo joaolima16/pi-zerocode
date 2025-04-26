@@ -1,138 +1,298 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus | Pagamento</title>
+    <title>Pagamento - EduConnect</title>
     <link rel="stylesheet" href="pagemento.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
 </head>
 <body>
+  <header class="main-header">
+    <div class="container">
+      <div class="logo">
+        <img src="../IMAGENS/Nexus.png" alt="Logo Nexus" />
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../Pagina_Cursos/cursos.html">Cursos</a></li>
+          <li>
+            <a href="../Pagina_AreaProfessor/pag-profssor.html "
+              >Professores</a
+            >
+            <a href="../Pagina_Perfil_Professor/perfilProfessor.html"></a>
+          </li>
+          <li><a href="../Pagina_Rank_Professores/rank.html">Rank</a></li>
+          <li><a href="../Pagina_Blog/blog.html">Blog</a></li>
+          <li><a href="../Pagina_Sobre/sobre.html">Sobre</a></li>
+          
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <a href="/FRONT-END/PAGINA_Login/Login/login.html" class="btn btn-outline">Entrar</a
+        >
+        <a href="/FRONT-END/PAGINA_Login/Cadastro/cadastro.html" class="btn btn-primary">Cadastrar</a
+        >
+      </div>
+      <button class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
 
-    <header class="main-header">
-        <div class="container">
-          <div class="logo">
-            <img src="../IMAGENS/Nexus.png" alt="Logo Nexus" />
-          </div>
-          <nav class="main-nav">
-            <ul>
-              <li><a href="../Pagina_Cursos/cursos.html">Cursos</a></li>
-              <li>
-                <a href="../Pagina_AreaProfessor/pag-professor.html "
-                  >Professores</a
-                >
-                <a href="../Pagina_Perfil_Professor/perfilProfessor.html"></a>
-              </li>
-              <li><a href="../Pagina_Rank_Professores/rank.html">Rank</a></li>
-              <li><a href="../Pagina_Blog/blog.html">Blog</a></li>
-              <li><a href="../Pagina_Sobre/sobre.html">Sobre</a></li>
-              
-            </ul>
-          </nav>
-          <div class="auth-buttons">
-            <a href="/FRONT-END/PAGINA_Login/Login/login.html" class="btn btn-outline">Entrar</a
-            >
-            <a href="/FRONT-END/PAGINA_Login/Cadastro/cadastro.html" class="btn btn-primary">Cadastrar</a
-            >
-          </div>
-          <button class="mobile-menu-toggle">
-            <i class="fas fa-bars"></i>
-          </button>
-        </div>
-      </header>
-      
     <main>
-        <div class="container">
-            <h2 class="section-title">Selecione a forma de pagamento</h2>
-            
-            <table class="course-list">
-                <thead>
-                    <tr>
-                        <th>Matéria</th>
-                        <th>Categoria</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <div style="display: flex; align-items: center; gap: 15px;">
-                                <div class="course-image"></div>
-                                <div>Economia</div>
-                            </div>
-                        </td>
-                        <td>Matéria: Gestão</td>
-                        <td>Valor: R$80,00</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div style="display: flex; align-items: center; gap: 15px;">
-                                <div class="course-image"></div>
-                                <div>Matemática</div>
-                            </div>
-                        </td>
-                        <td>Matéria: Geometria</td>
-                        <td>Valor: R$80,00</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div style="display: flex; align-items: center; gap: 15px;">
-                                <div class="course-image"></div>
-                                <div>Programação WEB</div>
-                            </div>
-                        </td>
-                        <td>Matéria: Front-End</td>
-                        <td>Valor: R$80,00</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <div style="display: flex; gap: 30px;">
-                <div style="flex: 2;"></div>
-                <div style="flex: 1; border: 1px solid #e0e0e0; padding: 20px; border-radius: 8px;">
-                    <h3 style="margin-bottom: 15px;">Forma de pagamento via:</h3>
+        <div class="container" style="padding-top: 3rem; padding-bottom: 3rem;">
+            <div class="breadcrumb">
+                <a href="../Pagina_Home/index.html" class="breadcrumb-item">
+                    <i class="fas fa-arrow-left"></i>
+                    Voltar
+                </a>
+                <div class="breadcrumb-separator"></div>
+                <span class="breadcrumb-item">Pagamento</span>
+            </div>
+
+            <h1 class="page-title">Finalizar compra</h1>
+
+            <div class="payment-container">
+                <!-- Seção do carrinho (lado esquerdo) -->
+                <div class="cart-section">
+                    <h2 style="margin-bottom: 1rem;">Itens do carrinho</h2>
                     
-                    <div class="payment-options">
-                        <div class="payment-option">
-                            <input type="radio" id="pix" name="payment" value="pix">
-                            <label for="pix">Pix</label>
-                        </div>
-                        <div class="payment-option">
-                            <input type="radio" id="boleto" name="payment" value="boleto">
-                            <label for="boleto">Boleto</label>
-                        </div>
-                        <div class="payment-option">
-                            <input type="radio" id="credit-card" name="payment" value="credit-card" checked>
-                            <label for="credit-card">Cartão de Crédito</label>
+                    <table class="cart-table">
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Matéria</th>
+                                <th>Preço</th>
+                                <th>Professor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="product-info">
+                                        <div class="product-image">
+                                            <img src="https://placehold.co/100x100" alt="Curso">
+                                        </div>
+                                        <div>
+                                            <div class="product-name">Matemática Avançada</div>
+                                            <div class="product-details">Prof. Carolina Silva</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Algebra Linear</td>
+                                <td>R$ 399,00</td>
+                                <td>Carolina Silva</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="product-info">
+                                        <div class="product-image">
+                                            <img src="https://placehold.co/100x100" alt="Curso">
+                                        </div>
+                                        <div>
+                                            <div class="product-name">Material de Apoio </div>
+                                            <div class="product-details">Apostilas e exercícios</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Raiz Quadrada</td>
+                                <td>R$ 49,90</td>
+                                <td>Carolina Silva</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    
+                   
+                </div>
+
+                <!-- Seção de pagamento (lado direito) -->
+                <div class="payment-section">
+                    <div class="tabs">
+                        <div class="tab active" data-tab="card">Cartão</div>
+                        <div class="tab" data-tab="pix">Pix</div>
+                        <div class="tab" data-tab="boleto">Boleto</div>
+                    </div>
+
+                    <!-- Tab de Cartão -->
+                    <div class="tab-content active" id="card-tab">
+                        <div class="payment-card">
+                            <div class="payment-card-header">
+                                <h3 class="payment-card-title">Pagamento com cartão</h3>
+                                <p class="payment-card-description">Preencha os dados do seu cartão de crédito ou débito</p>
+                            </div>
+                            <div class="payment-card-body">
+                                <form id="card-form">
+                                    <div class="form-group">
+                                        <label for="card-number">Número do cartão</label>
+                                        <input type="text" id="card-number" class="form-control" placeholder="0000 0000 0000 0000">
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="expiry">Validade</label>
+                                            <input type="text" id="expiry" class="form-control" placeholder="MM/AA">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cvv">CVV</label>
+                                            <input type="text" id="cvv" class="form-control" placeholder="123">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name">Nome no cartão</label>
+                                        <input type="text" id="name" class="form-control" placeholder="Nome como está no cartão">
+                                    </div>
+                                    <div class="form-group" style="margin-bottom: 0; ">
+                                        <div style="margin-bottom: 0.5rem; ">
+                                            <select name="" id="" style="width: 100%; height: 2.5rem; border-radius: 0.3rem;">
+                                              <optgroup >
+                                                <option value="" selected></option>
+                                                <option value="">tes2</option>
+                                                <option value="">tes2</option>
+                                                <option value="">tes2</option>  
+                                                <option value="">tes3</option>
+                                              </optgroup>
+                                            </select>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="cart-summary">
+                                      <div class="summary-row">
+                                          <span>Subtotal</span>
+                                          <span>R$ 448,90</span>
+                                      </div>
+                                      <div class="summary-row">
+                                          <span>Desconto</span>
+                                          <span class="text-success">- R$ 49,90</span>
+                                      </div>
+                                      <div class="summary-row total">
+                                          <span>Total</span>
+                                          <span>R$ 399,00</span>
+                                      </div>
+                                  </div>
+              
+                                </form>
+                            </div>
+                            <div class="payment-card-footer">
+                                <button type="submit" class="btn btn-primary" form="card-form">Pagar agora</button>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div style="margin-top: 15px;">
-                        <p style="font-size: 12px; color: #0066cc; margin-bottom: 15px;">Termos de pagamento</p>
-                        <button class="btn btn-success" style="width: 100%;">Pagamento</button>
+
+                    <!-- Tab de Pix -->
+                    <div class="tab-content" id="pix-tab">
+                        <div class="payment-card">
+                            <div class="payment-card-header">
+                                <h3 class="payment-card-title">Pagamento via Pix</h3>
+                                <p class="payment-card-description">Escaneie o QR Code ou copie o código Pix</p>
+                            </div>
+                            <div class="payment-card-body">
+                                <div class="qr-code">
+                                    <i class="fas fa-qrcode"></i>
+                                </div>
+                                <div class="pix-code">
+                                    <span class="pix-code-text">00020126580014BR.GOV.BCB.PIX01364023984238402398423...</span>
+                                    <button class="btn btn-outline btn-sm">Copiar</button>
+                                </div>
+                                <div class="security-info">
+                                    <i class="fas fa-lock"></i>
+                                    <span>Este QR code expira em 15 minutos</span>
+                                </div>
+                                <p style="text-align: center; margin-top: 0.5rem; font-size: 0.875rem; color: var(--text-secondary);">
+                                    Após o pagamento, a confirmação é automática
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab de Boleto -->
+                    <div class="tab-content" id="boleto-tab">
+                        <div class="payment-card">
+                            <div class="payment-card-header">
+                                <h3 class="payment-card-title">Pagamento via Boleto</h3>
+                                <p class="payment-card-description">Gere o boleto e pague em qualquer banco</p>
+                            </div>
+                            <div class="payment-card-body">
+                                <div class="form-group">
+                                    <label for="cpf">CPF</label>
+                                    <input type="text" id="cpf" class="form-control" placeholder="000.000.000-00">
+                                </div>
+                                <div style="background-color: var(--secondary); padding: 1rem; border-radius: var(--radius);">
+                                    <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
+                                        Informações importantes:
+                                    </p>
+                                    <ul style="list-style: disc; padding-left: 1.5rem; font-size: 0.875rem; color: var(--text-secondary);">
+                                        <li>O boleto vence em 3 dias úteis</li>
+                                        <li>Após o pagamento, a compensação pode levar até 3 dias úteis</li>
+                                        <li>O boleto será enviado também para seu email</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="payment-card-footer">
+                                <button class="btn btn-primary">Gerar Boleto</button>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                    <div class="terms-info">
+                        Ao finalizar sua compra, você concorda com nossos
+                        <a href="#">termos de serviço</a>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    
-        <footer class="main-footer">
-            <div class="container">
-              <div class="footer-logo">
-                <img src="/FRONT-END/IMAGENS/Nexus.png" alt="Logo da nexus">
+    <footer>
+      <div class="container">
+          <div class="footer-content">
+              <div class="footer-column">
+                  <h4>Nexus</h4>
+                  <ul>
+                      <li><a href="#">Sobre Nós</a></li>
+                      <li><a href="#">Parcerias</a></li>
+                      <li><a href="#">Blog</a></li>
+                  </ul>
               </div>
-              <nav class="footer-nav">
-                <ul>
-                  <li><a href="#">Termos</a></li>
-                  <li><a href="#">Privacidade</a></li>
-                  <li><a href="#">Contato</a></li>
-                </ul>
-              </nav>
-              <div class="footer-copyright">
-                &copy; 2025 Nexus | Inovação & Educação. Todos os direitos reservados.
+              <div class="footer-column">
+                  <h4>Cursos</h4>
+                  <ul>
+                      
+                      <li><a href="#">Tecnologia</a></li>
+                      <li><a href="#">Negócios</a></li>
+                      <li><a href="#">Idiomas</a></li>
+                      <li><a href="#">Desenvolvimento Pessoal</a></li>
+                  </ul>
               </div>
-            </div>
-          </footer>
-    </footer>
+              <div class="footer-column">
+                  <h4>Suporte</h4>
+                  <ul>
+                      <li><a href="#">Contato</a></li>
+                      <li><a href="#">Política de Privacidade</a></li>
+                      <li><a href="#">Termos de Uso</a></li>
+                  </ul>
+              </div>
+              <div class="footer-column">
+                  <h4>Contato</h4>
+                  <ul>
+                      <li><a href="#">contato@nexus.com.br</a></li>
+                      <li><a href="#">+55 (11) 3456-7890</a></li>
+                      <li><a href="#">São Paulo, SP - Brasil</a></li>
+                  </ul>
+              </div>
+          </div>
+          
+          <div class="copyright">
+              <div class="container">
+                  
+              <p>&copy; 2025 Nexus. Todos os direitos reservados.</p>
+          </div>
+          
+      </div>
+  </footer>
+    <script src="pagamento.js"></script>
 </body>
 </html>

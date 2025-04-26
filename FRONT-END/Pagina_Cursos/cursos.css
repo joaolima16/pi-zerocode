@@ -227,3 +227,87 @@
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+
+/* Footer  */
+
+/* Footer da nexus */
+
+footer {
+    background-color: #333;
+    color: #ddd;
+    padding: 3rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.footer-column h4 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-column ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #e0c3ff;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #444;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+
+    .mission-content {
+        padding: 2rem;
+    }
+
+    .mission-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .mission-content p {
+        font-size: 1rem;
+    }
+
+    .cta-content h3 {
+        font-size: 1.6rem;
+    }
+}

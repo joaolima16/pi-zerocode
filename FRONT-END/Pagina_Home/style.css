@@ -99,6 +99,8 @@ p {
     border: 1px solid transparent;
 }
 
+
+
 .btn-primary {
     background-color: var(--primary);
     color: white;
@@ -126,6 +128,19 @@ p {
 .btn i {
     margin-left: 0.5rem;
 }
+
+.icone-fas {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.icone-fas .fas-cart:hover, .fas-user:hover{
+    color: #10b981;
+}
+
 
 /* Header */
 .main-header {
@@ -157,7 +172,7 @@ p {
 .main-nav ul {
     display: flex;
     gap: 1.5rem;
-    margin-left: -5rem;
+    margin-left: 3rem;
 
 }
 
@@ -459,58 +474,83 @@ p {
 }
 
 /* Footer */
-.main-footer {
-    border-top: 1px solid var(--border);
-    padding: 2rem 0;
+/* Footer da nexus */
+
+footer {
+    background-color: #333;
+    color: #ddd;
+    padding: 3rem 0 2rem;
 }
 
-.main-footer .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
 }
 
-.footer-logo {
-    display: flex;
-    align-items: center;
-    font-weight: 700;
+.footer-column h4 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
 }
 
-.footer-logo img {
-    margin-right: 0.5rem;
-    width: 50%;
+.footer-column ul {
+    list-style: none;
 }
 
-
-.footer-nav ul {
-    display: flex;
-    gap: 3rem;
-    margin-left: -50px;
+.footer-column ul li {
+    margin-bottom: 0.8rem;
 }
 
-.footer-nav a {
-    font-size: 0.875rem;
-    font-weight: 500;
+.footer-column ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
-.footer-nav a:hover {
-    text-decoration: underline;
+.footer-column ul li a:hover {
+    color: #e0c3ff;
 }
 
-.footer-copyright {
-    font-size: 0.875rem;
-    color: var(--text-secondary);
+.copyright {
     text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #444;
+    font-size: 0.9rem;
+    color: #999;
 }
 
-@media (min-width: 768px) {
-    .main-footer .container {
-        flex-direction: row;
-        justify-content: space-between;
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
     }
-    
-    .footer-copyright {
-        text-align: right;
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+
+    .mission-content {
+        padding: 2rem;
+    }
+
+    .mission-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .mission-content p {
+        font-size: 1rem;
+    }
+
+    .cta-content h3 {
+        font-size: 1.6rem;
     }
 }
