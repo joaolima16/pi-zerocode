@@ -24,6 +24,8 @@ public class TeacherService {
     
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    
     public Teacher create(RegisterTeacherDTO registerTeacherDTO) {
         Teacher teacher = new Teacher();
         teacher.setName(registerTeacherDTO.name());

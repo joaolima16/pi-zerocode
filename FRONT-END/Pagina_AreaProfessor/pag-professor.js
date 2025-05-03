@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
                     <div class="teacher-rating"> 
          
-                       <a href="/FRONT-END/Pagina_Perfil_Professor/perfilProfessor.html"} onclick="redirectPage(${teacher.id})" class="btn btn-outline btn-sm details-btn">
+                       <a onclick="redirectPage(${teacher.id})" class="btn btn-outline btn-sm details-btn">
                         Detalhes
                     </a>
                     </div>

@@ -18,4 +18,3 @@ const renderTeacher = async () =>{
     document.querySelector(".teacher-phone").innerHTML = `Telefone: ${data.phone}`;
     document.querySelector(".teacher-email").innerHTML = `Email: ${data.email}`;
 }
-console.log(localStorage.getItem('token'));

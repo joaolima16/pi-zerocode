@@ -37,6 +37,7 @@ public class AuthenticationController {
     private AuthorizationService authorizationService;
     @PostMapping("/login")
     public ResponseEntity<LoginResponseDTO> login(@RequestBody @Valid AuthenticationDTO authenticationDTO) {
+
         var emailPassword = new UsernamePasswordAuthenticationToken(authenticationDTO.email(),
                 authenticationDTO.password());
         var auth = authenticationManager.authenticate(emailPassword);

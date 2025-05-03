@@ -5,6 +5,7 @@ function loginUser() {
         email: email,
         password: senha
     }
+    console.log(data);
     fetch('http://localhost:8080/auth/login', {
         method: 'POST',
         headers: {

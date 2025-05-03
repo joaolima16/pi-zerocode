@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     getTeachers();
+    getCourses();
+
     }
     
     // Add mobile menu styles dynamically
@@ -55,11 +57,11 @@ async function getTeachers(){
         .then((resp) => data = resp)
         .catch((err) => console.error(err));
     index = data.length > 3 ? 3 :data.length;
-    console.log(data)
+
     for (let i = 0; i < index; i++) {
         console.log(data[i]);
         container.innerHTML += `
-             <a href="teachers.html" class="teacher-card">
+             <a  onclick="redirectToTeacher(${data[i].id})" class="teacher-card">
               <div class="teacher-image">
                 <img
                   src="https://placehold.co/150x150"
@@ -75,6 +77,55 @@ async function getTeachers(){
         `
        
     }
-    
+}
+const getCourses = async () => {
+    const url = "http://localhost:8080/courses/all";
+    const container = document.querySelector(".courses-grid");
+    container.innerHTML = ""; 
+    let data = [];
+    let index;
 
+    await fetch(url)
+        .then((res) => res.json())
+        .then((resp) => data = resp)
+        .catch((err) => console.error(err));
+    index = data.length > 3 ? 3 :data.length;
+    for(let i = 0; i < index; i++) {
+        container.innerHTML += `
+             <a class="course-card" onClick="redirectToCourse(${data[i].id})">
+              <div class="course-image">
+                <img
+                  src="https://placehold.co/300x200"
+                  alt="${data[i].name}"
+                />
+              </div>
+              <div class="course-content">
+                <h3>${data[i].name}</h3>
+                <p>${data[i].description}</p>
+                <div class="course-meta">
+                  <span class="course-lessons">${data[i].classrooms.length} Aulas</span>
+                  <span class="course-details">Ver detalhes</span>
+                </div>
+              </div>
+            </a>
+        `
+    }
+}
+const redirectToCourse = (courseId) => {
+    localStorage.removeItem("courseId");
+    localStorage.setItem("courseId", courseId);
+    window.location.href = "../Modulos_Curso/modulos.html";
+}
+const redirectToTeacher = (id) =>{
+    localStorage.setItem('id', id);
+    window.location.href = `../Pagina_Perfil_Professor/perfilProfessor.html`;
+}
+const redirectUser = () =>{
+    const role = localStorage.getItem('role');
+    if(role === 'STUDENT'){
+        window.location.href = '../Pagina_Perfil_Aluno/perfilAluno.html';
+    }
+    if(role === 'TEACHER'){
+        window.location.href = '../Pagina_Perfil_Professor/perfilProfessor.html';
+    }
 }

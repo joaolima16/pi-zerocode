@@ -141,6 +141,8 @@ function registerTeacher() {
     const birthday = document.querySelector("#teacher-birthday").value;
     const phone = document.querySelector("#teacher-phone").value;
     const area_teaching = document.querySelector("#teacher-specialty").value;
+    const valuePerHour = document.querySelector("#teacher-valuePerHour").value;
+    console.log(valuePerHour);
     const jsonData = JSON.stringify({
         name: name,
         cpf: cpf,
@@ -148,7 +150,8 @@ function registerTeacher() {
         email: email,
         password: password,
         phone: phone,
-        areaTeaching: area_teaching
+        areaTeaching: area_teaching,
+        valuePerHour: valuePerHour
     })
 
     fetch(url, {
