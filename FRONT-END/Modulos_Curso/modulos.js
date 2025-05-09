@@ -33,14 +33,23 @@ const renderClassrooms = async() =>{
                     </h2>
                     <div id="flush-collapseOne" class="accordion-collapse collapse"
                         data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Duração da aula: ${Math.floor(classroom.duration / 60).toFixed(1)} Minutos</div>
+                        <div class="accordion-body">Duração da aula: ${formatDuration(classroom.duration)}</div>
                     </div>
                 </div>
-            
             `
-
         )
     })
-
-    
 }
+function formatDuration(minutos) {
+    const horas = Math.floor(minutos / 60);
+    const mins = minutos % 60;
+  
+    if (horas > 0 && mins > 0) {
+      return `${horas}h ${mins}min`;
+    } else if (horas > 0) {
+      return `${horas}h`;
+    } else {
+      return `${mins} min`;
+    }
+  }
+  

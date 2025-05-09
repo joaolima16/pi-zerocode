@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     // Render teachers
     function renderTeachers() {
-     
+
         const teachersGrid = document.getElementById('teachers-grid');
         teachersGrid.innerHTML = '';
 
@@ -70,16 +70,14 @@ document.addEventListener('DOMContentLoaded', async function () {
                 <div class="teacher-body">
                     <div class="teacher-meta">
                         <div class="teacher-price">
-                            R$ ${teacher.valuePerHour}/hora
+                            ${formatToReal(teacher.valuePerHour)}/hora
                         </div>
                         <div class="teacher-availability">
                         </div>
                     </div>
                 </div>
                 <div class="teacher-footer">
-                    <button class="btn btn-outline btn-sm message-btn" data-id="${teacher.id}" data-name="${teacher.name}">
-                        <i class="fas fa-comment"></i> Mensagem
-                    </button>
+          
                     <button class="btn btn-primary btn-sm schedule-btn" data-id="${teacher.id}" data-name="${teacher.name}" data-price="${teacher.valuePerHour}">
                         Agendar aula
                     </button>
@@ -154,12 +152,15 @@ document.addEventListener('DOMContentLoaded', async function () {
     function openMessageModal(teacherId, teacherName) {
         document.getElementById('message-teacher-name').textContent = teacherName;
         document.getElementById('message-modal').classList.add('active');
+    
     }
 
     function openScheduleModal(teacherId, teacherName, teacherPrice) {
+        if (!validateLogin()) { return; }
         document.getElementById('schedule-teacher-name').textContent = teacherName;
         document.getElementById('schedule-price').textContent = teacherPrice;
         document.getElementById('schedule-modal').classList.add('active');
+
 
         // Update price when duration changes
         document.getElementById('duration').addEventListener('change', function () {
@@ -219,7 +220,25 @@ async function getTeachers() {
         .catch((err) => console.log(err))
     return teachers;
 }
-const redirectPage = (id) =>{
+const redirectPage = (id) => {
     localStorage.setItem('id', id);
     window.location.href = `/FRONT-END/Pagina_Perfil_Professor/perfilProfessor.html`;
+}
+
+const validateLogin = () => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+        alert('Você precisa estar logado para acessar essa página!');
+        window.location.href = '../PAGINA_Login/Login/login.html';
+        return false;
+    }
+    return true;
+}
+
+const formatToReal = (value) => {
+    const valueFormat = new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+    }).format(value);
+    return valueFormat;
 }

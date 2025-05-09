@@ -129,3 +129,15 @@ const redirectUser = () =>{
         window.location.href = '../Pagina_Perfil_Professor/perfilProfessor.html';
     }
 }
+function verifyLogin() {
+
+    const token = localStorage.getItem('token');
+    if(token){
+        
+        document.querySelector("#btn-login").style.display = "none";
+        document.querySelector("#btn-cadastro").style.display = "none";
+    }
+}
+document.addEventListener('DOMContentLoaded', function() {
+    verifyLogin();
+});

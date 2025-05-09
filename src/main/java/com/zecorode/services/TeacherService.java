@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.zecorode.domain.teacher.RegisterTeacherDTO;
 import com.zecorode.domain.teacher.Teacher;
+import com.zecorode.domain.teacher.UpdateTeacherDTO;
 import com.zecorode.domain.user.SystemRole;
 import com.zecorode.domain.user.User;
 import com.zecorode.repositories.TeacherRepository;
@@ -50,5 +51,18 @@ public class TeacherService {
     }
     public Teacher findById(Long id) {
         return teacherRepository.findById(id).orElse(null);
+    }
+    public Teacher updateTeacher(Long id, UpdateTeacherDTO updateTeacherDTO) {
+        Teacher teacher = findById(id);
+        if (teacher == null) {
+            return null;
+        }
+        teacher.setName(updateTeacherDTO.name());
+        teacher.setAreaTeaching(updateTeacherDTO.areaTeaching());
+        teacher.setPhone(updateTeacherDTO.phone());
+        teacher.setEmail(updateTeacherDTO.email());
+        teacher.setPassword(passwordEncoder.encode(updateTeacherDTO.password()));
+        teacher.setValuePerHour(updateTeacherDTO.valuePerHour());
+        return teacherRepository.save(teacher);
     }
 }

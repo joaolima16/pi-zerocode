@@ -47,12 +47,6 @@
         <h2 class="section-title">Editar Perfil</h2>
         
         <div class="edit-profile-form">
-            <div class="profile-upload">
-                <div class="upload-preview">
-                    <img src="https://via.placeholder.com/150" alt="Foto do Perfil">
-                </div>
-                <button class="btn">Alterar foto</button>
-            </div>
             
             <div class="form-group">
                 <label for="name">Nome Completo</label>
@@ -63,25 +57,20 @@
                 <label for="email">Email</label>
                 <input type="email" id="email" placeholder="novoemail@exemplo.com">
             </div>
-
-            <div class="form-group">
-                <select id="gender" name="gender" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;" >
-                    <option value="Masculino" selected></option>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Feminino">Feminino</option>
-                    <option value="Outro">Outro</option>
-                </select>
-            </div>
-            
-            
             <div class="form-group">
                 <label for="phone">Telefone</label>
-                <input type="tel" id="phone" >
+                <input type="tel" id="phone" placeholder="11 91234-5678">
             </div>
-
+      
+            <div class="form-group">
+              <label for="areaTeaching">Área de atuação</label>
+              <input type="text" id="areaTeaching" placeholder="novoemail@exemplo.com">
+          </div>      
+          <div class="form-group">
+            <label for="valuePerHour">Valor por hora</label>
+            <input type="text" id="valuePerHour" placeholder="novoemail@exemplo.com">
+        </div>  
     
-            
-            
             <div style="margin-top: 20px;">
                 <button class="btn btn-primary" onclick="concluido()">Salvar Alterações</button>
                 <button class="btn" style="margin-left: 10px;">Cancelar</button>
@@ -111,6 +100,6 @@
 
     <!-- Mascot -->
     <img src="https://via.placeholder.com/80" alt="Mascote" class="mascot">
-    <script src="editar_professor.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
