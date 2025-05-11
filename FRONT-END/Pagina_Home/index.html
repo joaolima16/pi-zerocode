@@ -1,310 +1,275 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nexus | Invoção & Educação</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="../Scripts/auth.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <header class="main-header">
-      <div class="container">
-        <div class="logo">
-          <img src="../IMAGENS/Nexus.png" alt="Logo Nexus" />
-        </div>
-        <nav class="main-nav">
-          <ul>
-            <li><a href="../Pagina_Cursos/cursos.html">Cursos</a></li>
-            <li>
-              <a href="../Pagina_AreaProfessor/pag-professor.html "
-                >Professores</a
-              >
-              <a href="../Pagina_Perfil_Professor/perfilProfessor.html"></a>
-            </li>
-            <li><a href="../Pagina_Rank_Professores/rank.html">Rank</a></li>
-            <li><a href="../Pagina_Blog/blog.html">Blog</a></li>
-            <li><a href="../Pagina_Sobre/sobre.html">Sobre</a></li>
-            <li></li>
-          </ul>
-        </nav>
-        <div class="icone-fas">
-          
 
-    
-        
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexus | Invoção & Educação</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="../Scripts/auth.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="container">
+      <div class="logo">
+        <img src="../IMAGENS/Nexus.png" alt="Logo Nexus" />
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../Pagina_Cursos/cursos.html">Cursos</a></li>
+          <li>
+            <a href="../Pagina_AreaProfessor/pag-professor.html ">Professores</a>
+            <a href="../Pagina_Perfil_Professor/perfilProfessor.html"></a>
+          </li>
+          <li><a href="../Pagina_Rank_Professores/rank.html">Rank</a></li>
+          <li><a href="../Pagina_Blog/blog.html">Blog</a></li>
+          <li><a href="../Pagina_Sobre/sobre.html">Sobre</a></li>
+          <li></li>
+        </ul>
+      </nav>
+      <div class="icone-fas">
+
+        <div class="fas-user">
+          <i class="fa-solid fa-user" onclick="redirectToAreaUser()"></i>
         </div>
-        <div class="auth-buttons">
-          <!-- <i class="fa-solid fa-cart-shopping"></i>
+
+
+      </div>
+      <div class="auth-buttons">
+        <!-- <i class="fa-solid fa-cart-shopping"></i>
           <i class="fa-solid fa-user"></i>   -->
-          <a
-            href="/FRONT-END/PAGINA_Login/Login/login.html"
-            class="btn btn-outline"
-            id="btn-login"
-            >Entrar</a
-          >
-          <a
-            href="/FRONT-END/PAGINA_Login/Cadastro/cadastro.html"
-            class="btn btn-primary"
-            id="btn-cadastro"
-            >Cadastrar</a
-          >
-        </div>
-        <button class="mobile-menu-toggle">
-          <i class="fas fa-bars"></i>
-        </button>
+        <a href="/FRONT-END/PAGINA_Login/Login/login.html" class="btn btn-outline" id="btn-login">Entrar</a>
+        <a href="/FRONT-END/PAGINA_Login/Cadastro/cadastro.html" class="btn btn-primary" id="btn-cadastro">Cadastrar</a>
       </div>
-    </header>
+      <button class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
 
-    <main>
-      <section class="hero">
-        <div class="container">
-          <div class="hero-content">
-            <h1>Transforme seu aprendizado com aulas personalizadas</h1>
-            <p>
-              Conecte-se com os melhores professores e acesse cursos de
-              qualidade, tudo em um só lugar.
-            </p>
-            <div class="hero-buttons">
-              <a href="../PAGINA_Login/Cadastro/cadastro.html" class="btn btn-primary">
-                Comece agora <i class="fas fa-arrow-right"></i>
-              </a>
-              <a href="../Pagina_AreaProfessor/pag-professor.html" class="btn btn-outline">
-                Encontrar professores
-              </a>
-            </div>
-          </div>
-          <div class="hero-image">
-            <img
-              src="/FRONT-END/IMAGENS/Grupo-Estudantes.jpg"
-              alt="Estudantes aprendendo online"
-            />
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Transforme seu aprendizado com aulas personalizadas</h1>
+          <p>
+            Conecte-se com os melhores professores e acesse cursos de
+            qualidade, tudo em um só lugar.
+          </p>
+          <div class="hero-buttons">
+            <a href="../PAGINA_Login/Cadastro/cadastro.html" class="btn btn-primary">
+              Comece agora <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="../Pagina_AreaProfessor/pag-professor.html" class="btn btn-outline">
+              Encontrar professores
+            </a>
           </div>
         </div>
-      </section>
+        <div class="hero-image">
+          <img src="/FRONT-END/IMAGENS/Grupo-Estudantes.jpg" alt="Estudantes aprendendo online" />
+        </div>
+      </div>
+    </section>
 
-      <section class="como-trabalhamos">
-        <div class="container">
-          <div class="section-header">
-            <h2>Como funciona</h2>
+    <section class="como-trabalhamos">
+      <div class="container">
+        <div class="section-header">
+          <h2>Como funciona</h2>
+          <p>
+            Nossa plataforma facilita o acesso à educação de qualidade em
+            apenas três passos.
+          </p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <h3>Encontre o professor ideal</h3>
             <p>
-              Nossa plataforma facilita o acesso à educação de qualidade em
-              apenas três passos.
+              Busque por matéria, especialidade ou disponibilidade e encontre
+              o professor perfeito para você.
             </p>
           </div>
-          <div class="steps">
-            <div class="step">
-              <div class="step-icon">
-                <i class="fas fa-search"></i>
+          <div class="step">
+            <div class="step-icon">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <h3>Agende suas aulas</h3>
+            <p>
+              Escolha o horário que melhor se adapta à sua rotina e confirme
+              com apenas alguns cliques.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-icon">
+              <i class="fas fa-book-open"></i>
+            </div>
+            <h3>Aprenda no seu ritmo</h3>
+            <p>
+              Acesse aulas ao vivo, materiais de estudo e acompanhe seu
+              progresso de forma simples.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-courses">
+      <div class="container">
+        <div class="section-header">
+          <h2>Cursos em destaque</h2>
+          <p>
+            Conheça nossos cursos mais populares e comece sua jornada de
+            aprendizado.
+          </p>
+        </div>
+        <div class="courses-grid">
+          <a href="courses.html" class="course-card">
+            <div class="course-image">
+              <img src="https://placehold.co/300x200" alt="Matemática Avançada" />
+            </div>
+            <div class="course-content">
+              <h3>Matemática Avançada</h3>
+              <p>Domine conceitos avançados de cálculo e álgebra linear.</p>
+              <div class="course-meta">
+                <span class="course-lessons">12 aulas</span>
+                <span class="course-details">Ver detalhes</span>
               </div>
-              <h3>Encontre o professor ideal</h3>
+            </div>
+          </a>
+          <a href="courses.html" class="course-card">
+            <div class="course-image">
+              <img src="https://placehold.co/300x200" alt="Programação Web" />
+            </div>
+            <div class="course-content">
+              <h3>Programação Web</h3>
               <p>
-                Busque por matéria, especialidade ou disponibilidade e encontre
-                o professor perfeito para você.
+                Aprenda a criar sites responsivos e aplicações web modernas.
               </p>
-            </div>
-            <div class="step">
-              <div class="step-icon">
-                <i class="fas fa-calendar-check"></i>
+              <div class="course-meta">
+                <span class="course-lessons">10 aulas</span>
+                <span class="course-details">Ver detalhes</span>
               </div>
-              <h3>Agende suas aulas</h3>
+            </div>
+          </a>
+          <a href="courses.html" class="course-card">
+            <div class="course-image">
+              <img src="https://placehold.co/300x200" alt="Inglês Fluente" />
+            </div>
+            <div class="course-content">
+              <h3>Inglês Fluente</h3>
               <p>
-                Escolha o horário que melhor se adapta à sua rotina e confirme
-                com apenas alguns cliques.
+                Desenvolva habilidades de conversação e escrita em inglês.
               </p>
+              <div class="course-meta">
+                <span class="course-lessons">16 aulas</span>
+                <span class="course-details">Ver detalhes</span>
+              </div>
             </div>
-            <div class="step">
-              <div class="step-icon">
-                <i class="fas fa-book-open"></i>
-              </div>
-              <h3>Aprenda no seu ritmo</h3>
-              <p>
-                Acesse aulas ao vivo, materiais de estudo e acompanhe seu
-                progresso de forma simples.
-              </p>
+          </a>
+        </div>
+        <div class="section-footer">
+          <a href="/FRONT-END/Pagina_Cursos/cursos.html" class="btn btn-outline btn-lg">Ver todos os cursos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-teachers">
+      <div class="container">
+        <div class="section-header">
+          <h2>Nossos professores de destaque</h2>
+          <p>
+            Conheça alguns dos nossos talentosos professores que estão
+            transformando a educação.
+          </p>
+        </div>
+        <div class="teachers-grid">
+          <a href="teachers.html" class="teacher-card">
+            <div class="teacher-image">
+              <img src="https://placehold.co/150x150" alt="Dra. Carolina Silva" />
             </div>
-          </div>
+            <h3>Dra. Carolina Silva</h3>
+            <p>Matemática</p>
+            <span class="teacher-link">Ver perfil</span>
+          </a>
+          <a href="/Pagina_Perfil_Professor/perfilProfessor.html" class="teacher-card">
+            <div class="teacher-image">
+              <img src="https://placehold.co/150x150" alt="Prof. André Santos" />
+            </div>
+            <h3>Prof. André Santos</h3>
+            <p>Programação</p>
+            <span class="teacher-link">Ver perfil</span>
+          </a>
+          <a href="/Pagina_Perfil_Professor/perfilProfessor.html" class="teacher-card">
+            <div class="teacher-image">
+              <img src="https://placehold.co/150x150" alt="Mestra Julia Costa" />
+            </div>
+            <h3>Mestra Julia Costa</h3>
+            <p>Inglês</p>
+            <span class="teacher-link">Ver perfil</span>
+          </a>
         </div>
-      </section>
-
-      <section class="featured-courses">
-        <div class="container">
-          <div class="section-header">
-            <h2>Cursos em destaque</h2>
-            <p>
-              Conheça nossos cursos mais populares e comece sua jornada de
-              aprendizado.
-            </p>
-          </div>
-          <div class="courses-grid">
-            <a href="courses.html" class="course-card">
-              <div class="course-image">
-                <img
-                  src="https://placehold.co/300x200"
-                  alt="Matemática Avançada"
-                />
-              </div>
-              <div class="course-content">
-                <h3>Matemática Avançada</h3>
-                <p>Domine conceitos avançados de cálculo e álgebra linear.</p>
-                <div class="course-meta">
-                  <span class="course-lessons">12 aulas</span>
-                  <span class="course-details">Ver detalhes</span>
-                </div>
-              </div>
-            </a>
-            <a href="courses.html" class="course-card">
-              <div class="course-image">
-                <img src="https://placehold.co/300x200" alt="Programação Web" />
-              </div>
-              <div class="course-content">
-                <h3>Programação Web</h3>
-                <p>
-                  Aprenda a criar sites responsivos e aplicações web modernas.
-                </p>
-                <div class="course-meta">
-                  <span class="course-lessons">10 aulas</span>
-                  <span class="course-details">Ver detalhes</span>
-                </div>
-              </div>
-            </a>
-            <a href="courses.html" class="course-card">
-              <div class="course-image">
-                <img src="https://placehold.co/300x200" alt="Inglês Fluente" />
-              </div>
-              <div class="course-content">
-                <h3>Inglês Fluente</h3>
-                <p>
-                  Desenvolva habilidades de conversação e escrita em inglês.
-                </p>
-                <div class="course-meta">
-                  <span class="course-lessons">16 aulas</span>
-                  <span class="course-details">Ver detalhes</span>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="section-footer">
-            <a
-              href="/FRONT-END/Pagina_Cursos/cursos.html"
-              class="btn btn-outline btn-lg"
-              >Ver todos os cursos</a
-            >
-          </div>
+        <div class="section-footer">
+          <a href="../Pagina_AreaProfessor/pag-professor.html" class="btn btn-outline btn-lg">Encontrar mais
+            professores</a>
         </div>
-      </section>
+      </div>
+    </section>
+  </main>
 
-      <section class="featured-teachers">
-        <div class="container">
-          <div class="section-header">
-            <h2>Nossos professores de destaque</h2>
-            <p>
-              Conheça alguns dos nossos talentosos professores que estão
-              transformando a educação.
-            </p>
-          </div>
-          <div class="teachers-grid">
-            <a href="teachers.html" class="teacher-card">
-              <div class="teacher-image">
-                <img
-                  src="https://placehold.co/150x150"
-                  alt="Dra. Carolina Silva"
-                />
-              </div>
-              <h3>Dra. Carolina Silva</h3>
-              <p>Matemática</p>
-              <span class="teacher-link">Ver perfil</span>
-            </a>
-            <a
-              href="/Pagina_Perfil_Professor/perfilProfessor.html"
-              class="teacher-card"
-            >
-              <div class="teacher-image">
-                <img
-                  src="https://placehold.co/150x150"
-                  alt="Prof. André Santos"
-                />
-              </div>
-              <h3>Prof. André Santos</h3>
-              <p>Programação</p>
-              <span class="teacher-link">Ver perfil</span>
-            </a>
-            <a
-              href="/Pagina_Perfil_Professor/perfilProfessor.html"
-              class="teacher-card"
-            >
-              <div class="teacher-image">
-                <img
-                  src="https://placehold.co/150x150"
-                  alt="Mestra Julia Costa"
-                />
-              </div>
-              <h3>Mestra Julia Costa</h3>
-              <p>Inglês</p>
-              <span class="teacher-link">Ver perfil</span>
-            </a>
-          </div>
-          <div class="section-footer">
-            <a href="../Pagina_AreaProfessor/pag-professor.html" class="btn btn-outline btn-lg"
-              >Encontrar mais professores</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-   <!-- Rodape da nexus -->
-<footer>
-  <div class="container">
+  <!-- Rodape da nexus -->
+  <footer>
+    <div class="container">
       <div class="footer-content">
-          <div class="footer-column">
-              <h4>Nexus</h4>
-              <ul>
-                  <li><a href="#">Sobre Nós</a></li>
-                  <li><a href="#parceirias">Parcerias</a></li>
-                  <li><a href="#">Blog</a></li>
-              </ul>
-          </div>
-          <div class="footer-column">
-              <h4>Cursos</h4>
-              <ul>
-                  
-                  <li><a href="#">Tecnologia</a></li>
-                  <li><a href="#">Negócios</a></li>
-                  <li><a href="#">Idiomas</a></li>
-                  <li><a href="#">Desenvolvimento Pessoal</a></li>
-              </ul>
-          </div>
-          <div class="footer-column">
-              <h4>Suporte</h4>
-              <ul>
-                  <li><a href="#">Contato</a></li>
-                  <li><a href="#">Política de Privacidade</a></li>
-                  <li><a href="#">Termos de Uso</a></li>
-              </ul>
-          </div>
-          <div class="footer-column">
-              <h4>Contato</h4>
-              <ul>
-                  <li><a href="#">contato@nexus.com.br</a></li>
-                  <li><a href="#">+55 (11) 3456-7890</a></li>
-                  <li><a href="#">São Paulo, SP - Brasil</a></li>
-              </ul>
-          </div>
-      </div>
-      
-      <div class="copyright">
-          <div class="container">
-             
-          <p>&copy; 2025 Nexus. Todos os direitos reservados.</p>
-      </div>
-      
-  </div>
-</footer>
+        <div class="footer-column">
+          <h4>Nexus</h4>
+          <ul>
+            <li><a href="#">Sobre Nós</a></li>
+            <li><a href="#parceirias">Parcerias</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Cursos</h4>
+          <ul>
 
-    <script src="script.js"></script>
-  </body>
+            <li><a href="#">Tecnologia</a></li>
+            <li><a href="#">Negócios</a></li>
+            <li><a href="#">Idiomas</a></li>
+            <li><a href="#">Desenvolvimento Pessoal</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Suporte</h4>
+          <ul>
+            <li><a href="#">Contato</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Termos de Uso</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="#">contato@nexus.com.br</a></li>
+            <li><a href="#">+55 (11) 3456-7890</a></li>
+            <li><a href="#">São Paulo, SP - Brasil</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <div class="container">
+
+          <p>&copy; 2025 Nexus. Todos os direitos reservados.</p>
+        </div>
+
+      </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
 </html>

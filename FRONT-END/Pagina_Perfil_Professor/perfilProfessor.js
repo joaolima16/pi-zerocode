@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     renderTeacher();
 });
     const getTeacher = async() => {
-    const id = localStorage.getItem('id');
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
     const url = `http://localhost:8080/teacher/${id}`;
     let data = [];
     await fetch(url)

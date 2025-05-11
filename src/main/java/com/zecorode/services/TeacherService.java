@@ -17,16 +17,13 @@ import com.zecorode.repositories.TeacherRepository;
 public class TeacherService {
     @Autowired
     private TeacherRepository teacherRepository;
-    
+
     @Autowired
     private AuthorizationService authorizationService;
 
-
-    
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    
     public Teacher create(RegisterTeacherDTO registerTeacherDTO) {
         Teacher teacher = new Teacher();
         teacher.setName(registerTeacherDTO.name());
@@ -35,23 +32,26 @@ public class TeacherService {
         teacher.setPhone(registerTeacherDTO.phone());
         teacher.setAreaTeaching(registerTeacherDTO.areaTeaching());
         teacher.setEmail(registerTeacherDTO.email());
+        teacher.setCodeTeacher(generateUniqueCode());
         teacher.setPassword(passwordEncoder.encode(registerTeacherDTO.password()));
         teacher.setValuePerHour(registerTeacherDTO.valuePerHour());
         Teacher teacherSaved = teacherRepository.save(teacher);
-        if(teacherSaved == null) {
+        if (teacherSaved == null) {
             throw new RuntimeException("Teacher not saved");
         }
         User userTeacher = new User(teacherSaved.getEmail(), teacherSaved.getPassword(), SystemRole.TEACHER);
-        authorizationService.create(userTeacher
-        );
+        authorizationService.create(userTeacher);
         return teacherSaved;
     }
+
     public List<Teacher> findAll() {
         return teacherRepository.findAll();
     }
+
     public Teacher findById(Long id) {
         return teacherRepository.findById(id).orElse(null);
     }
+
     public Teacher updateTeacher(Long id, UpdateTeacherDTO updateTeacherDTO) {
         Teacher teacher = findById(id);
         if (teacher == null) {
@@ -61,8 +61,13 @@ public class TeacherService {
         teacher.setAreaTeaching(updateTeacherDTO.areaTeaching());
         teacher.setPhone(updateTeacherDTO.phone());
         teacher.setEmail(updateTeacherDTO.email());
-        teacher.setPassword(passwordEncoder.encode(updateTeacherDTO.password()));
+
         teacher.setValuePerHour(updateTeacherDTO.valuePerHour());
         return teacherRepository.save(teacher);
     }
+
+    public int generateUniqueCode() {
+        return (int) (Math.random() * 100_000_000); // Gera até 8 dígitos
+    }
+
 }

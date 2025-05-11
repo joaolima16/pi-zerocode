@@ -3,6 +3,7 @@ package com.zecorode.infra.security;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.autoconfigure.observation.ObservationProperties.Http;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -47,6 +48,7 @@ public class SecurityConfigurations {
                         .requestMatchers(HttpMethod.GET,"/courses/{id}").permitAll()
                         .requestMatchers(HttpMethod.POST,"/classroom").permitAll()
                         .requestMatchers(HttpMethod.GET,"/classroom/all").permitAll()
+                        .requestMatchers(HttpMethod.POST,"/schedules").permitAll()
                         
                         .anyRequest().authenticated())
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)

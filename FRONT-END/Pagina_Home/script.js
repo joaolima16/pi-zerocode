@@ -117,8 +117,7 @@ const redirectToCourse = (courseId) => {
     window.location.href = "../Modulos_Curso/modulos.html";
 }
 const redirectToTeacher = (id) =>{
-    localStorage.setItem('id', id);
-    window.location.href = `../Pagina_Perfil_Professor/perfilProfessor.html`;
+    window.location.href = `../Pagina_Perfil_Professor/perfilProfessor.html?id=${id}`;
 }
 const redirectUser = () =>{
     const role = localStorage.getItem('role');
@@ -138,6 +137,15 @@ function verifyLogin() {
         document.querySelector("#btn-cadastro").style.display = "none";
     }
 }
-document.addEventListener('DOMContentLoaded', function() {
-    verifyLogin();
-});
+function redirectToAreaUser(){
+    const role = localStorage.getItem('role');
+    if(!role ) return(alert('Você não está logado!'));
+    if(role === 'STUDENT'){
+        window.location.href = '../Pagina_Perfil_Aluno/perfilAluno.html';
+    }
+    else if(role === 'TEACHER'){
+        window.location.href = '../Pagina_Perfil_Professor/perfilProfessor.html';
+    }
+
+    // window.location.href = "../Pagina_Perfil_Aluno/perfilAluno.html";
+}

@@ -57,7 +57,7 @@ public class Teacher {
     @Column(length = 70, nullable = false)
     private String password;
 
-    @Column(name = "code_teacher", length = 10, nullable = false, unique = true)
+    @Column(name = "code_teacher", nullable = false, unique = true)
     private int codeTeacher;
 
     @OneToMany(mappedBy = "teacher")

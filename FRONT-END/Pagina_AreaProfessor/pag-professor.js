@@ -50,10 +50,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             teacherCard.innerHTML = `
                 <div class="teacher-header">
                     <div class="teacher-info">
-                        <div class="teacher-avatar">
-                            <img src="${teacher.image}" alt="${teacher.name}">
-                            <div class="status-indicator ${teacher.available ? 'status-available' : 'status-unavailable'}"></div>
-                        </div>
+                     
                         <div>
                             <h3 class="teacher-name">${teacher.name}</h3>
                             <p class="teacher-subject">${teacher.areaTeaching}</p>
@@ -221,8 +218,7 @@ async function getTeachers() {
     return teachers;
 }
 const redirectPage = (id) => {
-    localStorage.setItem('id', id);
-    window.location.href = `/FRONT-END/Pagina_Perfil_Professor/perfilProfessor.html`;
+    window.location.href = `/FRONT-END/Pagina_Perfil_Professor/perfilProfessor.html?id=${id}`;
 }
 
 const validateLogin = () => {
