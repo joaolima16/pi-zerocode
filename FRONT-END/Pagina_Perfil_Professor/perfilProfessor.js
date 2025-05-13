@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
     const getTeacher = async() => {
     const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get('id');
+    const id = localStorage.getItem('id');
+    console.log(id);
     const url = `http://localhost:8080/teacher/${id}`;
     let data = [];
     await fetch(url)
@@ -14,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 const renderTeacher = async () =>{
     let data = await getTeacher();
-    console.log(data);
+
     document.querySelector(".teacher-name").innerHTML = data.name;
     document.querySelector(".teacher-phone").innerHTML = `Telefone: ${data.phone}`;
     document.querySelector(".teacher-email").innerHTML = `Email: ${data.email}`;

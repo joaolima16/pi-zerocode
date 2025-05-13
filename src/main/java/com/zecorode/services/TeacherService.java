@@ -69,5 +69,7 @@ public class TeacherService {
     public int generateUniqueCode() {
         return (int) (Math.random() * 100_000_000); // Gera até 8 dígitos
     }
-
+    public Teacher findByEmail(String email) {
+        return teacherRepository.findByEmail(email);
+    }
 }

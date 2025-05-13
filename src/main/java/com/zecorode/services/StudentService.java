@@ -64,4 +64,11 @@ public class StudentService {
             throw new RuntimeException("Error to update student");
         }
     }
+    public Student findByEmail(String email) {
+        try {
+            return studentRepository.findByEmail(email);
+        } catch (Exception e) {
+            throw new RuntimeException("Error to get student");
+        }
+    }
 }
