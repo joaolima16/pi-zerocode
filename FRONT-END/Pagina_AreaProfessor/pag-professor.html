@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/FRONT-END/Pagina_Home/style.css"> <!-- Classe globa css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    
 </head>
 <body>
     <header class="main-header">
@@ -17,19 +18,22 @@
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="/FRONT-END/Pagina_Home/index.html" class="active">Início</a></li>
-                    <li><a href="/FRONT-END/Pagina_Cursos/cursos.html">Cursos</a></li>
-                    <li><a href="modules.html">Módulos</a></li>
-                    <li><a href="/FRONT-END/Pagina_Perfil_Aluno/perfilAluno.html">Meu Perfil</a></li> <!-- Precisa fazer verificação, ao logar o aluno para visualizar seus cursos e seu perfil -->
+                    <li><a href="../Pagina_Home/index.html" class="active">Início</a></li>
+                    <li><a href="../Pagina_Cursos/cursos.html">Cursos</a></li>
+                    <li><a href="../Pagina_Sobre/sobre.html">Sobre</a></li> <!-- Precisa fazer verificação, ao logar o aluno para visualizar seus cursos e seu perfil -->
                 </ul>
             </nav>
             <div class="auth-buttons">
                 <a href="login.html" class="btn btn-outline">Entrar</a>
-                <a href="register.html" class="btn btn-primary">Cadastrar</a>
+                <a href="register.html" class="btn btn-primary">Cadastrar</a>    
+                <svg fill="#000000" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 384.971 384.971" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g id="Sign_Out"> <path d="M180.455,360.91H24.061V24.061h156.394c6.641,0,12.03-5.39,12.03-12.03s-5.39-12.03-12.03-12.03H12.03 C5.39,0.001,0,5.39,0,12.031V372.94c0,6.641,5.39,12.03,12.03,12.03h168.424c6.641,0,12.03-5.39,12.03-12.03 C192.485,366.299,187.095,360.91,180.455,360.91z"></path> <path d="M381.481,184.088l-83.009-84.2c-4.704-4.752-12.319-4.74-17.011,0c-4.704,4.74-4.704,12.439,0,17.179l62.558,63.46H96.279 c-6.641,0-12.03,5.438-12.03,12.151c0,6.713,5.39,12.151,12.03,12.151h247.74l-62.558,63.46c-4.704,4.752-4.704,12.439,0,17.179 c4.704,4.752,12.319,4.752,17.011,0l82.997-84.2C386.113,196.588,386.161,188.756,381.481,184.088z"></path> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </g> </g></svg>            
             </div>
             <button class="mobile-menu-toggle">
                 <i class="fas fa-bars"></i>
             </button>
+        </div>
+        <div>
+
         </div>
     </header>
 
@@ -204,6 +208,16 @@
             </div>
         </div>
     </div>
+    <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
 
     <script src="pag-professor.js"></script>
 </body>
