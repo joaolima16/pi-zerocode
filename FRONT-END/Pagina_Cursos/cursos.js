@@ -22,7 +22,7 @@ const renderCourses = async () => {
               <a class="course-card" onClick="redirectToCourse(${courses[i].id})">
                     <div class="course-image">
                         <img
-                            src="https://placehold.co/300x200"
+                            src="../IMAGENS/curso.png"
                             alt="Matemática Avançada"
                         />
                         </div>
@@ -52,7 +52,7 @@ const renderAllCourses = async () => {
               <a class="course-card" onClick="redirectToCourse(${courses.id})">
                     <div class="course-image">
                         <img
-                            src="https://placehold.co/300x200"
+                            src="../IMAGENS/curso.png"
                             alt="Matemática Avançada"
                         />
                         </div>
