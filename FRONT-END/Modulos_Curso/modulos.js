@@ -53,3 +53,13 @@ function formatDuration(minutos) {
     return `${mins} min`;
   }
 }
+function verifyLogin() {
+    const token = localStorage.getItem('token');
+    if(token){
+        
+        document.querySelector("#btn-login").style.display = "none";
+        document.querySelector("#btn-cadastro").style.display = "none";
+        document.querySelector("#btn-sair").style.display = "block";
+    }
+}
+document.addEventListener("DOMContentLoaded", verifyLogin());

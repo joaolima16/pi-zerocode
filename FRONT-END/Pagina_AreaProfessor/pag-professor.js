@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     });
 
     // Close modals when clicking outside
-    window.addEventListener('click', function (e) {
+    window.addEventListener('click', function (e) { 
         if (e.target.classList.contains('modal')) {
             e.target.classList.remove('active');
         }

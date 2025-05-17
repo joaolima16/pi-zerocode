@@ -345,6 +345,7 @@ p {
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
+    
 }
 
 .course-card:hover .course-image img {
@@ -553,4 +554,7 @@ footer {
     .cta-content h3 {
         font-size: 1.6rem;
     }
+}
+#btn-sair{
+    display: none;
 }

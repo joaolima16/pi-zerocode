@@ -2,6 +2,7 @@ package com.zecorode.domain.course;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.zecorode.domain.classroom.Classroom;
 import com.zecorode.domain.teacher.Teacher;
 
@@ -42,6 +43,7 @@ public class Course {
 
     @ManyToOne
     @JoinColumn(name = "teacher_id", nullable = false)
+    @JsonBackReference
     private Teacher teacher;
 
 }

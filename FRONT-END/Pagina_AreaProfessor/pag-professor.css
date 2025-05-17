@@ -83,12 +83,13 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  flex-direction: column;
 }
 
 .teacher-info {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 }
 
 .teacher-avatar {
