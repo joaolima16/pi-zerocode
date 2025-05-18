@@ -19,7 +19,7 @@ const renderCourses = async () => {
     for(let i= 0; i <3;i++){
         if(courses.length > 0){
             coursesContainer.innerHTML += `
-              <a class="course-card" onClick="redirectToCourse(${courses[i].id})">
+              <a class="course-card">
                     <div class="course-image">
                         <img
                             src="../IMAGENS/curso.png"
@@ -31,7 +31,10 @@ const renderCourses = async () => {
                             <p>${courses[i].description}</p>
                             <div class="course-meta">
                                   <span class="course-lessons">${courses[i].classrooms.length} Aulas</span>
-                                  <span class="course-details"> Ver detalhes</span>
+                                <span class="course-details" onClick="redirectToCourse(${courses.id})">Ver detalhes</span>
+                            </div>
+                             <div class="course-meta">         
+                                  <span class="course-details" onClick="purchaseCourse(${courses[i].id})">Adquirir curso</span>
                             </div>
                     </div>
                 </a>
@@ -49,7 +52,7 @@ const renderAllCourses = async () => {
   courses.forEach((courses) => {
     
         return coursesContainer.innerHTML += `
-              <a class="course-card" onClick="redirectToCourse(${courses.id})">
+              <a class="course-card">
                     <div class="course-image">
                         <img
                             src="../IMAGENS/curso.png"
@@ -63,13 +66,21 @@ const renderAllCourses = async () => {
                                   <span class="course-lessons">${courses.classrooms.length} Aulas</span>
                                   <span class="course-details" onClick="redirectToCourse(${courses.id})">Ver detalhes</span>
                             </div>
+                                <div class="course-meta">
+                                  <span class="course-details" onClick="purchaseCourse(${courses.id})">Adquirir curso</span>
+                                  </div>
+                            </div>
                     </div>
                 </a>
         `
     })
 }
 const redirectToCourse = (courseId) => {
-    localStorage.removeItem("courseId");
-    localStorage.setItem("courseId", courseId);
+    sessionStorage.removeItem("courseId");
+    sessionStorage.setItem("courseId", courseId);
     window.location.href = "../Modulos_Curso/modulos.html";
+}
+const purchaseCourse = async (courseId) => {
+    console.log(courseId);
+    window.location.href = `../Pagina_pagamento/pagamento.html?courseId=${courseId}`;
 }

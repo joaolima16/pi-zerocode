@@ -4,7 +4,11 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import com.zecorode.domain.scheduleClass.ScheduleClass;
+import org.hibernate.annotations.ManyToAny;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.zecorode.domain.course.Course;
+import com.zecorode.domain.schedule.Schedule;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -12,6 +16,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -49,7 +56,11 @@ public class Student {
         @Column(length = 70, nullable = false)
         private String password;
 
+        @JsonIgnore
+        @OneToMany(mappedBy = "student", cascade = CascadeType.REMOVE, orphanRemoval = true)
+        private List<Schedule> schedules;
 
-        // @OneToMany(mappedBy = "student", cascade = CascadeType.REMOVE, orphanRemoval = true)
-        // private List<ScheduleClass> schedules;
+        @ManyToMany
+        @JoinTable(name = "student_course", joinColumns = @JoinColumn(name = "student_id"), inverseJoinColumns = @JoinColumn(name = "course_id"))
+        private List<Course> purchasedCourses;
 }

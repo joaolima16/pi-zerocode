@@ -1,4 +1,4 @@
-package com.zecorode.domain.scheduleClass;
+package com.zecorode.domain.schedule;
 
 import java.time.LocalDateTime;
 

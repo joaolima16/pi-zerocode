@@ -275,7 +275,7 @@ nav {
     left: 0;
     width: 100%;
     height: 30%;
-    background: linear-gradient(to top, rgba(106, 48, 147, 0.7), transparent);
+    background: linear-gradient(to top, rgba(66, 66, 66, 0.7), transparent);
 }
 
 .member-info {
@@ -283,7 +283,7 @@ nav {
 }
 
 .member-info h3 {
-    color: #6a3093;
+    color: #3f3f40;
     margin-bottom: 0.5rem;
 }
 

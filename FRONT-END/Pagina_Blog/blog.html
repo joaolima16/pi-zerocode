@@ -1,154 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexus | Blog</title>
-
 </head>
+
 <body>
-   <header class="main-header">
+    <header class="main-header">
         <div class="container">
             <div class="logo">
                 <img src="/FRONT-END/IMAGENS/Nexus.png" alt="Logo Nexus">
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="/FRONT-END/Pagina_Home/index.html" class="active">Início</a></li>
-                    <li><a href="/FRONT-END/Pagina_Cursos/cursos.html">Cursos</a></li>
-                    <li><a href="modules.html">Módulos</a></li>
-                    <li><a href="/FRONT-END/Pagina_Perfil_Aluno/perfilAluno.html">Meu Perfil</a></li> <!-- Precisa fazer verificação, ao logar o aluno para visualizar seus cursos e seu perfil -->
+                    <li><a href="../Pagina_Home/index.html">Início</a></li>
+                    <li>
+                        <a href="../Pagina_AreaProfessor/pag-professor.html ">Professores</a>
+                        <a href="../Pagina_Perfil_Professor/perfilProfessor.html"></a>
+                    </li>
+                    <li><a href="../Pagina_Sobre/sobre.html">Sobre</a></li>
+
                 </ul>
             </nav>
             <div class="auth-buttons">
-                <a href="login.html" class="btn btn-outline">Entrar</a>
-                <a href="register.html" class="btn btn-primary">Cadastrar</a>
-                    <svg fill="#000000" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 384.971 384.971" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g id="Sign_Out"> <path d="M180.455,360.91H24.061V24.061h156.394c6.641,0,12.03-5.39,12.03-12.03s-5.39-12.03-12.03-12.03H12.03 C5.39,0.001,0,5.39,0,12.031V372.94c0,6.641,5.39,12.03,12.03,12.03h168.424c6.641,0,12.03-5.39,12.03-12.03 C192.485,366.299,187.095,360.91,180.455,360.91z"></path> <path d="M381.481,184.088l-83.009-84.2c-4.704-4.752-12.319-4.74-17.011,0c-4.704,4.74-4.704,12.439,0,17.179l62.558,63.46H96.279 c-6.641,0-12.03,5.438-12.03,12.151c0,6.713,5.39,12.151,12.03,12.151h247.74l-62.558,63.46c-4.704,4.752-4.704,12.439,0,17.179 c4.704,4.752,12.319,4.752,17.011,0l82.997-84.2C386.113,196.588,386.161,188.756,381.481,184.088z"></path> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </g> </g></svg>    
+                <a href="/FRONT-END/PAGINA_Login/Login/login.html" class="btn btn-outline" id="btn-login">Entrar</a>
+                <a href="/FRONT-END/PAGINA_Login/Cadastro/cadastro.html" class="btn btn-primary"
+                    id="btn-cadastro">Cadastrar</a>
+                <button onclick="logout()" class="btn btn-outline" id="btn-sair">
+                    <!-- SVG do botão sair -->
+                    <svg fill="#000000" height="30px" width="30px" ...> ... </svg>
+                </button>
             </div>
             <button class="mobile-menu-toggle">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-<link rel="stylesheet" href="blog.css">    </header>
-   
+        <link rel="stylesheet" href="blog.css">
+    </header>
 
-
-
-<main>
-
-    <section id="parceirias"  class="team-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Conheça nosso blog</h2>
-                <p>Aqui os alunos podem visualizar blog de outros alunos e professores, e podem também postar o seu para engrajar o estudos do proximo</p>
-            </div>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-img"></div>
-                    <div class="member-info">
-                        <h3>Tecnlogia perminentes</h3>
-                        <p>Joao created</p>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-img"></div>
-                    <div class="member-info">
-                        <h3>Python é uma linguagem interessante</h3>
-                        <p>Alexandre created</p>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-img"><img src="" alt=""></div>
-                    <div class="member-info">
-                        <h3>Aula do professor de matematica é interessantes</h3>
-                        <p>Kaio Oliveira created</p>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-img"></div>
-                    <div class="member-info">
-                        <h3>Aulas interessante sobre java + front</h3>
-                        <p>Richard Miranda created</p>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-img"></div>
-                    <div class="member-info">
-                        <h3>Faculdade x Aulas online</h3>
-                        <p>Eduardo Torquato created</p>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-img"></div>
-                    <div class="member-info">
-                        <h3>Aulas de ingles do professor é muito bom</h3>
-                        <p>Denis created</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-</main>
-
-
-<!-- Rodape da nexus -->
-<footer>
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>Nexus</h4>
-                <ul>
-                    <li><a href="#">Sobre Nós</a></li>
-                    <li><a href="#parceirias">Parcerias</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Cursos</h4>
-                <ul>
-                    
-                    <li><a href="#">Tecnologia</a></li>
-                    <li><a href="#">Negócios</a></li>
-                    <li><a href="#">Idiomas</a></li>
-                    <li><a href="#">Desenvolvimento Pessoal</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Suporte</h4>
-                <ul>
-                    <li><a href="#">Contato</a></li>
-                    <li><a href="#">Política de Privacidade</a></li>
-                    <li><a href="#">Termos de Uso</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Contato</h4>
-                <ul>
-                    <li><a href="#">contato@nexus.com.br</a></li>
-                    <li><a href="#">+55 (11) 3456-7890</a></li>
-                    <li><a href="#">São Paulo, SP - Brasil</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="copyright">
+    <main>
+        <section id="parceirias" class="team-section">
             <div class="container">
-               
-            <p>&copy; 2025 Nexus. Todos os direitos reservados.</p>
+                <div class="section-title">
+                    <h2>Conheça nosso blog</h2>
+                    <p>Aqui você pode visualizar publicações de outros alunos e professores, além de compartilhar seus
+                        próprios conteúdos para contribuir com o aprendizado de todos.</p>
+                </div>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-img"></div>
+                        <div class="member-info">
+                            <h3>Tecnologias que vieram para ficar</h3>
+                            <p>Postado por João</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-img"></div>
+                        <div class="member-info">
+                            <h3>Por que Python é tão popular?</h3>
+                            <p>Postado por Alexandre</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-img"><img src="" alt=""></div>
+                        <div class="member-info">
+                            <h3>A importância das aulas de matemática</h3>
+                            <p>Postado por Kaio Oliveira</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-img"></div>
+                        <div class="member-info">
+                            <h3>Integração entre Java e Frontend</h3>
+                            <p>Postado por Richard Miranda</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-img"></div>
+                        <div class="member-info">
+                            <h3>Faculdade ou cursos online: qual escolher?</h3>
+                            <p>Postado por Eduardo Torquato</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-img"></div>
+                        <div class="member-info">
+                            <h3>Aprendizado de inglês com qualidade</h3>
+                            <p>Postado por Denis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé da Nexus -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Nexus</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#parceirias">Parcerias</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Cursos</h4>
+                    <ul>
+                        <li><a href="#">Tecnologia</a></li>
+                        <li><a href="#">Negócios</a></li>
+                        <li><a href="#">Idiomas</a></li>
+                        <li><a href="#">Desenvolvimento Pessoal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Suporte</h4>
+                    <ul>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><a href="#">contato@nexus.com.br</a></li>
+                        <li><a href="#">+55 (11) 3456-7890</a></li>
+                        <li><a href="#">São Paulo, SP - Brasil</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <p>&copy; 2025 Nexus. Todos os direitos reservados.</p>
+                </div>
+            </div>
         </div>
-        
+    </footer>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
     </div>
-</footer>
-<div vw class="enabled">
-    <div vw-access-button class="active"></div>
-    <div vw-plugin-wrapper>
-      <div class="vw-plugin-top-wrapper"></div>
-    </div>
-  </div>
-  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-  <script>
-    new window.VLibras.Widget('https://vlibras.gov.br/app');
-  </script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <script src="../Scripts/auth.js"></script>
 </body>
+
 </html>

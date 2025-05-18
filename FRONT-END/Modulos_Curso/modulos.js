@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const getClassroom = async (id) => {
-  const courseId = localStorage.getItem("courseId");
+  const courseId = sessionStorage.getItem("courseId");
   let dataClassrooms = [];
   const url = `http://localhost:8080/courses/${courseId}`;
   await fetch(url)
@@ -22,7 +22,7 @@ const renderClassrooms = async () => {
   const classroomsContainer = document.querySelector(".accordion");
   classroomsContainer.innerHTML = "";
   dataClassrooms.map((classroom) => {
-    console.log(classroom);
+
     return (classroomsContainer.innerHTML += `
                 <div class="accordion-item" key="${classroom.id}">
                     <h2 class="accordion-header">
@@ -54,7 +54,7 @@ function formatDuration(minutos) {
   }
 }
 function verifyLogin() {
-    const token = localStorage.getItem('token');
+    const token = sessionStorage.getItem('token');
     if(token){
         
         document.querySelector("#btn-login").style.display = "none";

@@ -4,7 +4,6 @@ function concluido(){
 
 async function renderTeacher(){
     const teacher = await getTeacher();
-    console.log(teacher.phone);
     document.querySelector("#name").value = teacher.name;
     document.querySelector("#email").value = teacher.email;
     document.querySelector("#phone").value = teacher.phone;
@@ -14,7 +13,7 @@ async function renderTeacher(){
 }
 
 async function updateTeacher(){
-    const id = localStorage.getItem('id');
+    const id = sessionStorage.getItem('id');
     const url = `http://localhost:8080/teacher/11`;
     const name = document.querySelector("#name").value;
     const email = document.querySelector("#email").value;
@@ -47,8 +46,8 @@ async function updateTeacher(){
     });
 }
 async function getTeacher(){
-    const id = localStorage.getItem('id');
-    const url = `http://localhost:8080/teacher/11`;
+    const id = sessionStorage.getItem('id');
+    const url = `http://localhost:8080/teacher/${id}`;
     console.log(id);
     let teacher = [];
     await fetch(url)

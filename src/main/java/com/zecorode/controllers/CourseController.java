@@ -37,4 +37,9 @@ public class CourseController {
         Course course = this.courseService.getCourseById(id);
         return ResponseEntity.ok(course);
     }
+    @PostMapping("/{studentId}/purchase/{courseId}")
+    public ResponseEntity<String> purchaseCourse(@PathVariable Long studentId, @PathVariable Long courseId) {
+        this.courseService.purchaseCourse(studentId, courseId);
+        return ResponseEntity.ok("Course purchased successfully!");
+    }
 }

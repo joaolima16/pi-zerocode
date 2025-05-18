@@ -1,5 +1,6 @@
 package com.zecorode.domain.course;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -38,6 +39,9 @@ public class Course {
     @Column(name = "description", nullable = false, length = 255)
     private String description;
 
+    @Column(name = "price", nullable = false, precision = 10, scale = 2)
+    private BigDecimal price;
+    
     @OneToMany(mappedBy = "course")
     private List<Classroom> classrooms;
 

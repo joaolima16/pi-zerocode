@@ -70,15 +70,15 @@ const getCourses = async () => {
     }
 }
 const redirectToCourse = (courseId) => {
-    localStorage.removeItem("courseId");
-    localStorage.setItem("courseId", courseId);
+    sessionStorage.removeItem("courseId");
+    sessionStorage.setItem("courseId", courseId);
     window.location.href = "../Modulos_Curso/modulos.html";
 }
 const redirectToTeacher = (id) =>{
     window.location.href = `../Pagina_Perfil_Professor/perfilProfessor.html?id=${id}`;
 }
 const redirectUser = () =>{
-    const role = localStorage.getItem('role');
+    const role = sessionStorage.getItem('role');
     if(role === 'STUDENT'){
         window.location.href = '../Pagina_Perfil_Aluno/perfilAluno.html';
     }
@@ -87,7 +87,7 @@ const redirectUser = () =>{
     }
 }
 function redirectToAreaUser(){
-    const role = localStorage.getItem('role');
+    const role = sessionStorage.getItem('role');
 
     if(!role ) return(alert('Você não está logado!'));
     if(role === 'STUDENT'){
@@ -98,7 +98,7 @@ function redirectToAreaUser(){
     }
 }
 function verifyLogin() {
-    const token = localStorage.getItem('token');
+    const token = sessionStorage.getItem('token');
     if(token){
         
         document.querySelector("#btn-login").style.display = "none";

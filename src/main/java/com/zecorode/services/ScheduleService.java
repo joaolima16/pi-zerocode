@@ -3,8 +3,8 @@ package com.zecorode.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.zecorode.domain.scheduleClass.CreateScheduleDTO;
-import com.zecorode.domain.scheduleClass.ScheduleClass;
+import com.zecorode.domain.schedule.CreateScheduleDTO;
+import com.zecorode.domain.schedule.Schedule;
 import com.zecorode.domain.student.Student;
 import com.zecorode.domain.teacher.Teacher;
 import com.zecorode.repositories.ScheduleRepository;
@@ -28,7 +28,7 @@ public class ScheduleService {
                 .orElseThrow(() -> new RuntimeException("Teacher not found"));
         Student student = studentRepository.findById(createScheduleDTO.studentId())
                 .orElseThrow(() -> new RuntimeException("Student not found"));
-        ScheduleClass scheduleClass = new ScheduleClass();
+        Schedule scheduleClass = new Schedule();
         boolean isTeacherAvailable = scheduleRepository.existsByScheduleHourAndTeacherIdAndStudentId(
                 createScheduleDTO.scheduleHour(), createScheduleDTO.teacherId(), createScheduleDTO.studentId());
         if (isTeacherAvailable) {

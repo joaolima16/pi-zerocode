@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 const getStudentData = async () => {
-    const id = localStorage.getItem('id');
+    const id = sessionStorage.getItem('id');
     const url = `http://localhost:8080/students/${id}`;
     let data = [];
     await fetch(url)
@@ -23,7 +23,7 @@ const renderStudent = async() =>{
 }
 
 const updateStudent = async () => {
-    const id = localStorage.getItem('id');
+    const id = sessionStorage.getItem('id');
     const url = `http://localhost:8080/students/update/${id}`;
     const name = document.getElementById("student-name").value;
     const phone = document.getElementById("student-phone").value;
@@ -55,7 +55,7 @@ const updateStudent = async () => {
 const deleteStudent = async () => { 
     const confirmation = confirm("Tem certeza que deseja excluir sua conta?");
     if(confirmation){
-        const id = localStorage.getItem('id');
+        const id = sessionStorage.getItem('id');
         const url = `http://localhost:8080/students/delete/${id}`;
         await fetch(url, {
             method: 'DELETE',

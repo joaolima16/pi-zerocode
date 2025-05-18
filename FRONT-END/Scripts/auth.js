@@ -1,5 +1,5 @@
 function verifyLogin() {
-    const token = localStorage.getItem('token');
+    const token = sessionStorage.getItem('token');
     if(token){
         
         document.querySelector("#btn-login").style.display = "none";
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", verifyLogin());
 
 function logout() {
     alert("Você foi desconectado com sucesso!");
-    localStorage.removeItem('token');
-    localStorage.removeItem('id');
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('id');
     window.location.href = "../Pagina_Login/Login/login.html";
 }

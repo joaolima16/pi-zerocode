@@ -17,9 +17,9 @@ function loginUser() {
 
             if (data.token) {
                 alert("Logado com sucesso!");
-                localStorage.setItem('token', data.token);
-                localStorage.setItem('id', data.id);
-                localStorage.setItem('role', data.role);
+                sessionStorage.setItem('token', data.token);
+                sessionStorage.setItem('id', data.id);
+                sessionStorage.setItem('role', data.role);
                 window.location.href = "../../Pagina_Home/index.html";
             }
         })

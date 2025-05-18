@@ -1,3 +1,5 @@
+var teacherPrice = 0;
+var teacherId = 0;
 document.addEventListener('DOMContentLoaded', async function () {
     const teachers = await getTeachers();
 
@@ -74,43 +76,50 @@ document.addEventListener('DOMContentLoaded', async function () {
         document.getElementById('message-modal').classList.add('active');
     }
 
-    function openScheduleModal(teacherId, teacherName, teacherPrice) {
+    function openScheduleModal(idTeacher, teacherName, priceTeacher) {
         if (!validateLogin()) return;
         document.getElementById('schedule-teacher-name').textContent = teacherName;
-        document.getElementById('schedule-price').textContent = teacherPrice;
+        document.getElementById('schedule-price').textContent = priceTeacher;
         document.getElementById('schedule-modal').classList.add('active');
+        teacherPrice = priceTeacher;
+        teacherId = idTeacher;
+
 
         document.getElementById('duration').addEventListener('change', function () {
             const duration = parseInt(this.value);
-            const price = parseInt(teacherPrice);
-            document.getElementById('schedule-price').textContent = (price * duration / 60).toFixed(2);
+            const price = parseInt(priceTeacher);
+            document.getElementById('schedule-price').textContent = (price * duration).toFixed(2);
         });
     }
 
     // Modal Events
-    document.getElementById('close-message-modal').addEventListener('click', function () {
-        document.getElementById('message-modal').classList.remove('active');
-    });
 
-    document.getElementById('send-message').addEventListener('click', function () {
-        alert('Mensagem enviada com sucesso!');
-        document.getElementById('message-modal').classList.remove('active');
-    });
+
 
     document.getElementById('close-schedule-modal').addEventListener('click', function () {
         document.getElementById('schedule-modal').classList.remove('active');
     });
 
-    document.getElementById('confirm-schedule').addEventListener('click', function () {
+    document.getElementById('confirm-schedule').addEventListener('click', async function () {
         const date = document.getElementById('date').value;
         const time = document.getElementById('time').value;
-
+        const topic = document.getElementById('topic').value;
+        var localDateTime = '';
         if (!date || !time) {
             alert('Por favor, selecione uma data e horário.');
             return;
         }
-
-        alert('Aula agendada com sucesso!');
+        if (date && time) {
+             localDateTime = `${date}T${time}`; 
+        }
+        const response = await scheduler(localDateTime, topic, sessionStorage.getItem('id'), teacherId);
+       console.log(response);
+        if(response == true){
+            alert('Aula agendada com sucesso!');
+        }
+        else{
+            alert('Erro ao agendar aula. Tente novamente mais tarde.');
+        }
         document.getElementById('schedule-modal').classList.remove('active');
     });
 
@@ -120,7 +129,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
     });
 
-    renderTeachers(); // Renderiza todos os professores sem filtro
+    renderTeachers();
 });
 
 // Funções auxiliares mantidas
@@ -144,7 +153,7 @@ const redirectPage = (id) => {
 }
 
 const validateLogin = () => {
-    const token = localStorage.getItem('token');
+    const token = sessionStorage.getItem('token');
     if (!token) {
         alert('Você precisa estar logado para acessar essa página!');
         window.location.href = '../PAGINA_Login/Login/login.html';
@@ -158,4 +167,35 @@ const formatToReal = (value) => {
         style: 'currency',
         currency: 'BRL'
     }).format(value);
+}
+async function scheduler(date, topic, idStudent, idTeacher) {
+    const url = "http://localhost:8080/schedules"
+    const jsonData = JSON.stringify({
+        studentId: idStudent,
+        teacherId: idTeacher,
+        subject: topic,
+        scheduleHour: date,
+        status: "PENDENTE"
+    });
+
+    await fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: jsonData
+    })
+        .then((response) => {
+            console.log(response);
+            if (response.status == 200) {
+                return true;
+            }
+            if(response.status == 403) {
+                console.error('Erro ao agendar aula:', response.statusText);
+                return false;
+            }
+        })
+        .catch((error) => {
+            console.error('Erro:', error);
+        });
 }

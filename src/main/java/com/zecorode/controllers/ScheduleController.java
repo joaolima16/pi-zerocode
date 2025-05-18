@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.zecorode.domain.scheduleClass.CreateScheduleDTO;
+import com.zecorode.domain.schedule.CreateScheduleDTO;
 import com.zecorode.services.ScheduleService;
 
 @RestController

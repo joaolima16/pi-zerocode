@@ -23,7 +23,6 @@ const renderTeacher = async () => {
 const renderCourses = async (courses) => {
     const container = document.querySelector(".courses-grid");
     courses.map((index) => {
-        console.log(index)
        container.innerHTML += `
             <div class="card">
             <div class="card-image"></div>

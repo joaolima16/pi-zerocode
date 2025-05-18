@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 const renderStudentProfile = async () => {
-    const id = localStorage.getItem('id');
+    const id = sessionStorage.getItem('id');
 
     const url =  `http://localhost:8080/students/${id}`;
     await fetch(url)

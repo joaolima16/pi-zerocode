@@ -47,6 +47,7 @@ public class SecurityConfigurations {
                         .requestMatchers(HttpMethod.POST,"/courses").permitAll()
                         .requestMatchers(HttpMethod.GET,"/courses/all").permitAll()
                         .requestMatchers(HttpMethod.GET,"/courses/{id}").permitAll()
+                        .requestMatchers(HttpMethod.POST,"/courses/{studentId}/purchase/{courseId}").permitAll()
                         .requestMatchers(HttpMethod.POST,"/classroom").permitAll()
                         .requestMatchers(HttpMethod.GET,"/classroom/all").permitAll()
                         .requestMatchers(HttpMethod.POST,"/schedules").permitAll()      

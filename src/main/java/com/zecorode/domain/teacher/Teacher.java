@@ -7,6 +7,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.zecorode.domain.course.Course;
+import com.zecorode.domain.schedule.Schedule;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -65,4 +66,7 @@ public class Teacher {
     @JsonManagedReference
     private List<Course> courses;
     
+    @OneToMany(mappedBy = "teacher")
+    @JsonIgnore
+    private List<Schedule> schedules;
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagamento - EduConnect</title>
+    <title>Pagamento - Nexus</title>
     <link rel="stylesheet" href="pagamento.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -30,12 +30,14 @@
           
         </ul>
       </nav>
-      <div class="auth-buttons">
-        <a href="/FRONT-END/PAGINA_Login/Login/login.html" class="btn btn-outline">Entrar</a
-        >
-        <a href="/FRONT-END/PAGINA_Login/Cadastro/cadastro.html" class="btn btn-primary">Cadastrar</a
-        >
-            <svg fill="#000000" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 384.971 384.971" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g id="Sign_Out"> <path d="M180.455,360.91H24.061V24.061h156.394c6.641,0,12.03-5.39,12.03-12.03s-5.39-12.03-12.03-12.03H12.03 C5.39,0.001,0,5.39,0,12.031V372.94c0,6.641,5.39,12.03,12.03,12.03h168.424c6.641,0,12.03-5.39,12.03-12.03 C192.485,366.299,187.095,360.91,180.455,360.91z"></path> <path d="M381.481,184.088l-83.009-84.2c-4.704-4.752-12.319-4.74-17.011,0c-4.704,4.74-4.704,12.439,0,17.179l62.558,63.46H96.279 c-6.641,0-12.03,5.438-12.03,12.151c0,6.713,5.39,12.151,12.03,12.151h247.74l-62.558,63.46c-4.704,4.752-4.704,12.439,0,17.179 c4.704,4.752,12.319,4.752,17.011,0l82.997-84.2C386.113,196.588,386.161,188.756,381.481,184.088z"></path> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </g> </g></svg>    
+       <div class="auth-buttons">
+
+        <a href="/FRONT-END/PAGINA_Login/Login/login.html" class="btn btn-outline" id="btn-login">Entrar</a>
+        <a href="/FRONT-END/PAGINA_Login/Cadastro/cadastro.html" class="btn btn-primary" id="btn-cadastro">Cadastrar</a>
+        <button onclick="logout()" class="btn btn-outline" id="btn-sair">
+          <svg fill="#000000" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 384.971 384.971" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g id="Sign_Out"> <path d="M180.455,360.91H24.061V24.061h156.394c6.641,0,12.03-5.39,12.03-12.03s-5.39-12.03-12.03-12.03H12.03 C5.39,0.001,0,5.39,0,12.031V372.94c0,6.641,5.39,12.03,12.03,12.03h168.424c6.641,0,12.03-5.39,12.03-12.03 C192.485,366.299,187.095,360.91,180.455,360.91z"></path> <path d="M381.481,184.088l-83.009-84.2c-4.704-4.752-12.319-4.74-17.011,0c-4.704,4.74-4.704,12.439,0,17.179l62.558,63.46H96.279 c-6.641,0-12.03,5.438-12.03,12.151c0,6.713,5.39,12.151,12.03,12.151h247.74l-62.558,63.46c-4.704,4.752-4.704,12.439,0,17.179 c4.704,4.752,12.319,4.752,17.011,0l82.997-84.2C386.113,196.588,386.161,188.756,381.481,184.088z"></path> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </g> </g></svg>    
+
+        </button>    
       </div>
       <button class="mobile-menu-toggle">
         <i class="fas fa-bars"></i>
@@ -65,9 +67,8 @@
                         <thead>
                             <tr>
                                 <th>Produto</th>
-                                <th>Matéria</th>
+                                <th>Quantidade de aulas</th>
                                 <th>Preço</th>
-                                <th>Professor</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -78,31 +79,13 @@
                                             <img src="https://placehold.co/100x100" alt="Curso">
                                         </div>
                                         <div>
-                                            <div class="product-name">Matemática Avançada</div>
-                                            <div class="product-details">Prof. Carolina Silva</div>
-                                        </div>
+                                            <div class="product-name">Matemática Avançada</div> 
                                     </div>
                                 </td>
-                                <td>Algebra Linear</td>
-                                <td>R$ 399,00</td>
-                                <td>Carolina Silva</td>
+                                <td class="product-classrooms">5</td>
+                                <td class="product-price">R$ 399,00</td>
                             </tr>
-                            <tr>
-                                <td>
-                                    <div class="product-info">
-                                        <div class="product-image">
-                                            <img src="https://placehold.co/100x100" alt="Curso">
-                                        </div>
-                                        <div>
-                                            <div class="product-name">Material de Apoio </div>
-                                            <div class="product-details">Apostilas e exercícios</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>Raiz Quadrada</td>
-                                <td>R$ 49,90</td>
-                                <td>Carolina Silva</td>
-                            </tr>
+                    
                         </tbody>
                     </table>
 
@@ -305,5 +288,6 @@
   </script>
   </footer>
     <script src="pagamento.js"></script>
+    <script src="../Scripts/auth.js"></script>
 </body>
 </html>
