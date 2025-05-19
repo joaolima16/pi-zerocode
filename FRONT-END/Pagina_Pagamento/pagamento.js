@@ -1,5 +1,5 @@
+var courseId = null;
 document.addEventListener('DOMContentLoaded', function () {
-
     renderCourses();
     const tabs = document.querySelectorAll('.tab');
     const tabContents = document.querySelectorAll('.tab-content');
@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (cardForm) {
         cardForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            alert('Pagamento processado com sucesso! Em um ambiente real, você seria redirecionado para a página de confirmação.');
+            purchaseCourse();
+        
         });
     }
 
@@ -50,10 +51,10 @@ const getCourse = async () => {
 
     return dataCourse;
 }
-const renderCourses = async (data) => {
+const renderCourses = async () => {
 
     const dataCourses = await getCourse();
-
+    courseId = dataCourses.id;
     document.querySelector(".product-name").innerHTML = dataCourses.name;
     document.querySelector(".product-classrooms").innerHTML = dataCourses.classrooms.length;
     document.querySelector(".product-price").innerHTML = formatToReal(dataCourses.price);
@@ -65,4 +66,23 @@ const formatToReal = (value) => {
         style: 'currency',
         currency: 'BRL'
     }).format(value);
+}
+const purchaseCourse = async () => {
+    const idStudent = sessionStorage.getItem('id');
+    const url = `http://localhost:8080/courses/${idStudent}/purchase/${courseId}`;
+    fetch(url,{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    })
+    .then((response) =>{
+        console.log(response);
+        if (response.ok) {
+            alert('Compra realizada com sucesso!');
+            window.location.href = '../Pagina_Home/index.html'
+        } else {
+            alert('Erro ao realizar a compra.');
+        }
+    })
 }

@@ -4,11 +4,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const getClassroom = async (id) => {
   const courseId = sessionStorage.getItem("courseId");
+  console.log(courseId);
   let dataClassrooms = [];
   const url = `http://localhost:8080/courses/${courseId}`;
+  
   await fetch(url)
+
     .then((response) => response.json())
     .then((data) => {
+
       document.querySelector(
         ".title-course"
       ).innerHTML = `<h2>${data.name}</h2>`;

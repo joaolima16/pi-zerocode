@@ -30,8 +30,15 @@ const renderCourses = async (courses) => {
               <div class="card-title">Nome do curso: ${index.name}</div>
               <div class="card-subtitle">Descrição do curso: ${index.description}</div>
               <div class="card-status">Quantidade de aulas: ${index.classrooms.length}</div>
+              <div class="card-price">Preço:  ${formatToReal(index.price)}</div>
             </div>
           </div>
        `
     })
+}
+const formatToReal = (value) => {
+    return new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+    }).format(value);
 }

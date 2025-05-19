@@ -11,7 +11,6 @@ const getStudentData = async () => {
         .then((res) => res.json())
         .then((response) => data = response)
         .catch((err) => console.log(err));
-    console.log(data);
     return data;
 }
 const renderStudent = async() =>{
@@ -64,6 +63,9 @@ const deleteStudent = async () => {
             .then(response =>{
                 if (response.ok) {
                     alert("Conta excluída com sucesso!");
+                    sessionStorage.removeItem('token');
+                    sessionStorage.removeItem('id');
+                    sessionStorage.removeItem('role');
                     window.location.href = "../Pagina_home/index.html";
                 } else {
                     alert("Erro ao excluir a conta");

@@ -31,7 +31,7 @@ const renderCourses = async () => {
                             <p>${courses[i].description}</p>
                             <div class="course-meta">
                                   <span class="course-lessons">${courses[i].classrooms.length} Aulas</span>
-                                <span class="course-details" onClick="redirectToCourse(${courses.id})">Ver detalhes</span>
+                                <span class="course-details" onClick="redirectToCourse(${courses[i].id})">Ver detalhes</span>
                             </div>
                              <div class="course-meta">         
                                   <span class="course-details" onClick="purchaseCourse(${courses[i].id})">Adquirir curso</span>
@@ -76,11 +76,21 @@ const renderAllCourses = async () => {
     })
 }
 const redirectToCourse = (courseId) => {
+    if(!validateLogin()) return;
     sessionStorage.removeItem("courseId");
     sessionStorage.setItem("courseId", courseId);
     window.location.href = "../Modulos_Curso/modulos.html";
 }
 const purchaseCourse = async (courseId) => {
-    console.log(courseId);
+    if(!validateLogin()) return;
     window.location.href = `../Pagina_pagamento/pagamento.html?courseId=${courseId}`;
+}
+const validateLogin = () => {
+    const token = sessionStorage.getItem('token');
+    if (!token) {
+        alert('Você precisa estar logado para acessar essa página!');
+        window.location.href = '../PAGINA_Login/Login/login.html';
+        return false;
+    }
+    return true;
 }

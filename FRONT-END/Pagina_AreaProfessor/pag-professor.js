@@ -113,13 +113,7 @@ document.addEventListener('DOMContentLoaded', async function () {
              localDateTime = `${date}T${time}`; 
         }
         const response = await scheduler(localDateTime, topic, sessionStorage.getItem('id'), teacherId);
-       console.log(response);
-        if(response == true){
-            alert('Aula agendada com sucesso!');
-        }
-        else{
-            alert('Erro ao agendar aula. Tente novamente mais tarde.');
-        }
+     
         document.getElementById('schedule-modal').classList.remove('active');
     });
 
@@ -186,12 +180,13 @@ async function scheduler(date, topic, idStudent, idTeacher) {
         body: jsonData
     })
         .then((response) => {
-            console.log(response);
+        
             if (response.status == 200) {
+                alert('Aula agendada com sucesso!');
                 return true;
             }
             if(response.status == 403) {
-                console.error('Erro ao agendar aula:', response.statusText);
+                alert('Hora indisponível, tente novamente.');
                 return false;
             }
         })
