@@ -14,7 +14,7 @@ async function renderTeacher(){
 
 async function updateTeacher(){
     const id = sessionStorage.getItem('id');
-    const url = `http://localhost:8080/teacher/11`;
+    const url = `http://localhost:8080/teacher/${id}`;
     const name = document.querySelector("#name").value;
     const email = document.querySelector("#email").value;
     const phone = document.querySelector("#phone").value;

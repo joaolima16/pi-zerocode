@@ -88,13 +88,13 @@ const redirectUser = () =>{
 }
 function redirectToAreaUser(){
     const role = sessionStorage.getItem('role');
-
+    const id = sessionStorage.getItem('id');
     if(!role ) return(alert('Você não está logado!'));
     if(role === 'STUDENT'){
-        window.location.href = '../Pagina_Editar_Perfil_Aluno/editar_aluno.html';
+        window.location.href = `../Pagina_Perfil_Aluno/perfilAluno.html?id=${id}`;
     }
     else if(role === 'TEACHER'){
-        window.location.href = '../Pagina_Editar_Perfil_Professor/editar_professor.html';
+        window.location.href = `../Pagina_Perfil_Professor/perfilProfessor.html?id=${id}`;
     }
 }
 function verifyLogin() {

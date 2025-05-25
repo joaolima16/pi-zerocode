@@ -11,6 +11,8 @@ const getTeacher = async () => {
         .then((response) => data = response)
         .catch((err) => console.log(err));
     renderCourses(data.courses);
+    renderSchedules(data.schedules);
+    console.log(data);
     return data;
 }
 const renderTeacher = async () => {
@@ -21,7 +23,7 @@ const renderTeacher = async () => {
     document.querySelector(".teacher-email").innerHTML = `Email: ${data.email}`;
 }
 const renderCourses = async (courses) => {
-    const container = document.querySelector(".courses-grid");
+    const container = document.querySelector("#courses-grid");
     courses.map((index) => {
        container.innerHTML += `
             <div class="card">
@@ -36,9 +38,42 @@ const renderCourses = async (courses) => {
        `
     })
 }
+const renderSchedules = async(schedules) =>{
+    const container = document.querySelector("#schedules-grid");
+    schedules.map((index) =>{
+        console.log(index);
+        container.innerHTML += `
+            <div class="card">
+            <div class="card-image"></div>
+            <div class="card-content">
+              <div class="card-title">Nome da aula: ${index.subject}</div>
+              <div class="card-subtitle">Status: ${index.status}</div>
+              <div class="card-status">Data e hora: ${formatDate(index.scheduleHour)}</div>
+            </div>
+          </div>
+        
+        `
+    })
+}
 const formatToReal = (value) => {
     return new Intl.NumberFormat('pt-BR', {
         style: 'currency',
         currency: 'BRL'
     }).format(value);
 }
+function verifyLogin() {
+    const token = sessionStorage.getItem('token');
+    console.log(token);
+    if(token){
+        
+        document.querySelector("#btn-login").style.display = "none";
+        document.querySelector("#btn-cadastro").style.display = "none";
+        document.querySelector("#btn-sair").style.display = "block";
+    }
+}
+const formatDate = (isoDate) => {
+  const data = new Date(isoDate);
+  const twoDigits = (n) => String(n).padStart(2, '0');
+
+  return `${twoDigits(data.getDate())}/${twoDigits(data.getMonth() + 1)}/${data.getFullYear()} ${twoDigits(data.getHours())}:${twoDigits(data.getMinutes())}`;
+};

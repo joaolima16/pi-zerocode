@@ -1,12 +1,8 @@
 package com.zecorode.domain.student;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
-import org.hibernate.annotations.ManyToAny;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.zecorode.domain.course.Course;
 import com.zecorode.domain.schedule.Schedule;
 
@@ -56,7 +52,6 @@ public class Student {
         @Column(length = 70, nullable = false)
         private String password;
 
-        @JsonIgnore
         @OneToMany(mappedBy = "student", cascade = CascadeType.REMOVE, orphanRemoval = true)
         private List<Schedule> schedules;
 

@@ -1,223 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nexus | Perfil Aluno</title>
-    <link rel="stylesheet" href="perfilAluno.css" />
-    <link rel="stylesheet" href="../Pagina_Home/style.css" />
-    <!-- Classe globa css -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-  </head>
 
-  <body>
-    <script src="perfilAluno.js"></script>
-    <header class="main-header">
-      <div class="container">
-        <div class="logo">
-          <img src="../IMAGENS/Nexus.png" alt="Logo Nexus" />
-        </div>
-        <nav class="main-nav">
-          <ul>
-            <li><a href="../Pagina_Cursos/cursos.html">Cursos</a></li>
-            <li>
-              <a href="../Pagina_AreaProfessor/pag-professor.html "
-                >Professores</a
-              >
-              <a href="../Pagina_Perfil_Professor/perfilProfessor.html"></a>
-            </li>
-            <li><a href="../Pagina_Rank_Professores/rank.html">Rank</a></li>
-            <li><a href="../Pagina_Blog/blog.html">Blog</a></li>
-            <li><a href="../Pagina_Sobre/sobre.html">Sobre</a></li>
-          </ul>
-        </nav>
-        <div class="auth-buttons">
-          <a href="../Pagina_Pagamento/pagamento.html" class="btn"
-            ><i class="fa fa-shopping-cart"></i
-          ></a>
-          <a
-            href="/FRONT-END/PAGINA_Login/Login/login.html"
-            class="btn btn-outline"
-            >Entrar</a
-          >
-          <a
-            href="/FRONT-END/PAGINA_Login/Cadastro/cadastro.html"
-            class="btn btn-primary"
-            >Cadastrar</a
-          >
-          <svg
-            fill="#000000"
-            height="30px"
-            width="30px"
-            version="1.1"
-            id="Capa_1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 384.971 384.971"
-            xml:space="preserve"
-          >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexus | Perfil Aluno</title>
+  <link rel="stylesheet" href="perfilAluno.css" />
+  <link rel="stylesheet" href="../Pagina_Home/style.css" />
+  <!-- Classe globa css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+  <script src="script.js"></script>
+  <script src="../Scripts/auth.js"></script>
+  <header class="main-header">
+    <div class="container">
+      <div class="logo">
+        <img src="../IMAGENS/Nexus.png" alt="Logo Nexus" />
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../Pagina_Cursos/cursos.html">Cursos</a></li>
+          <li>
+            <a href="../Pagina_AreaProfessor/pag-professor.html ">Professores</a>
+            <a href="../Pagina_Perfil_Professor/perfilProfessor.html"></a>
+          </li>
+          <li><a href="../Pagina_Home/index.html">Home</a></li>
+          <li><a href="../Pagina_Blog/blog.html">Blog</a></li>
+          <li><a href="../Pagina_Sobre/sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+
+        <a href="/FRONT-END/PAGINA_Login/Login/login.html" class="btn btn-outline" id="btn-login">Entrar</a>
+        <a href="/FRONT-END/PAGINA_Login/Cadastro/cadastro.html" class="btn btn-primary" id="btn-cadastro">Cadastrar</a>
+        <button onclick="logout()" class="btn btn-outline" id="btn-sair">
+          <svg fill="#000000" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 384.971 384.971" xml:space="preserve">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g
-              id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
             <g id="SVGRepo_iconCarrier">
               <g>
                 <g id="Sign_Out">
                   <path
-                    d="M180.455,360.91H24.061V24.061h156.394c6.641,0,12.03-5.39,12.03-12.03s-5.39-12.03-12.03-12.03H12.03 C5.39,0.001,0,5.39,0,12.031V372.94c0,6.641,5.39,12.03,12.03,12.03h168.424c6.641,0,12.03-5.39,12.03-12.03 C192.485,366.299,187.095,360.91,180.455,360.91z"
-                  ></path>
+                    d="M180.455,360.91H24.061V24.061h156.394c6.641,0,12.03-5.39,12.03-12.03s-5.39-12.03-12.03-12.03H12.03 C5.39,0.001,0,5.39,0,12.031V372.94c0,6.641,5.39,12.03,12.03,12.03h168.424c6.641,0,12.03-5.39,12.03-12.03 C192.485,366.299,187.095,360.91,180.455,360.91z">
+                  </path>
                   <path
-                    d="M381.481,184.088l-83.009-84.2c-4.704-4.752-12.319-4.74-17.011,0c-4.704,4.74-4.704,12.439,0,17.179l62.558,63.46H96.279 c-6.641,0-12.03,5.438-12.03,12.151c0,6.713,5.39,12.151,12.03,12.151h247.74l-62.558,63.46c-4.704,4.752-4.704,12.439,0,17.179 c4.704,4.752,12.319,4.752,17.011,0l82.997-84.2C386.113,196.588,386.161,188.756,381.481,184.088z"
-                  ></path>
+                    d="M381.481,184.088l-83.009-84.2c-4.704-4.752-12.319-4.74-17.011,0c-4.704,4.74-4.704,12.439,0,17.179l62.558,63.46H96.279 c-6.641,0-12.03,5.438-12.03,12.151c0,6.713,5.39,12.151,12.03,12.151h247.74l-62.558,63.46c-4.704,4.752-4.704,12.439,0,17.179 c4.704,4.752,12.319,4.752,17.011,0l82.997-84.2C386.113,196.588,386.161,188.756,381.481,184.088z">
+                  </path>
                 </g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
               </g>
             </g>
           </svg>
-        </div>
-        <button class="mobile-menu-toggle">
-          <i class="fas fa-bars"></i>
+
         </button>
       </div>
-    </header>
 
-    <main>
-      <div class="container">
-        <!-- Profile Section -->
-        <div class="profile">
-          <div class="profile-image">
-            <img src="https://via.placeholder.com/150" alt="Foto do Aluno" />
-            <a href="../Pagina_Editar_Perfil_Aluno/editar_aluno.html"
-              ><span>Ver perfil</span></a
-            >
-          </div>
-          <div class="profile-info">
-            <h2 class="name-student">Aluno : [Nome]</h2>
-            <p class="phone-student">Telefone:</p>
-            <p>Status na plataforma : [Ativo]</p>
-          </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- Profile Section -->
+      <div class="profile">
+        <div class="profile-image">
+
+          <a href="../Pagina_Editar_Perfil_Aluno/editar_aluno.html">
+            <img src="../IMAGENS/icone-estudante.png" alt="Foto do Aluno" />
+          </a>
         </div>
-
-        <!-- Scheduled Classes Section -->
-        <h3 class="section-title">Aulas marcadas</h3>
-        <div class="card-grid">
-          <!-- Card 1 -->
-          <div class="card">
-            <div class="card-image"></div>
-            <div class="card-content">
-              <div class="card-title">Matéria: [Nome da matéria]</div>
-              <div class="card-subtitle">Disciplina: [Nome da disciplina]</div>
-              <div class="card-status">Status: [Agendado]</div>
-              <div class="card-date">Horário: [Horário]</div>
-              <div class="card-action">
-                <a href="#">[Desmarcar Aula]</a>
-              </div>
-            </div>
-          </div>
-          <!-- Card 2 -->
-          <div class="card">
-            <div class="card-image"></div>
-            <div class="card-content">
-              <div class="card-title">Matéria: [Nome da matéria]</div>
-              <div class="card-subtitle">Disciplina: [Nome da disciplina]</div>
-              <div class="card-status">Status: [Agendado]</div>
-              <div class="card-date">Horário: [Horário]</div>
-              <div class="card-action">
-                <a href="#">[Desmarcar Aula]</a>
-              </div>
-            </div>
-          </div>
-          <!-- Card 3 -->
-          <div class="card">
-            <div class="card-image"></div>
-            <div class="card-content">
-              <div class="card-title">Matéria: [Nome da matéria]</div>
-              <div class="card-subtitle">Disciplina: [Nome da disciplina]</div>
-              <div class="card-status">Status: [Agendado]</div>
-              <div class="card-date">Horário: [Horário]</div>
-              <div class="card-action">
-                <a href="#">[Desmarcar Aula]</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Enrolled Courses Section -->
-        <h3 class="section-title">Cursos Inscritos</h3>
-        <div class="card-grid">
-          <!-- Card 1 -->
-          <div class="card">
-            <div class="card-image"></div>
-            <div class="card-content">
-              <div class="card-title">Matéria: Fundamentos</div>
-              <div class="card-subtitle">Disciplina: Matemática</div>
-              <div class="card-action">
-                <a href="#">Ver a matéria</a>
-              </div>
-            </div>
-          </div>
-          <!-- Card 2 -->
-          <div class="card">
-            <div class="card-image"></div>
-            <div class="card-content">
-              <div class="card-title">Matéria: Geometria</div>
-              <div class="card-subtitle">Disciplina: Matemática</div>
-              <div class="card-action">
-                <a href="#">Ver a matéria</a>
-              </div>
-            </div>
-          </div>
-          <!-- Card 3 -->
-          <div class="card">
-            <div class="card-image"></div>
-            <div class="card-content">
-              <div class="card-title">Matéria: Gestão</div>
-              <div class="card-subtitle">Disciplina: Economia</div>
-              <div class="card-action">
-                <a href="#">Ver a matéria</a>
-              </div>
-            </div>
-          </div>
+        <div class="profile-info">
+          <h2 class="name-student">Aluno : [Nome]</h2>
+          <p class="phone-student">Telefone:</p>
+          <p>Status na plataforma : [Ativo]</p>
         </div>
       </div>
-    </main>
 
-    <footer class="main-footer">
-      <div class="container">
-        <div class="footer-logo">
-          <img src="/IMAGENS/Nexus.png" alt="Logo da nexus" />
-        </div>
-        <nav class="footer-nav">
-          <ul>
-            <li><a href="#">Termos</a></li>
-            <li><a href="#">Privacidade</a></li>
-            <li><a href="#">Contato</a></li>
-          </ul>
-        </nav>
-        <div class="footer-copyright">
-          &copy; 2025 Nexus | Inovação & Educação. Todos os direitos reservados.
-        </div>
+      <!-- Scheduled Classes Section -->
+      <h3 class="section-title">Aulas marcadas</h3>
+      <div class="card-grid" id="card-schedules">
+
       </div>
-    </footer>
-    <div vw class="enabled">
-      <div vw-access-button class="active"></div>
-      <div vw-plugin-wrapper>
-        <div class="vw-plugin-top-wrapper"></div>
+
+      <!-- Enrolled Courses Section -->
+      <h3 class="section-title">Cursos Inscritos</h3>
+      <div class="card-grid" id="card-courses">
+
       </div>
     </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-      new window.VLibras.Widget("https://vlibras.gov.br/app");
-    </script>
-  </body>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-logo">
+        <img src="/IMAGENS/Nexus.png" alt="Logo da nexus" />
+      </div>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="#">Termos</a></li>
+          <li><a href="#">Privacidade</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </nav>
+      <div class="footer-copyright">
+        &copy; 2025 Nexus | Inovação & Educação. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget("https://vlibras.gov.br/app");
+  </script>
+</body>
+
 </html>

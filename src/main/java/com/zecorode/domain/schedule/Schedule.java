@@ -1,8 +1,8 @@
 package com.zecorode.domain.schedule;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.zecorode.domain.student.Student;
 import com.zecorode.domain.teacher.Teacher;
 
@@ -35,10 +35,12 @@ public class Schedule {
     private String subject;
 
     @ManyToOne
+    @JsonBackReference
     private Student student;
 
     @ManyToOne
     @JoinColumn(name = "teacher_id", nullable = false)
+    @JsonBackReference
     private Teacher teacher;
  
 
