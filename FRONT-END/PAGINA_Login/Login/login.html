@@ -1,92 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login - Nexus - Inovação & Educação</title>
-    <link rel="stylesheet" href="login.css" />
-    <link rel="stylesheet" href="/FRONT-END/Pagina_Home/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <div class="login-container">
-      <div class="login-card">
-        <div class="login-header">
-          <a href="/FRONT-END/Pagina_Home/index.html" class="login-logo">
-            <figure>
-              <img src="/FRONT-END/IMAGENS/Nexus.png" alt="" />
-            </figure>
-          </a>
-          <h1>Bem-vindo de volta</h1>
-          <p>Entre com sua conta para acessar a plataforma</p>
-        </div>
 
-        <div class="tab-content active" id="student-tab">
-          <form id="student-login-form">
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                class="form-control"
-                placeholder="seu@email.com"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <div class="form-footer">
-                <label for="password">Senha</label>
-                <a href="recuperar-senha.html" class="forgot-password"
-                  >Esqueceu a senha?</a
-                >
-              </div>
-              <input
-                type="password"
-                id="password"
-                class="form-control"
-                required
-              />
-            </div>
-            <button
-              type="button"
-              class="btn btn-primary"
-              style="width: 100%"
-              onclick="loginUser()"
-            >
-              Entrar
-            </button>
-          </form>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Nexus - Inovação & Educação</title>
+  <link rel="stylesheet" href="login.css" />
+  <link rel="stylesheet" href="/FRONT-END/Pagina_Home/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
 
-        <div class="login-footer">
-          Não tem uma conta?
-          <a
-            href="/FRONT-END/PAGINA_Login/Cadastro/cadastro.html"
-            target="_blank"
-            >Cadastre-se aqui</a
-          >
-        </div>
-
-        <a href="/FRONT-END/Pagina_Home/index.html" class="back-link">
-          <i class="fas fa-arrow-left"></i>
-          Voltar para a página inicial
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-header">
+        <a href="/FRONT-END/Pagina_Home/index.html" class="login-logo">
+          <figure>
+            <img src="/FRONT-END/IMAGENS/Nexus.png" alt="" />
+          </figure>
         </a>
+        <h1>Bem-vindo de volta</h1>
+        <p>Entre com sua conta para acessar a plataforma</p>
       </div>
-    </div>
-    <div vw class="enabled">
-      <div vw-access-button class="active"></div>
-      <div vw-plugin-wrapper>
-        <div class="vw-plugin-top-wrapper"></div>
-      </div>
-    </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-      new window.VLibras.Widget("https://vlibras.gov.br/app");
-    </script>
 
-    <script src="login.js"></script>
-  </body>
+      <div class="tab-content active" id="student-tab">
+        <form id="student-login-form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" placeholder="seu@email.com" required />
+          </div>
+          <div class="form-group">
+            <div class="form-footer">
+              <label for="password">Senha</label>
+              <a href="recuperar-senha.html" class="forgot-password">Esqueceu a senha?</a>
+            </div>
+            <input type="password" id="password" class="form-control" required />
+          </div>
+          <button type="button" class="btn btn-primary" style="width: 100%" onclick="loginUser()">
+            Entrar
+          </button>
+        </form>
+      </div>
+
+      <div class="login-footer">
+        Não tem uma conta?
+        <a href="/FRONT-END/PAGINA_Login/Cadastro/cadastro.html" target="_blank">Cadastre-se aqui</a>
+      </div>
+
+      <a href="/FRONT-END/Pagina_Home/index.html" class="back-link">
+        <i class="fas fa-arrow-left"></i>
+        Voltar para a página inicial
+      </a>
+    </div>
+  </div>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget("https://vlibras.gov.br/app");
+  </script>
+
+  <script src="login.js"></script>
+</body>
+
 </html>

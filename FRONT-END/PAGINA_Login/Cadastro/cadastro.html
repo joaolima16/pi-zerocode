@@ -1,234 +1,216 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadastro - Nexus - Inovação & Educação</title>
-    <link rel="stylesheet" href="cadastro.css" />
-    <link rel="stylesheet" href="/FRONT-END/Pagina_Home/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <div class="register-container">
-      <div class="register-card">
-        <div class="register-header">
-          <a href="index.html" class="register-logo">
-            <figure>
-              <img src="/FRONT-END/IMAGENS/Nexus.png" alt="logo Nexus" />
-            </figure>
-          </a>
-          <h1>Crie sua conta</h1>
-          <p>Cadastre-se para começar sua jornada de aprendizado</p>
-        </div>
 
-        <div class="tabs">
-          <div class="tab active" data-tab="student">Aluno</div>
-          <div class="tab" data-tab="teacher">Professor</div>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro - Nexus - Inovação & Educação</title>
+  <link rel="stylesheet" href="cadastro.css" />
+  <link rel="stylesheet" href="/FRONT-END/Pagina_Home/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
 
-        <div class="tab-content active" id="student-tab">
-          <form id="student-register-form">
-            <div class="form-group">
-              <label for="student-name">Nome completo</label>
-              <input
-                type="text"
-                id="student-name"
-                class="form-control"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="student-email">Email</label>
-              <input
-                type="email"
-                id="student-email"
-                class="form-control"
-                placeholder="seu@email.com"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="student-cpf">cpf</label>
-              <input
-                type="text"
-                id="student-cpf"
-                class="form-control"
-                placeholder="999.999.999-99"
-                required
-                maxlength="11"
-                onchange="validateCPF()"
-              />
-            </div>
-            <div class="form-group">
-              <label for="student-birthday">Data de nascimento</label>
-              <input
-                type="date"
-                id="student-birthday"
-                class="form-control"
-                placeholder="30/11/2004"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="student-phone">Telefone</label>
-              <input type="tel" id="student-phone" class="form-control" />
-            </div>
-
-            <div class="form-group">
-              <label for="student-password">Senha</label>
-              <input
-                type="password"
-                id="student-password"
-                class="form-control"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="student-confirm-password">Confirmar senha</label>
-              <input
-                type="password"
-                id="student-confirm-password"
-                class="form-control"
-                required
-              />
-            </div>
-            <div class="checkbox-group">
-              <input type="checkbox" id="student-terms" required />
-              <label for="student-terms">
-                Eu aceito os
-                <a href="#" class="terms-link">termos de serviço</a> e
-                <a href="#" class="terms-link">política de privacidade</a>
-              </label>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%">
-              Cadastrar como Aluno
-            </button>
-          </form>
-        </div>
-
-        <div class="tab-content" id="teacher-tab">
-          <form id="teacher-register-form">
-            <div class="form-group">
-              <label for="teacher-name">Nome completo</label>
-              <input
-                type="text"
-                id="teacher-name"
-                class="form-control"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="teacher-email">Email</label>
-              <input
-                type="email"
-                id="teacher-email"
-                class="form-control"
-                placeholder="professor@email.com"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="teacher-cpf">Cpf</label>
-              <input
-                type="text"
-                id="teacher-cpf"
-                class="form-control"
-                placeholder="999.999.999-99"
-                required
-                maxlength="11"
-              />
-            </div>
-            <div class="form-group">
-              <label for="teacher-birthday">Data de nascimento</label>
-              <input
-                type="date"
-                id="teacher-birthday"
-                class="form-control"
-                placeholder="30/11/2004"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="teacher-phone">Telefone</label>
-              <input type="tel" id="teacher-phone" class="form-control" />
-            </div>
-            <div class="form-group">
-              <label for="teacher-valuePerHour">Valor por hora</label>
-              <input
-                type="tel"
-                id="teacher-valuePerHour"
-                class="form-control"
-              />
-            </div>
-            <div class="form-group">
-              <label for="teacher-specialty">Especialidade principal</label>
-              <select id="teacher-specialty" class="form-select" required>
-                <option value="">Selecione sua especialidade</option>
-                <option value="math">Matemática</option>
-                <option value="portuguese">Português</option>
-                <option value="science">Literatura</option>
-                <option value="geography">Biologia</option>
-                <option value="programming">Programação</option>
-                <option value="languages">Idiomas</option>
-                <option value="other">Outra</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="teacher-password">Senha</label>
-              <input
-                type="password"
-                id="teacher-password"
-                class="form-control"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="teacher-confirm-password">Confirmar senha</label>
-              <input
-                type="password"
-                id="teacher-confirm-password"
-                class="form-control"
-                required
-              />
-            </div>
-            <div class="checkbox-group">
-              <input type="checkbox" id="teacher-terms" required />
-              <label for="teacher-terms">
-                Eu aceito os
-                <a href="#" class="terms-link">termos de serviço</a> e
-                <a href="#" class="terms-link">política de privacidade</a>
-              </label>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%">
-              Cadastrar como Professor
-            </button>
-          </form>
-        </div>
-
-        <div class="register-footer">
-          Já tem uma conta?
-          <a href="/FRONT-END/PAGINA_Login/Login/login.html">Entre aqui</a>
-        </div>
-
-        <a href="/FRONT-END/Pagina_Home/index.html" class="back-link">
-          <i class="fas fa-arrow-left"></i>
-          Voltar para a página inicial
+<body>
+  <div class="register-container">
+    <div class="register-card">
+      <div class="register-header">
+        <a href="index.html" class="register-logo">
+          <figure>
+            <img src="/FRONT-END/IMAGENS/Nexus.png" alt="logo Nexus" />
+          </figure>
         </a>
+        <h1>Crie sua conta</h1>
+        <p>Cadastre-se para começar sua jornada de aprendizado</p>
       </div>
-    </div>
-    <div vw class="enabled">
-      <div vw-access-button class="active"></div>
-      <div vw-plugin-wrapper>
-        <div class="vw-plugin-top-wrapper"></div>
+
+      <div class="tabs">
+        <div class="tab active" data-tab="student">Aluno</div>
+        <div class="tab" data-tab="teacher">Professor</div>
       </div>
+
+      <div class="tab-content active" id="student-tab">
+        <form id="student-register-form">
+          <div class="form-group">
+            <label for="student-name">Nome completo</label>
+            <input type="text" id="student-name" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label for="student-email">Email</label>
+            <input type="email" id="student-email" class="form-control" placeholder="seu@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="student-cpf">cpf</label>
+            <input type="text" id="student-cpf" class="form-control" placeholder="999.999.999-99" required
+              maxlength="11" onchange="validateCPF()" />
+          </div>
+          <div class="form-group">
+            <label for="student-birthday">Data de nascimento</label>
+            <input type="date" id="student-birthday" class="form-control" placeholder="30/11/2004" required />
+          </div>
+          <div class="form-group">
+            <label for="student-phone">Telefone</label>
+            <input type="tel" id="student-phone" class="form-control" />
+          </div>
+
+          <div class="form-group">
+            <label for="student-password">Senha</label>
+            <input type="password" id="student-password" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label for="student-confirm-password">Confirmar senha</label>
+            <input type="password" id="student-confirm-password" class="form-control" required />
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="student-terms" required />
+            <label for="student-terms" onclick="openModal()" id="openModalBtn">
+              Eu aceito os
+              <a href="#" class="terms-link">termos de serviço</a> e
+              <a href="#" class="terms-link">política de privacidade</a>
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%">
+            Cadastrar como Aluno
+          </button>
+        </form>
+      </div>
+
+      <div class="tab-content" id="teacher-tab">
+        <form id="teacher-register-form">
+          <div class="form-group">
+            <label for="teacher-name">Nome completo</label>
+            <input type="text" id="teacher-name" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label for="teacher-email">Email</label>
+            <input type="email" id="teacher-email" class="form-control" placeholder="professor@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="teacher-cpf">Cpf</label>
+            <input type="text" id="teacher-cpf" class="form-control" placeholder="999.999.999-99" required
+              maxlength="11" />
+          </div>
+          <div class="form-group">
+            <label for="teacher-birthday">Data de nascimento</label>
+            <input type="date" id="teacher-birthday" class="form-control" placeholder="30/11/2004" required />
+          </div>
+          <div class="form-group">
+            <label for="teacher-phone">Telefone</label>
+            <input type="tel" id="teacher-phone" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="teacher-valuePerHour">Valor por hora</label>
+            <input type="tel" id="teacher-valuePerHour" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="teacher-specialty">Especialidade principal</label>
+            <select id="teacher-specialty" class="form-select" required>
+              <option value="">Selecione sua especialidade</option>
+              <option value="math">Matemática</option>
+              <option value="portuguese">Português</option>
+              <option value="science">Literatura</option>
+              <option value="geography">Biologia</option>
+              <option value="programming">Programação</option>
+              <option value="languages">Idiomas</option>
+              <option value="other">Outra</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="teacher-password">Senha</label>
+            <input type="password" id="teacher-password" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label for="teacher-confirm-password">Confirmar senha</label>
+            <input type="password" id="teacher-confirm-password" class="form-control" required />
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="teacher-terms" required />
+
+            <label for="teacher-terms" onclick="openModal()" id="openModalBtn">
+              Eu aceito os
+              <a href="#" class="terms-link">termos de serviço</a> e
+              <a href="#" class="terms-link">política de privacidade</a>
+            </label>
+
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%">
+            Cadastrar como Professor
+          </button>
+        </form>
+      </div>
+
+      <div class="register-footer">
+        Já tem uma conta?
+        <a href="/FRONT-END/PAGINA_Login/Login/login.html">Entre aqui</a>
+      </div>
+
+      <a href="/FRONT-END/Pagina_Home/index.html" class="back-link">
+        <i class="fas fa-arrow-left"></i>
+        Voltar para a página inicial
+      </a>
     </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-      new window.VLibras.Widget("https://vlibras.gov.br/app");
-    </script>
-    <script src="cadastro.js"></script>
-  </body>
+  </div>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModalBtn" class="close">&times;</span>
+      <section>
+        <h2>3. Termos de Uso para Alunos</h2>
+        <ol>
+          <li>
+            <p><strong>3.1.</strong> O aluno terá acesso a conteúdos educacionais, incluindo vídeos gravados,
+              transmissões ao vivo e matérias complementares.</p>
+          </li>
+          <li>
+            <p><strong>3.2.</strong> O conteúdo disponibilizado é de uso exclusivo para fins educacionais e não deve ser
+              compartilhado, copiado ou reproduzido sem autorização.</p>
+          </li>
+          <li>
+            <p><strong>3.3.</strong> O aluno compromete-se a manter conduta ética, respeitosa e colaborativa em todas as
+              interações dentro da Plataforma.</p>
+          </li>
+          <li>
+            <p><strong>3.4.</strong> O uso indevido da Plataforma poderá resultar em sanções previstas neste termo.</p>
+          </li>
+          <li>
+            <p><strong>3.5.</strong> Dados de desempenho acadêmico poderão ser utilizados para fins pedagógicos,
+              respeitando-se a privacidade e confidencialidade das informações.</p>
+          </li>
+        </ol>
+
+        <h2>4. Termos de Uso para Instrutores</h2>
+        <ol>
+          <li>
+            <p><strong>4.1.</strong> O instrutor é responsável pela criação, atualização e disponibilidade dos conteúdos
+              educacionais, sejam eles gravados ou transmitidos ao vivo.</p>
+          </li>
+          <li>
+            <p><strong>4.2.</strong> Os conteúdos produzidos devem respeitar as normas de direitos autorais e estar em
+              conformidade com os objetivos educacionais da plataforma.</p>
+          </li>
+          <li>
+            <p><strong>4.3.</strong> O instrutor deverá zelar pela boa conduta no ambiente virtual, promovendo um espaço
+              de aprendizagem inclusivo e respeitoso.</p>
+          </li>
+          <li>
+            <p><strong>4.4.</strong> É facultado ao instrutor o acesso a relatórios de desempenho dos alunos para fins
+              de acompanhamento e melhoria do processo de ensino-aprendizagem.</p>
+          </li>
+        </ol>
+      </section>
+
+      <button id="acceptBtn" class="btn btn-primary">Aceitar Termos</button>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget("https://vlibras.gov.br/app");
+  </script>
+  <script src="cadastro.js"></script>
+</body>
+
 </html>

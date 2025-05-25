@@ -116,3 +116,13 @@
 .back-link i {
     margin-right: 0.5rem;
 }
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+

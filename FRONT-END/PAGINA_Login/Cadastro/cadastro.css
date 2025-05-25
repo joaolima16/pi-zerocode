@@ -138,3 +138,69 @@
 .back-link i {
     margin-right: 0.5rem;
 }
+/* Modal: fundo escuro */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Conteúdo da modal */
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-family: Arial, sans-serif;
+}
+
+/* Botão de fechar (X) */
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+/* Lista ordenada */
+.modal-content ol {
+  padding-left: 1.5rem;
+}
+
+.modal-content li {
+  margin-bottom: 1rem;
+}
+
+/* Botão de aceitar */
+#acceptBtn {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+#acceptBtn:hover {
+  background-color: #0056b3;
+}

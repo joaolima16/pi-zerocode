@@ -82,7 +82,7 @@ async function registerStudent() {
     })
         .then((res) => res)
         .then((response) => {
-    
+
             if (response.status == 200) {
                 alert("Aluno cadastrado com sucesso!");
                 window.location.href = "../Login/login.html";
@@ -142,7 +142,7 @@ function registerTeacher() {
     const phone = document.querySelector("#teacher-phone").value;
     const area_teaching = document.querySelector("#teacher-specialty").value;
     const valuePerHour = document.querySelector("#teacher-valuePerHour").value;
-  
+
     const jsonData = JSON.stringify({
         name: name,
         cpf: cpf,
@@ -164,12 +164,74 @@ function registerTeacher() {
         .then((res) => res.json())
         .then((response) => {
             console.log(response);
-                alert("Professor cadastrado com sucesso!");
-                window.location.href = "../Login/login.html";
-            
+            alert("Professor cadastrado com sucesso!");
+            window.location.href = "../Login/login.html";
+
         })
-        .catch((err) =>{
+        .catch((err) => {
             alert("Ocorreu um erro ao cadastrar o professor!");
             console.log(err);
         });
+}
+document.addEventListener('DOMContentLoaded', () => {
+    setupModalEvents();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const openModalBtn = document.getElementById('openModalBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const modal = document.getElementById('modal');
+    const acceptBtn = document.getElementById('acceptBtn');
+
+    // Abrir modal
+    openModalBtn.addEventListener('click', () => {
+        modal.style.display = 'block';
+    });
+
+    // Fechar modal ao clicar no X
+    closeModalBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // Fechar modal ao clicar em "Aceitar Termos"
+    acceptBtn.addEventListener('click', () => {
+
+        modal.style.display = 'none'; // <-- fecha a modal
+    });
+
+    // Fechar ao clicar fora da área da modal
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+function openModal() {
+    document.getElementById('modal').style.display = 'block';
+}
+
+function setupModalEvents() {
+  const openModalBtn = document.getElementById('openModalBtn');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  const modal = document.getElementById('modal');
+  const acceptBtn = document.getElementById('acceptBtn');
+
+  openModalBtn.addEventListener('click', () => {
+    console.log("Modal aberto");
+    modal.style.display = 'block';
+  });
+
+  closeModalBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  acceptBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
 }
