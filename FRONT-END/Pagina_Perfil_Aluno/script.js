@@ -40,12 +40,12 @@ const renderStudentCourses = async (courses) => {
 const renderStudentSchedules = async (schedules) => {
   const container = document.querySelector("#card-schedules");
   schedules.map((index) => {
+    console.log(index);
     container.innerHTML += `
         <div class="card">
             <div class="card-image"></div>
             <div class="card-content">
               <div class="card-title">Nome da aula:  ${index.subject}</div>
-              <div class="card-subtitle">Disciplina: ${index.teacher.areaTeaching}</div>
               <div class="card-status">Status: ${index.status}</div>
               <div class="card-date">Data e hora: ${formatDate(index.scheduleHour)}</div>
         

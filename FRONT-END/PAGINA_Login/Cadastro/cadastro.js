@@ -235,3 +235,11 @@ function setupModalEvents() {
     }
   });
 }
+
+function mascararCpf(cpf) {
+  return cpf
+    .replace(/\D/g, '')                         // Remove tudo que não for dígito
+    .replace(/(\d{3})(\d)/, '$1.$2')            // Coloca ponto depois dos 3 primeiros dígitos
+    .replace(/(\d{3})(\d)/, '$1.$2')            // Coloca ponto depois dos 6 primeiros dígitos
+    .replace(/(\d{3})(\d{1,2})$/, '$1-$2');     // Coloca hífen entre o 9º e 10º dígitos
+}
